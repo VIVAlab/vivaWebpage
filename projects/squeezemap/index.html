@@ -1,0 +1,284 @@
+<!DOCTYPE HTML>
+<!--
+	Halcyonic by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Two Column 1 - Halcyonic by HTML5 UP</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="/assets/css/main.css" />
+		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+
+	<style type="text/css">
+		.tg  {border-collapse:collapse;border-spacing:0;margin:0px auto;}
+		.tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;}
+		.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;}
+		.tg .tg-s6z2{text-align:center}
+		@media screen and (max-width: 767px) {.tg {width: auto !important;}.tg col {width: auto !important;}.tg-wrap {overflow-x: auto;-webkit-overflow-scrolling: touch;margin: auto 0px;}}
+
+		.center {text-align:left;width:640px;margin:0 auto;}
+		.center ul {font-family:Arial, sans-serif;font-size:14px;list-style-type: disc;}
+	</style>
+	</head>
+	<body class="subpage">
+		<div id="page-wrapper">
+
+			<!-- Header -->
+				<div id="header-wrapper">
+					<header id="header" class="container">
+						<div class="row">
+							<div class="12u">
+
+								<!-- Logo -->
+									<h1><a href="#" id="logo">Halcyonic</a></h1>
+
+								<!-- Nav -->
+									<nav id="nav">
+										<a href="index.html">Homepage</a>
+										<a href="threecolumn.html">Three Column</a>
+										<a href="twocolumn1.html">Two Column #1</a>
+										<a href="twocolumn2.html">Two Column #2</a>
+										<a href="onecolumn.html">One Column</a>
+									</nav>
+
+							</div>
+						</div>
+					</header>
+				</div>
+
+			<!-- Content -->
+				<div id="content-wrapper">
+					<div id="content">
+						<div class="container">
+							<div class="row">
+								<div class="9u 12u(mobile)">
+
+									<!-- Main Content -->
+										<section>
+											<header>
+												<h2><center>SqueezeMap: Fast Pedestrian Detection on a Low-power Automotive Processor Using Efficient Convolutional Neural Networks</center></h2>
+<div class="tg-wrap"><table class="tg">
+  <tr>
+    <th class="tg-s6z2"><a href="mailto:rverb054@uottawa.ca?Subject=SqueezeMap">Rytis Verbickas</a>, <a href="mailto:laganier@eecs.uottawa.ca?Subject=SqueezeMap">Robert Laganiere</a><br>University of Ottawa<br>Ottawa, ON, Canada</th>
+    <th class="tg-s6z2"><a href="mailto:daniel.laroche@nxp.com?Subject=SqueezeMap">Daniel Laroche</a>, <a href="mailto:changyun.zhu@nxp.com?Subject=SqueezeMap">Changyun Zhu</a>, <a href="mailto:christina.xu@nxp.com?Subject=SqueezeMap">Xiaoyin Xu</a>,<br><a href="mailto:ali.ors@nxp.com?Subject=SqueezeMap">Ali Ors</a><br>NXP Semiconductors<br>Ottawa, ON, Canada</th>
+  </tr>
+  <tr>
+    <td class="tg-s6z2" colspan="2">Questions? <a href="mailto:rverb054@uottawa.ca?Subject=SqueezeMap&cc=laganier@eecs.uottawa.ca;daniel.laroche@nxp.com;changyun.zhu@nxp.com;christina.xu@nxp.com;ali.ors@nxp.com">Drop us a line</a></td>
+  </tr>
+</table></div>
+											</header>
+<hr>
+<center><a name="overview"><h1>Overview</h1></a></center>
+<hr>
+Pedestrian detection for autonomous driving is a challenging task that requires careful trade-off between accuracy, storage, computation and energy requirements. Detection models deployed on an embedded system in an autonomous vehicle have to be:<br><br>
+
+<div class="center"><ul>
+<li>small in size to fit on resource restricted hardware and to be updated easily over networks with speed and capacity constraints</li>
+<li>computationally light, to minimize power consumption, but with a low miss rate while keeping false positives small</li>
+<li>fast to ensure safe operation, allowing enough time to perform detection, notification and avoidance</li>
+</ul></div>
+
+In our work, we extend the recent <a href="https://arxiv.org/abs/1602.07360" target="_blank">SqueezeNet</a> architecture to pedestrian detection with a focus on meeting the mentioned criteria. We train our extension, SqueezeMap, on the <a href="http://www.vision.caltech.edu/Image_Datasets/CaltechPedestrians/" target="_blank">Caltech USA</a> pedestrian dataset and show how this model has the following advantages:<br><br>
+<div class="center"><ul>
+<li>small with a tiny model size of 3.24MB; roughly the size of a single song in an MP3 file</li>
+<li>comparable in overall miss rate to other competing models on the same dataset</li>
+<li>easily runs at 30 frames per second on an automotive processor within a power envelope of 2W</li>
+</ul></div>
+
+Our work was accepted to the <a href="http://cvisioncentral.com/promotion/evw2017/" target="_blank">Thirteenth IEEE Embedded Vision Workshop</a> which is run as part of <a href="http://cvpr2017.thecvf.com/" target="_blank">CVPR 2017</a>.<br><br>
+
+<hr>
+<center><a name="examples"><h1>Examples</h1></a></center>
+<hr><br>
+The following is a video and example image of our model applied to an unseen video sequence. The sequence was captured around the University of Ottawa campus. This model was constructed using the Caltech USA training set, and has never seen snow, winter jackets or hats. The green boundary annotated in the video and image is the region within which the network is applied, and corresponds to our main region of interest (ROI). For best viewing, use the "Full Screen" option at the bottom right of the video. Due to privacy concerns, the video has been cropped to remove parts with discernible faces.<br><br>
+
+<center><iframe src="https://www.youtube.com/embed/watch?v=NyiKBRPQ3BY"
+   width="640" height="360" frameborder="0" allowfullscreen></iframe></center><br>
+
+<center><a href="images/hmcap.png" target="_blank"><div class="hmscreencap"><img src="images/hmcap.png" alt="SqueezeMap uOtt cap" style="width:640px;height:360px;"></div></a></center><br>
+
+Additional examples outputs from different sequences and datasets is shown below (note the ROI outline is blue in these).<br><br>
+
+<center><a href="images/loewenplatz.png" target="_blank"><img src="images/loewenplatz.png" alt="ETH Loewenplatz" style="width:640px;height:360px;"></a></center><br>
+<center><a href="images/cal_test.png" target="_blank"><div class="hmscreencap_additional"><img src="images/cal_test.png" alt="ETH Loewenplatz" style="width:640px;height:360px;"></div></a></center><br>
+
+<hr>
+<center><a name="background"><h1>Background</h1></a></center>
+<hr><br>
+In the era of autonomous vehicles and smart assist vehicle computers, a robust and above all safe driving system requires a model which can create an accurate representation of the environment. Such systems rely on sensors for its input, which can include laser, radar or camera based solutions. Unlike laser and radar solutions which can cost thousands of dollaras, camera solutions offer a cheap and simple input source for such systems.<br><br>
+
+The wide availability of camera based pedestrian and traffic data is also helpful, allowing researchers to design models instead of collecting datasets. A number of pedestrian detection focused datasets have become available in recent years, the most popular among them arguably the Caltech-USA dataset which provides video sequences with annotations of pedestrian locations using bounding boxes. While a number of solutions have been built such as <a href="https://arxiv.org/abs/1311.2524" target="_blank">R-CNN</a>, <a href="https://arxiv.org/abs/1504.08083" target="_blank">Fast-RCNN</a>, <a href="https://arxiv.org/abs/1506.01497" target="_blank">Faster-RCNN</a> and <a href="https://arxiv.org/abs/1506.02640" target="_blank">YOLO</a> with corresponding trade-offs, they all rely on bounding boxes which we want to avoid having to compute exact pixel-wise locations for and focus on a coarse approximation.<br><br>
+
+Instead our extension relies on the observation that precise knowledge of bounding box corners are not necessary to know the location of pedestrians and their approximate size. Rather, a coarse grid based localization is proposed and acts as a kind of heatmap of pedestrian locations, relying on only one forward pass through a convolutional neural network (CNN). The number of new free parameters introduced is small relative to the original SqueezeNet model. In fact our final model is smaller (3.24MB) than the original SqueezeNet model (4.8MB).<br><br>
+
+An example of our coarse grid is shown below. The left image shows an image from the Caltech USA dataset, with the bounding boxes indicating pedestrians drawn in green. We overlay our grid (red) on top and intersect the bounding boxes with the grid. The result is a set of gridboxes which we expect to be 'on' if pedestrian features are detected inside and 'off' otherwise. This resulting grid is shown in the right image.<br><br>
+
+<center><a href="images/gridoverlay.png" target="_blank"><div class="gridoverlay"><img src="images/gridoverlay.png" alt="Grid overlay cap" style="width:640px;height:360px;"></div></a></center><br><br>
+
+The output layer of our network uses a partially connected (PC) layer of neurons to save parameters. Fully connected layers can drastically increase the size of a neural network and a large amount of the parameters can be pruned (sometimes up to 90%). The PC layer connects across the depth dimension in the previous layer, performing a kind of weighted voting for each output pixel (which corresponds to one of the gridboxes shown earlier) as to whether to turn 'on' or 'off' to indicate the presence or absence of a pedestrian in that gridbox. The concept is shown below.<br><br>
+
+<center><a href="images/hm_layer.png" target="_blank"><div class="hm_layer"><img src="images/hm_layer.png" alt="HM layer connectivity" style="width:427px;height:240px;"></div></a></center><br>
+
+The final summary of parameters is as follows (there is an additional 2 parameters not shown in the table for computing a batch normalization before the output layer). The name of each network layer and/or module is shown along with the size of its output, used filter size, number of parameters and additional information (similar to the original SqueezeNet paper).<br><br>
+
+<center><a href="images/net_params.png" target="_blank"><div class="net_params"><img src="images/net_params.png" alt="Net param summary" style="width:360px;height:400px;"></div></a></center><br><br>
+
+<hr>
+<center><a name="performance"><h1>Performance</h1></a></center>
+<hr><br>
+
+We evaluate the run-time performance of our final model on a 681x227 input image on 3 different systems:<br><br>
+<div class="center"><ul>
+<li>a standard laptop with an i3-6100U @ 2.3GHz, 16GB of RAM and a Samsung 850 EVO SSD</li>
+<li>a desktop with an i7-4790 @ 3.6GHz, 24GB of RAM, a Samsung 850 EVO SSD and a high end GTX Titan X GPU</li>
+<li>an S32V234 automotive processor manufactured by our industry partner NXP</li>
+</ul></div>
+
+The S32V234 is a high-performance, ultra low power, automotive grade processor which supports a range of applications in vision and sensor fusion. It includes Quad ARM Cortex-A53 cores @ 1GHz, 4MB of on chip system RAM, 3D GPU and Dual APEX-2 image cognition processor cores. The observed run-time performance is summarized below. Note that the difference between raw and full frames is that raw does not include any processing overhead and only measures the time to propagate a frame through the network. We see that the dual APEX-2 configuration can run our network at 30 FPS and within a power envelope of about 2W.<br><br>
+
+<center><a href="images/runtime.png" target="_blank"><div class="runtime"><img src="images/runtime.png" alt="Grid overlay cap" style="width:320px;height:180px;"></div></a></center><br><br>
+
+Although we do not compute bounding boxes, we still want to estimate our performance relative to other approaches on the Caltech USA dataset. Our evaluation procedure introduces a number of parameters that can be adjusted to make the evaluation more or less difficult relative to the original evaluation procedure. This gives us a kind of band of worst and best performance within which our method should fall. This is shown below, with the vertical axis representing the (log average) miss rate while the horizontal axis denotes the percentage overlap an 'on' gridbox and ground truth bounding box must have to be considered a true positive (our target value is ~50%). The 'difficult' evaluation if the top (blue) curve and the easier one is the bottom (red) curve.<br><br>
+
+<center><a href="images/perf_curve.png" target="_blank"><div class="perf_curve"><img src="images/perf_curve.png" alt="LAMR Perf band" style="width:540px;height:380px;"></div></a></center><br><br>
+
+At the 50% target, our model obtains a log average miss rate of 71.2% on the entire Caltech USA training dataset. The performance curves of a range of competing models on the same dataset is shown below. Typicaly performance values are ~65% log average miss rate, however many of these approaches are not real time (unless run on high end GPU systems) or have significantly larger model sizes (up to hundreds of MB's).<br><br>
+
+<center><a href="images/cal_perf.png" target="_blank"><div class="cal_perf"><img src="images/cal_perf.png" alt="LAMR Perf band" style="width:540px;height:380px;"></div></a></center><br><br>
+
+<hr>
+<center><a name="acknowledgements"><h1>Acknowledgements</h1></a></center>
+<hr><br>
+Thank you to NXP Semiconductor for making this work possible.<br><br>
+
+
+
+
+										</section>
+
+								</div>
+								<div class="3u 12u(mobile)">
+
+									<!-- Sidebar -->
+										<section>
+											<header>
+												<h2>Magna Phasellus</h2>
+											</header>
+											<ul class="link-list">
+												<li><a href="#">Sed dolore viverra</a></li>
+												<li><a href="#">Ligula non varius</a></li>
+												<li><a href="#">Nec sociis natoque</a></li>
+												<li><a href="#">Penatibus et magnis</a></li>
+												<li><a href="#">Dis parturient montes</a></li>
+												<li><a href="#">Nascetur ridiculus</a></li>
+											</ul>
+										</section>
+										<section>
+											<header>
+												<h2>Ipsum Dolor</h2>
+											</header>
+											<p>
+												Vehicula fermentum ligula at pretium. Suspendisse semper iaculis eros, eu aliquam
+												iaculis. Phasellus ultrices diam sit amet orci lacinia sed consequat.
+											</p>
+											<ul class="link-list">
+												<li><a href="#">Sed dolore viverra</a></li>
+												<li><a href="#">Ligula non varius</a></li>
+												<li><a href="#">Dis parturient montes</a></li>
+												<li><a href="#">Nascetur ridiculus</a></li>
+											</ul>
+										</section>
+
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			<!-- Footer -->
+				<div id="footer-wrapper">
+					<footer id="footer" class="container">
+						<div class="row">
+							<div class="8u 12u(mobile)">
+
+								<!-- Links -->
+									<section>
+										<h2>Links to Important Stuff</h2>
+										<div>
+											<div class="row">
+												<div class="3u 12u(mobile)">
+													<ul class="link-list last-child">
+														<li><a href="#">Neque amet dapibus</a></li>
+														<li><a href="#">Sed mattis quis rutrum</a></li>
+														<li><a href="#">Accumsan suspendisse</a></li>
+														<li><a href="#">Eu varius vitae magna</a></li>
+													</ul>
+												</div>
+												<div class="3u 12u(mobile)">
+													<ul class="link-list last-child">
+														<li><a href="#">Neque amet dapibus</a></li>
+														<li><a href="#">Sed mattis quis rutrum</a></li>
+														<li><a href="#">Accumsan suspendisse</a></li>
+														<li><a href="#">Eu varius vitae magna</a></li>
+													</ul>
+												</div>
+												<div class="3u 12u(mobile)">
+													<ul class="link-list last-child">
+														<li><a href="#">Neque amet dapibus</a></li>
+														<li><a href="#">Sed mattis quis rutrum</a></li>
+														<li><a href="#">Accumsan suspendisse</a></li>
+														<li><a href="#">Eu varius vitae magna</a></li>
+													</ul>
+												</div>
+												<div class="3u 12u(mobile)">
+													<ul class="link-list last-child">
+														<li><a href="#">Neque amet dapibus</a></li>
+														<li><a href="#">Sed mattis quis rutrum</a></li>
+														<li><a href="#">Accumsan suspendisse</a></li>
+														<li><a href="#">Eu varius vitae magna</a></li>
+													</ul>
+												</div>
+											</div>
+										</div>
+									</section>
+
+							</div>
+							<div class="4u 12u(mobile)">
+
+								<!-- Blurb -->
+									<section>
+										<h2>An Informative Text Blurb</h2>
+										<p>
+											Duis neque nisi, dapibus sed mattis quis, rutrum accumsan sed. Suspendisse eu
+											varius nibh. Suspendisse vitae magna eget odio amet mollis. Duis neque nisi,
+											dapibus sed mattis quis, sed rutrum accumsan sed. Suspendisse eu varius nibh
+											lorem ipsum amet dolor sit amet lorem ipsum consequat gravida justo mollis.
+										</p>
+									</section>
+
+							</div>
+						</div>
+					</footer>
+				</div>
+
+			<!-- Copyright -->
+				<div id="copyright">
+					&copy; Untitled. All rights reserved. | Design: <a href="http://html5up.net">HTML5 UP</a>
+				</div>
+
+		</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/skel-viewport.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
