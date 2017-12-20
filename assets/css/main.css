@@ -1176,7 +1176,21 @@
 			display: block;
 			width: 100%;
 		}
-
+	
+	.bordered-member-image {
+		display: block;
+		background: #fff url("images/bg04.png");
+		padding: 5px;
+		box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.15);
+		margin: 0 0 0em 0;
+		outline: 0;
+		height:70px;
+		width:70px;
+	}
+		.bordered-member-image img {
+			display: block;
+		}
+			
 	.bordered-feature-image {
 		display: block;
 		background: #fff url("images/bg04.png");
@@ -1188,7 +1202,6 @@
 
 		.bordered-feature-image img {
 			display: block;
-			width: 100%;
 		}
 
 	.button-big {
@@ -1269,7 +1282,7 @@
 			}
 
 			section:last-child {
-				margin-bottom: 0 !important;
+				margin-bottom: 10% !important;
 			}
 
 		/* Wrappers */
