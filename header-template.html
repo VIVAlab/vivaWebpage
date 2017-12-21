@@ -1,0 +1,28 @@
+<div id="header-wrapper">
+	<header id="header" class="container">
+		<div class="row">
+			<div class="12u">
+
+				<!-- Logo -->
+					<h1><a href="#" id="logo"><img src="/images/logoviva_half.png" alt="VIVAlab" style="width:200px;height:100px;padding-top:20px"></a>
+
+					</h1>
+
+				<!-- Nav -->
+					<nav id="nav">
+						<a href="/index.html">Home</a>
+						<a href="threecolumn.html">Research</a>
+						<a href="twocolumn1.html">People</a>
+						<a href="twocolumn2.html">Links</a>
+					</nav>
+			</div>
+		</div>
+	</header>
+</div>
+
+<script>
+    var owner = document.currentScript.ownerDocument;
+    var hdrContent = owner.querySelector( '#header-wrapper' );
+    var container = document.querySelectorAll( '.template-header-container' );
+    for(i=0; i<container.length; i++) { container[i].appendChild( hdrContent.cloneNode( true ) ); }
+</script>
