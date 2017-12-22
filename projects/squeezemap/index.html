@@ -11,7 +11,18 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
 		<link rel="stylesheet" href="/assets/css/main.css" />
+		<link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
 		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+
+
+			<script src="/assets/js/skel.min.js"></script>
+			<script src="/assets/js/skel-viewport.min.js"></script>
+			<script src="/assets/js/util.js"></script>
+			<script src="/assets/js/jquery.min.js"/>
+			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="/assets/js/main.js"></script>
+			<script src="/assets/js/bootstrap.min.js"></script>
+
 		<link rel="import" href="/header-template.html"/>
 		<link rel="import" href="/footer-template.html"/>
 
@@ -51,8 +62,8 @@
 					<div class="tg-wrap">
 						<table class="tg">
 					 		<tr>
-					    		<th class="tg-s6z2"><a href="mailto:rverb054@uottawa.ca?Subject=SqueezeMap">Rytis Verbickas</a>, <a href="mailto:laganier@eecs.uottawa.ca?Subject=SqueezeMap">Robert Laganiere</a><br>University of Ottawa<br>Ottawa, ON, Canada</th>
-					    		<th class="tg-s6z2"><a href="mailto:daniel.laroche@nxp.com?Subject=SqueezeMap">Daniel Laroche</a>, <a href="mailto:changyun.zhu@nxp.com?Subject=SqueezeMap">Changyun Zhu</a>, <a href="mailto:christina.xu@nxp.com?Subject=SqueezeMap">Xiaoyin Xu</a>,<br><a href="mailto:ali.ors@nxp.com?Subject=SqueezeMap">Ali Ors</a><br>NXP Semiconductors<br>Ottawa, ON, Canada</th>
+					    		<th class="tg-s6z2"><a href="mailto:rverb054@uottawa.ca?Subject=SqueezeMap">Rytis Verbickas</a>,<br><a href="mailto:laganier@eecs.uottawa.ca?Subject=SqueezeMap">Robert Laganiere</a><br>University of Ottawa<br>Ottawa, ON, Canada</th>
+					    		<th class="tg-s6z2"><a href="mailto:daniel.laroche@nxp.com?Subject=SqueezeMap">Daniel Laroche</a>, <a href="mailto:changyun.zhu@nxp.com?Subject=SqueezeMap">Changyun Zhu</a>,<br><a href="mailto:christina.xu@nxp.com?Subject=SqueezeMap">Xiaoyin Xu</a>,<a href="mailto:ali.ors@nxp.com?Subject=SqueezeMap"> Ali Ors</a><br>NXP Semiconductors<br>Ottawa, ON, Canada</th>
 					  		</tr>
 					  		<tr>
 					    		<td class="tg-s6z2" colspan="2">Questions? <a href="mailto:rverb054@uottawa.ca?Subject=SqueezeMap&cc=laganier@eecs.uottawa.ca;daniel.laroche@nxp.com;changyun.zhu@nxp.com;christina.xu@nxp.com;ali.ors@nxp.com">Drop us a line</a></td>
@@ -61,7 +72,7 @@
 					</div>
 				</header>
 				<hr>
-				<center><a name="overview"><h1>Overview</h1></a></center>
+				<center><a name="overview"><h4>Overview</h4></a></center>
 				<hr>
 
 Pedestrian detection for autonomous driving is a challenging task that requires careful trade-off between accuracy, storage, computation and energy requirements. Detection models deployed on an embedded system in an autonomous vehicle have to be:<br><br>
@@ -81,8 +92,12 @@ In our work, we extend the recent <a href="https://arxiv.org/abs/1602.07360" tar
 
 Our work was accepted to the <a href="http://cvisioncentral.com/promotion/evw2017/" target="_blank">Thirteenth IEEE Embedded Vision Workshop</a> which is run as part of <a href="http://cvpr2017.thecvf.com/" target="_blank">CVPR 2017</a>. This work was also featured in the <a href="https://media.uottawa.ca/news/unleashing-power-deep-learning-smarter-driverless-cars" target="_blank">uOttawa news</a>.<br><br>
 
+		      
+		    <a id="collapse-trigger" data-toggle="collapse" href="#collapse1" onclick="collapsetrig()">Click here for more</a>
+		      
+		    <div id="collapse1" class="panel-collapse collapse">
 <hr>
-<center><a name="examples"><h1>Examples</h1></a></center>
+<center><a name="examples"><h4>Demos</h4></a></center>
 <hr><br>
 The following is a video and example image of our model applied to an unseen video sequence. The sequence was captured around the University of Ottawa campus. This model was constructed using the Caltech USA training set, and has never seen snow, winter jackets or hats. The green boundary annotated in the video and image is the region within which the network is applied, and corresponds to our main region of interest (ROI). For best viewing, use the "Full Screen" option at the bottom right of the video. Due to privacy concerns, the video has been cropped to remove parts with discernible faces.<br><br>
 <center><iframe width="640" height="360" src="https://www.youtube.com/embed/tj8pzFZVniM" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe></center>
@@ -96,7 +111,7 @@ Additional examples outputs from different sequences and datasets is shown below
 <center><a href="images/cal_test.png" target="_blank"><div class="hmscreencap_additional"><img src="images/cal_test.png" alt="ETH Loewenplatz" style="width:640px;height:360px;"></div></a></center><br>
 
 <hr>
-<center><a name="background"><h1>Background</h1></a></center>
+<center><a name="background"><h4>Background</h4></a></center>
 <hr><br>
 In the era of autonomous vehicles and smart assist vehicle computers, a robust and above all safe driving system requires a model which can create an accurate representation of the environment. Such systems rely on sensors for its input, which can include laser, radar or camera based solutions. Unlike laser and radar solutions which can cost thousands of dollaras, camera solutions offer a cheap and simple input source for such systems.<br><br>
 
@@ -117,7 +132,7 @@ The final summary of parameters is as follows (there is an additional 2 paramete
 <center><a href="images/net_params.png" target="_blank"><div class="net_params"><img src="images/net_params.png" alt="Net param summary" style="width:360px;height:400px;"></div></a></center><br><br>
 
 <hr>
-<center><a name="performance"><h1>Performance</h1></a></center>
+<center><a name="performance"><h4>Performance</h4></a></center>
 <hr><br>
 
 We evaluate the run-time performance of our final model on a 681x227 input image on 3 different systems:<br><br>
@@ -137,9 +152,9 @@ Although we do not compute bounding boxes, we still want to estimate our perform
 
 At the 50% target, our model obtains a log average miss rate of 71.2% on the entire Caltech USA training dataset. The performance curves of a range of competing models on the same dataset is shown below. Typicaly performance values are ~65% log average miss rate, however many of these approaches are not real time (unless run on high end GPU systems) or have significantly larger model sizes (up to hundreds of MB's).<br><br>
 
-<center><a href="images/cal_perf.png" target="_blank"><div class="cal_perf"><img src="images/cal_perf.png" alt="LAMR Perf band" style="width:540px;height:380px;"></div></a></center><br><br>
+<center><a href="images/cal_perf.png" target="_blank"><div class="cal_perf"><img src="images/cal_perf.png" alt="LAMR Perf band" style="width:540px;height:380px;"></div></a></center>
 
-<br>
+		</div>
 
 			</section>
 		</div>
@@ -152,7 +167,7 @@ At the 50% target, our model obtains a log average miss rate of 71.2% on the ent
 					</header>
 					<ul class="link-list">
 						<li><a href="#overview">Overview</a></li>
-						<li><a href="#examples">Examples</a></li>
+						<li><a href="#examples">Demos</a></li>
 						<li><a href="#background">Background</a></li>
 						<li><a href="#performance">Performance</a></li>
 					</ul>
@@ -173,12 +188,13 @@ At the 50% target, our model obtains a log average miss rate of 71.2% on the ent
 		</div>
 
 		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/skel.min.js"></script>
-			<script src="assets/js/skel-viewport.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
-			<script src="assets/js/main.js"></script>
+			<script>
+			function collapsetrig()
+			{
+				if ($("#collapse-trigger").text() == "Click here for more") { $("#collapse-trigger").html("Click here for less"); }
+				else { $("#collapse-trigger").html("Click here for more"); }
+			}
+			</script>
 
 	</body>
 </html>
