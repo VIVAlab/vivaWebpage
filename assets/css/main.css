@@ -1098,7 +1098,7 @@
 
 	section > :last-child,
 	.last-child {
-		margin-bottom: 0 !important;
+		margin-bottom: 0% !important;
 	}
 
 /* Multi-use */
@@ -1282,7 +1282,7 @@
 			}
 
 			section:last-child {
-				margin-bottom: 10% !important;
+				margin-bottom: 0% !important;
 			}
 
 		/* Wrappers */
@@ -1308,7 +1308,7 @@
 			#content-wrapper {
 				background: #f7f7f7 url("images/bg04.png");
 				border-top: solid 1px #fff;
-				padding: 45px 0 45px 0;
+				padding: 25px 0 25px 0;
 			}
 
 			#footer-wrapper {
@@ -1401,7 +1401,7 @@
 
 			#content section {
 				background: #fff;
-				padding: 40px 30px 45px 30px;
+				padding: 30px 30px 30px 30px;
 				box-shadow: 2px 2px 2px 1px rgba(128, 128, 128, 0.1);
 				margin: 0 0 10% 0;
 			}
