@@ -6,35 +6,28 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
 		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/skel.min.js"></script>
+		<script src="assets/js/skel-viewport.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+		<script src="assets/js/main.js"></script>
+
+		<script src="/assets/js/bootstrap.min.js"></script>
+
+		<link rel="import" href="/header-template.html"/>
+		<link rel="import" href="/footer-template.html"/>
 	</head>
 
 	<body>
 		<div id="page-wrapper">
-
+			
 			<!-- Header -->
 				<div id="header-wrapper">
-					<header id="header" class="container">
-						<div class="row">
-							<div class="14u">
-
-								<!-- Logo -->
-									<h1 style="bottom:10px">
-										<a href="#" id="logo"></a><img src="images/logoviva_half.png" alt="" style="width:15%; display:inline-block"/></a>
-										<a href="https://www.uottawa.ca"><img src="images/uottawa.png" alt="" style="width:10%; display:inline-block"/></a>
-									</h1>
-								<!-- Nav -->
-									<nav id="nav">
-										<a href="index.html">Homepage</a>
-										<a href="publications.html">Research</a>
-										<a href="publications.html">Publications</a>
-										<a href="members.html">Members</a>
-									</nav>
-									
-
-							</div>
-						</div>
-					</header>
+					<div class="template-header-container"></div>
 					<div id="banner">
 						<div class="container">
 							<div class="row">
@@ -42,8 +35,9 @@
 
 									<!-- Banner Copy -->
 										<p style="font-size:130%">
-											VIVA Lab was founded in 1999 within the School of Electrical Engineering and Computer Science (formerly School of Information Technology and Engineering) at the University of Ottawa. Research areas include:
+											VIVA Lab was founded in 1999 within the School of Electrical Engineering and Computer Science (formerly School of Information Technology and Engineering) at the University of Ottawa.
 										</p>
+										<p style="font-size:130%">Research areas include:</p>
 										<p style="font-size:130%; padding-left:10px">
 												Video Processing and Coding<br>
 												Image Processing and Analysis<br>
@@ -56,7 +50,7 @@
 								<div class="3u 12u(mobile)">
 
 									<!-- Banner Image -->
-										<a href="#" class="bordered-feature-image" ><img src="images/navire_researchers.jpg" alt="" style="padding-left:2px"/></a>
+										<a href="#" ><img src="images/navire_researchers.jpg" alt="" style="padding-left:2px"/></a>
 
 								</div>
 							</div>
@@ -74,18 +68,18 @@
 
 									<!-- Feature #1 -->
 										<section>
-											<a href="#" class="bordered-feature-image"><img src="images/pic01.jpg" alt="" /></a>
-											<h2 style="line-height:110%; margin-bottom:4%">Autonomous driving and Driver assistance Applications</h2>
-											<p style="line-height:110%; margin-bottom:5%">
-												Pedestrian detection<br>
-												Smart back-up camera<br>
-												Forward collision warning<br>
+											<a href="#" ><img src="images/naptime-1540192.jpg" alt="" width="262" height="110" /></a>
+											<h2 style="margin-top:4%; margin-bottom:4%">Autonomous driving and Driver assistance Applications</h2>
+											<p style=" margin-bottom:4%">
+												<a href="/projects/squeezemap/index.html">Pedestrian detection</a><br/>
+												<a href="/projects/singleviewod/index.html">Smart back-up camera</a><br/>
+												<a href="/projects/forwardcollision/index.html">Forward collision warning</a><br/>
 											</p>
 											<p style="line-height:110%">
 												<i style="font-style:italic">
 													Partners: 
-													<a href="" style="text-decoration: none">Cognivue</a>,
-													<a href="https://www.nxp.com/" style="text-decoration: none">NXP</a>
+													<a href="" target="_blank" style="text-decoration: none">Cognivue</a>,
+													<a href="https://www.nxp.com/" target="_blank" style="text-decoration: none">NXP</a>
 												</i>												
 											</p>
 										</section>
@@ -95,26 +89,27 @@
 
 									<!-- Feature #2 -->
 										<section>
-											<a href="#" class="bordered-feature-image"><img src="images/pic02.jpg" alt="" /></a>
-											<h2>Human Recognition</h2>
-											<p style="line-height:110%; margin-bottom:5%">
-												People Detection<br>
-												Action recognition<br>
-												Hand gesture recognition<br>
-												Face Recognition<br>
-												Gender Recognition<br>
-												Face Quality Assessment<br>
+											<a href="#"><img src="images/peopleDetection.png" width="262" height="110" alt="" /></a>
+											<h2 style="margin-top:4%; margin-bottom:4%">Human Recognition</h2>
+											<p style=" margin-bottom:4%">
+												People Detection<br/>
+												Action recognition<br/>
+												<a href="/projects/handgesturerecognition/index.html">Hand gesture recognition</a><br/>
+												Face Recognition<br/>
+												Gender Recognition<br/>
+												Face Quality Assessment<br/>
 											</p>
 											<p style="line-height:110%">
 												<i style="font-style:italic">
 													Partners:
-													<a href="https://www.iwatchlife.com/" style="text-decoration: none">iWatchLife</a>,
-													<a href="http://solinkcorp.com/" style="text-decoration: none">Solink Corp</a>,
+													<a href="https://www.iwatchlife.com/" target="_blank" style="text-decoration: none">iWatchLife</a>,
+													<a href="http://solinkcorp.com/" target="_blank" style="text-decoration: none">Solink Corp</a>,
 													<a href="" style="text-decoration: none">Cognivue</a>,
 													<a href="" style="text-decoration: none">Aditude</a>,
-													<a href="https://www.cbsa-asfc.gc.ca/" style="text-decoration: none">CBSA Canada</a>
+													<a href="https://www.cbsa-asfc.gc.ca/" target="_blank" style="text-decoration: none">CBSA Canada</a>
 												</i>
 											</p>
+											<br/>
 										</section>
 
 								</div>
@@ -122,9 +117,9 @@
 
 									<!-- Feature #3 -->
 										<section>
-											<a href="#" class="bordered-feature-image"><img src="images/pic03.jpg" alt="" /></a>
-											<h2 style="line-height:110%; margin-bottom:4%">Real-time Object Matching and Tracking</h2>
-											<p style="line-height:110%; margin-bottom:5%">
+											<a href="#"><img src="images/houseframe_align.jpg" width="262" height="110" alt="" /></a>
+											<h2 style="margin-top:4%; margin-bottom:4%">Real-time Object Matching and Tracking</h2>
+											<p style="margin-bottom:4%">
 												Fast Visual Tracking<br>
 												3D Object Recognition<br>
 												Fast Homography estimation<br>
@@ -132,10 +127,10 @@
 											<p style="line-height:110%">
 												<i style="font-style:italic">
 													Partners: 
-													<a href="https://www.rossvideo.com/" style="text-decoration: none">Ross Video</a>,
-													<a href="https://www.thalesgroup.com/" style="text-decoration: none">Thales</a>,
-													<a href="https://habitatseven.com/" style="text-decoration: none">Habitat Seven</a>,
-													<a href="https://www.youi.tv/" style="text-decoration: none">YouI Labs</a>
+													<a href="https://www.rossvideo.com/" target="_blank" style="text-decoration: none">Ross Video</a>,
+													<a href="https://www.thalesgroup.com/" target="_blank" style="text-decoration: none">Thales</a>,
+													<a href="https://habitatseven.com/" target="_blank" style="text-decoration: none">Habitat Seven</a>,
+													<a href="https://www.youi.tv/" target="_blank" style="text-decoration: none">YouI Labs</a>
 												</i>
 											</p>
 										</section>
@@ -145,18 +140,18 @@
 
 									<!-- Feature #4 -->
 										<section>
-											<a href="#" class="bordered-feature-image"><img src="images/pic04.jpg" alt="" /></a>
-											<h2>Intelligent Visual Surveillance</h2>
-											<p style="line-height:110%; margin-bottom:5%">
+											<a href="#"><img src="images/twopeopdet.jpg" width="262" height="110" alt="" /></a>
+											<h2 style="margin-top:4%; margin-bottom:4%">Intelligent Visual Surveillance</h2>
+											<p style="margin-bottom:4%">
 												Smart surveillance<br>
 												Video summarization<br>
 											</p>
 											<p style="line-height:110%">
 												<i style="font-style:italic">
 													Partners: 
-													<a href="https://www.iwatchlife.com/" style="text-decoration: none">iWatchLife</a>,
-													<a href="http://solinkcorp.com/" style="text-decoration: none">Solink Corp</a>,
-													<a href="https://www.cbsa-asfc.gc.ca/" style="text-decoration: none">CBSA Canada</a>
+													<a href="https://www.iwatchlife.com/" target="_blank" style="text-decoration: none">iWatchLife</a>,
+													<a href="http://solinkcorp.com/" target="_blank" style="text-decoration: none">Solink Corp</a>,
+													<a href="https://www.cbsa-asfc.gc.ca/" target="_blank" style="text-decoration: none">CBSA Canada</a>
 												</i>
 											</p>
 										</section>
@@ -172,14 +167,14 @@
 	
 										<!-- Feature #1 -->
 											<section>
-												<a href="#" class="bordered-feature-image"><img src="images/pic01.jpg" alt="" /></a>
-												<h2>Feature Detection and Matching</h2>
-												<p style="line-height:110%; margin-bottom:5%">
-														Corners and junction detection<br>
-														An empirical study of feature point matching strategies<br>
-														Correspondence between calibrated image triplets<br>
-														Widely separated view matching<br>
-														Feature-based cut detection in videos<br>
+												<a href="#" ><img src="images/kitchen.2.corners.gif" width="262" height="110" alt="" /></a>
+												<h2 style="margin-top:4%; margin-bottom:4%">Feature Detection and Matching</h2>
+												<p style="margin-bottom:4%">
+														Corners and junction detection<br/>
+														Feature point matching strategies<br/>
+														Correspondence between image triplets<br/>
+														Widely separated view matching<br/>
+														Feature-based cut detection in videos<br/>
 												</p>
 											</section>
 	
@@ -188,15 +183,15 @@
 	
 										<!-- Feature #2 -->
 											<section>
-												<a href="#" class="bordered-feature-image"><img src="images/pic02.jpg" alt="" /></a>
-												<h2 style="line-height:110%; margin-bottom:4%">NAVIRE: Virtual Navigation in Remote Environements</h2>
-												<p style="line-height:110%; margin-bottom:5%">
+												<a href="#"><img src="images/cubeall.jpg" width="262" height="110" alt="" /></a>
+												<h2 style="margin-top:4%; margin-bottom:4%">NAVIRE: Virtual Navigation in Remote Environements</h2>
+												<p style="margin-bottom:4%">
 													The objective of this project is to address and solve the technical challenges required to achieve effective and natural virtual navigation in image-based renditions of real environments.	
 												</p>
 												<p style="line-height:110%">
 													<i style="font-style:italic">
 														Partners: 
-														<a href="http://www.frontline-robotics.com/" style="text-decoration: none">Frontline Robotics</a>
+														<a href="http://www.frontline-robotics.com/" target="_blank" style="text-decoration: none">Frontline Robotics</a>
 													</i>
 												</p>
 											</section>
@@ -219,7 +214,7 @@
 												<h2>Who We Are</h2>
 												<!--h3>We are the gods of deep learning</h3-->
 											</header>
-											<a href="#" class="feature-image"><img src="images/pic05.jpg" alt="" /></a>
+											<a href="#" class="feature-image"><img src="images/group.pic.2.JPG" width="324" height="252" alt="" /></a>
 											<p>
 												VIVA Lab at the University of Ottawa.
 											</p>
@@ -238,6 +233,7 @@
 												<li>Machine Learning</li>
 												<li>Robotics</li>
 												<li>Image Processing</li>
+												<br/>
 											</ul>
 										</section >
 								</div>
@@ -279,67 +275,7 @@
 				</div>
 
 			<!-- Footer -->
-				<div id="footer-wrapper">
-					<footer id="footer" class="container">
-						<div class="row">
-							<div class="8u 12u(mobile)">
-
-								<!-- Links -->
-									<section>
-										<!--h2>Links to Important Stuff</h2-->
-										<div>
-											<div class="row">
-												<div class="3u 12u(mobile)">
-													<ul class="link-list last-child">
-														<li><a href="https://www.uottawa.ca">University of Ottawa</a></li>
-														<!--li><a href="#">Sed mattis quis rutrum</a></li>
-														<li><a href="#">Accumsan suspendisse</a></li>
-														<li><a href="#">Eu varius vitae magna</a></li-->
-													</ul>
-												</div>
-												<div class="3u 12u(mobile)">
-													<ul class="link-list last-child">
-														<li><a href="https://www.eecs.uottawa.ca">School of Electrical and Computer Engineering</a></li>
-														<!--li><a href="#">Sed mattis quis rutrum</a></li>
-														<li><a href="#">Accumsan suspendisse</a></li>
-														<li><a href="#">Eu varius vitae magna</a></li-->
-													</ul>
-												</div>
-												<div class="3u 12u(mobile)">
-													<ul class="link-list last-child">
-														<li><a href="https://ottawa.ca/">City of Ottawa</a></li>
-														<!--li><a href="#">Sed mattis quis rutrum</a></li>
-														<li><a href="#">Accumsan suspendisse</a></li>
-														<li><a href="#">Eu varius vitae magna</a></li-->
-													</ul>
-												</div>
-												<div class="3u 12u(mobile)">
-													<ul class="link-list last-child">
-														<li><a href="https://www.ottawatourism.ca/">Ottawa Tourism</a></li>
-														<!--li><a href="#">Sed mattis quis rutrum</a></li>
-														<li><a href="#">Accumsan suspendisse</a></li>
-														<li><a href="#">Eu varius vitae magna</a></li-->
-													</ul>
-												</div>
-											</div>
-										</div>
-									</section>
-
-							</div>
-							<div class="4u 12u(mobile)">
-
-								<!-- Blurb -->
-									<section>
-										<h2>@VIVA Lab</h2>
-										<!--p>
-											
-										</p-->
-									</section>
-
-							</div>
-						</div>
-					</footer>
-				</div>
+				<div class="template-footer-container"></div>
 
 			<!-- Copyright -->
 				<!--div id="copyright">
@@ -347,14 +283,6 @@
 				</div-->
 
 		</div>
-
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/skel.min.js"></script>
-			<script src="assets/js/skel-viewport.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
-			<script src="assets/js/main.js"></script>
 
 	</body>
 </html>
