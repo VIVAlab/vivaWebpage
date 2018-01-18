@@ -26,6 +26,11 @@
 			<script src="/research/viva/assets/js/bootstrap.min.js"></script>
 
 			<script>
+			$(function(){
+			  $(".template-header-container").load("/research/viva/header-template.html"); 
+			  $(".template-footer-container").load("/research/viva/footer-template.html"); 
+			});
+
 			function collapsejump()
 			{
 				elem = $("#collapse-trigger");
@@ -42,9 +47,6 @@
 				else { elem.html('Click here for more'); }
 			}
 			</script>
-
-		<link rel="import" href="/research/viva/header-template.html"/>
-		<link rel="import" href="/research/viva/footer-template.html"/>
 
 		<style type="text/css">
 			.tg  {border-collapse:collapse;border-spacing:0;margin:0px auto;}

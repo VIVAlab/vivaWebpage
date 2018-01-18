@@ -18,8 +18,12 @@
 
 		<script src="assets/js/bootstrap.min.js"></script>
 
-		<link rel="import" href="header-template.html"/>
-		<link rel="import" href="footer-template.html"/>
+		<script> 
+		$(function(){
+		  $(".template-header-container").load("header-template.html"); 
+		  $(".template-footer-container").load("footer-template.html"); 
+		});
+		</script> 
 	</head>
 
 	<body>
