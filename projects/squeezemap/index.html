@@ -31,20 +31,30 @@
 			  $(".template-footer-container").load("/research/viva/footer-template.html"); 
 			});
 
-			function collapsejump()
+			function collapsejump(evt)
 			{
 				elem = $("#collapse-trigger");
 				if (elem.attr("aria-expanded") === undefined || elem.attr("aria-expanded") == "false")
 				{
-					elem.click();
+					targ = $(evt.target.hash)
+					$("#collapse1").on('shown.bs.collapse', function () {
+						targ[0].scrollIntoView();
+					});
+					$("#collapse1").collapse("toggle");
 				}
 			}
 
 			function collapsetrig()
 			{
 				elem = $("#collapse-trigger");
-				if (elem.attr("aria-expanded") === undefined || elem.attr("aria-expanded") == "false") { elem.html('Click here for less'); }
-				else { elem.html('Click here for more'); }
+				if (elem.attr("aria-expanded") === undefined || elem.attr("aria-expanded") == "false")
+				{
+					elem.html('Click here for less');
+				}
+				else
+				{
+					elem.html('Click here for more');
+				}
 			}
 			</script>
 
@@ -94,7 +104,7 @@
 					</div>
 				</header>
 				<hr>
-				<center><a name="overview"><h4>Overview</h4></a></center>
+				<center><a id="overview" name="overview"><h4>Overview</h4></a></center>
 				<hr>
 
 Pedestrian detection for autonomous driving is a challenging task that requires careful trade-off between accuracy, storage, computation and energy requirements. Detection models deployed on an embedded system in an autonomous vehicle have to be:<br><br>
@@ -119,7 +129,7 @@ Our work was accepted to the <a href="http://cvisioncentral.com/promotion/evw201
 		      
 		    <div id="collapse1" class="panel-collapse collapse">
 <hr>
-<center><a name="examples"><h4>Demos</h4></a></center>
+<center><a id="examples" name="examples"><h4>Demos</h4></a></center>
 <hr><br>
 The following is a video and example image of our model applied to an unseen video sequence. The sequence was captured around the University of Ottawa campus. This model was constructed using the Caltech USA training set, and has never seen snow, winter jackets or hats. The green boundary annotated in the video and image is the region within which the network is applied, and corresponds to our main region of interest (ROI). For best viewing, use the "Full Screen" option at the bottom right of the video. Due to privacy concerns, the video has been cropped to remove parts with discernible faces.<br><br>
 <center><iframe width="640" height="360" src="https://www.youtube.com/embed/tj8pzFZVniM" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe></center>
@@ -133,7 +143,7 @@ Additional examples outputs from different sequences and datasets is shown below
 <center><a href="images/cal_test.png" target="_blank"><div class="hmscreencap_additional"><img src="images/cal_test.png" alt="ETH Loewenplatz" style="width:640px;height:360px;"></div></a></center><br>
 
 <hr>
-<center><a name="background"><h4>Background</h4></a></center>
+<center><a id="background" name="background"><h4>Background</h4></a></center>
 <hr><br>
 In the era of autonomous vehicles and smart assist vehicle computers, a robust and above all safe driving system requires a model which can create an accurate representation of the environment. Such systems rely on sensors for its input, which can include laser, radar or camera based solutions. Unlike laser and radar solutions which can cost thousands of dollaras, camera solutions offer a cheap and simple input source for such systems.<br><br>
 
@@ -189,9 +199,9 @@ At the 50% target, our model obtains a log average miss rate of 71.2% on the ent
 					</header>
 					<ul class="link-list">
 						<li><a href="#overview">Overview</a></li>
-						<li><a href="#examples" onclick="collapsejump()">Demos</a></li>
-						<li><a href="#background" onclick="collapsejump();">Background</a></li>
-						<li><a href="#performance" onclick="collapsejump()">Performance</a></li>
+						<li><a href="#examples" onclick="collapsejump(event)">Demos</a></li>
+						<li><a href="#background" onclick="collapsejump(event);">Background</a></li>
+						<li><a href="#performance" onclick="collapsejump(event)">Performance</a></li>
 					</ul>
 				</section>
 				<section>
