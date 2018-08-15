@@ -1,0 +1,175 @@
+<!DOCTYPE HTML>
+<!--
+	Halcyonic by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Creating Immersive Virtual Reality Scenes Using a Single RGB-D Camera</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="/research/viva/assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="/research/viva/assets/css/main.css" />
+		<link rel="stylesheet" href="/research/viva/assets/css/bootstrap.min.css" />
+		<!--[if lte IE 9]><link rel="stylesheet" href="/research/viva/assets/css/ie9.css" /><![endif]-->
+
+			<script src="/research/viva/assets/js/jquery.min.js"/>
+			<script src="/research/viva/assets/js/main.js"></script>
+			<script src="/research/viva/assets/js/skel.min.js"></script>
+			<script src="/research/viva/assets/js/skel-viewport.min.js"></script>
+			
+			<script src="/research/viva/assets/js/util.js"></script>
+			
+			<!--[if lte IE 8]><script src="/research/viva/assets/js/ie/respond.min.js"></script><![endif]-->
+			
+			<script src="/research/viva/assets/js/bootstrap.min.js"></script>
+
+			<script>
+			$(function(){
+			  $(".template-header-container").load("/research/viva/header-template.html"); 
+			  $(".template-footer-container").load("/research/viva/footer-template.html"); 
+			});
+
+			function collapsejump(evt)
+			{
+				elem = $("#collapse-trigger");
+				if (elem.attr("aria-expanded") === undefined || elem.attr("aria-expanded") == "false")
+				{
+					targ = $(evt.target.hash)
+					$("#collapse1").on('shown.bs.collapse', function () {
+						targ[0].scrollIntoView();
+					});
+					$("#collapse1").collapse("toggle");
+				}
+			}
+
+			function collapsetrig()
+			{
+				elem = $("#collapse-trigger");
+				if (elem.attr("aria-expanded") === undefined || elem.attr("aria-expanded") == "false")
+				{
+					elem.html('Click here for less');
+				}
+				else
+				{
+					elem.html('Click here for more');
+				}
+			}
+			</script>
+
+		<style type="text/css">
+			.tg  {border-collapse:collapse;border-spacing:0;margin:0px auto;}
+			.tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;}
+			.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;}
+			.tg .tg-s6z2{text-align:center}
+			@media screen and (max-width: 767px) {.tg {width: auto !important;}.tg col {width: auto !important;}.tg-wrap {overflow-x: auto;-webkit-overflow-scrolling: touch;margin: auto 0px;}}
+
+			.hmscreencap { position: relative;border: 1px solid #333;margin: 2%;overflow: hidden;width: 640px; }
+			.hmscreencap img { max-width: 100%; -moz-transition: all 0.5s; -webkit-transition: all 0.5s; transition: all 0.5s; }
+			.hmscreencap:hover img { -moz-transform: scale(2.0); -webkit-transform: scale(2.0); transform: scale(2.0); }
+
+			.hmscreencap_additional { position: relative;border: 1px solid #333;margin: 2%;overflow: hidden;width: 640px; }
+			.hmscreencap_additional img { max-width: 100%; -moz-transition: all 0.5s; -webkit-transition: all 0.5s; transition: all 0.5s; }
+			.hmscreencap_additional:hover img { -moz-transform: scale(1.2); -webkit-transform: scale(1.2); transform: scale(1.2); }
+
+			.center {text-align:left;width:640px;margin:0 auto;}
+			.center ul {font-family:Arial, sans-serif;font-size:14px;list-style-type: disc;}
+		</style>
+	</head>
+	<body >
+			<!-- Header -->
+			<div class="template-header-container"></div>
+
+		<div id="page-wrapper">
+
+			<!-- Content -->
+			<div id="content-wrapper"><div id="content"><div class="container"><div class="row"><div class="9u 12u(mobile)">
+
+			<!-- Main Content -->
+			<section>
+				<header>
+					<h2><center>Creating Immersive Virtual Reality Scenes Using a Single RGB-D Camera</center></h2>
+
+					<div class="tg-wrap">
+						<table class="tg">
+					 		<tr>
+					    		<th class="tg-s6z2"><a href="mailto:plai036@uottawa.ca?Subject=SingleRGBDVR">Po Kong Lai</a> and <a href="mailto:laganier@eecs.uottawa.ca?Subject=SingleRGBDVR">Robert Lagani&egrave;re</a><br>University of Ottawa<br>Ottawa, ON, Canada</th>
+					  		</tr>
+					  		<tr>
+					    		<td class="tg-s6z2" colspan="2">Questions? <a href="mailto:plai036@uottawa.ca?Subject=SingleRGBDVR&cc=laganier@eecs.uottawa.ca;">Drop us a line</a></td>
+					  		</tr>
+						</table>
+					</div>
+				</header>
+				<hr>
+				<center><a id="overview" name="overview"><h4>Overview</h4></a></center>
+				<hr>
+
+
+Creating experiences for virtual reality (VR) with six degrees of freddom (6-DoF) using visual sensors typically requires a complicated capture system involving multiple sensors. Realistically speaking, an average consumer may not have the space and/or the resources to setup a multi-sensor environment. Furthermore such an environment has poor mobility making it difficult to record content spontaneously at different locations. Our aim is to provide a framework to empower regular consumers to record their own content to be viewed or interacted with in VR at a later date. Being able to reproduce a dynamic scene through a single sensor is therefore of great interest.
+
+In order for a scene captured using visual sensors to be considered “immersive” in VR, several properties must hold.
+<div class="center"><ol>
+<li>The background of the scene must be displayed to the viewer. While it may be compelling to display just the dynamic objects, without the background there is no context.</li>
+<li>Dynamic objects must be consistent with the captured background. If there is no correlation between the dynamic objects being displayed and the background, then the captured scene does not reflect the viewers expectations.</li>
+<li>The viewer should retain full rotational and positional freedom (ie: 6-DoF) while experiencing the captured scene. Without this freedom the viewer will experience an inconsistency between their movements and what they are seeing through the VR head mounted display (HMD).</li>
+<li>The captured scene, background and dynamic objects, should be as complete as possible.</li>
+</ol></div>
+
+Failure to achieve these properties will decrease the quality of the immersive experience.
+<br><br>
+This work aims at producing immersive VR scenes using a single RGB-D camera by satisfying the above properties. An obvious limitation with using a single RGB-D camera is that the fourth property, completely capturing a scene with dynamic objects, is not always possible. A single camera can only record dynamic objects within it’s field of view (FOV), thus any moving objects out of it’s FOV will not be included.
+<br><br>
+Our proposed approach aims to achieve the first three properties by utilizing a combination of static scene reconstruction, skeleton tracking and general visual object tracking to reconstruct the captured scene such that the background and dynamic objects are displayed coherently in VR.
+<br><br>
+This work was accepted to the <a href="https://www.aimiconf.org/iciar17/" target="_blank">14th International Conference on Image Analysis and Recognition</a> (ICIAR 2017).
+
+<center><a id="examples" name="examples"><h4>Example output</h4></a></center>
+<hr><br>
+<br><br>
+<center><iframe width="640" height="360" src="https://drive.google.com/file/d/1Zeq34L6UrAVeh9MdWh1W6uwRDbFOSiuJ/preview" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe><br><i>Static camera results.</i><br></center>
+</center><br>
+
+<center><iframe width="640" height="360" src="https://drive.google.com/file/d/1RiS2sbWT_9OcoGmejY6QfQNve0fSPlZq/preview" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe><br><i>Moving camera results.</i><br></center>
+</center><br>
+
+<hr>
+<center><a id="dataset" name="dataset"><h4>Dataset</h4></a></center>
+<hr><br>
+Here is the dataset we used in our experiments: <a href="https://drive.google.com/file/d/0ByLzTb0oFmpvU1pjdF9iVm1naEE/view?usp=sharing">download</a> <br>
+
+		<div class="3u 12u(mobile)">
+
+			<!-- Sidebar -->
+				<section>
+					<header>
+						<h2>Navigation</h2>
+					</header>
+					<ul class="link-list">
+						<li><a href="#overview">Overview</a></li>
+						<li><a href="#examples" onclick="collapsejump(event);">Example output</a></li>
+						<li><a href="#dataset" onclick="collapsejump(event);">Dataset</a></li>
+					</ul>
+				</section>
+				<section>
+					<header>
+						<h2>Industry Partners</h2>
+					</header>
+					<p>Thank you to BRINX Software for making this work possible!</p>
+					<center><a href="https://www.brinx.ca/" target="_blank"><img src="images/brinx_logo.png" alt="Brinx" style="width:100px;height:100px;"></a></center>
+				</section>
+		</div>
+		</div></div></div></div>
+
+		</div>
+
+		
+
+			<!-- Footer -->
+			<div class="template-footer-container"></div>
+
+		<!-- Scripts -->
+
+	</body>
+</html>
