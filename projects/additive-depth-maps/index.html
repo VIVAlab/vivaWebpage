@@ -1,0 +1,166 @@
+<!DOCTYPE HTML>
+<!--
+	Halcyonic by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Additive depth maps - compact approach to 3D shape completion</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="/research/viva/assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="/research/viva/assets/css/main.css" />
+		<link rel="stylesheet" href="/research/viva/assets/css/bootstrap.min.css" />
+		<!--[if lte IE 9]><link rel="stylesheet" href="/research/viva/assets/css/ie9.css" /><![endif]-->
+
+			<script src="/research/viva/assets/js/jquery.min.js"/>
+			<script src="/research/viva/assets/js/main.js"></script>
+			<script src="/research/viva/assets/js/skel.min.js"></script>
+			<script src="/research/viva/assets/js/skel-viewport.min.js"></script>
+			
+			<script src="/research/viva/assets/js/util.js"></script>
+			
+			<!--[if lte IE 8]><script src="/research/viva/assets/js/ie/respond.min.js"></script><![endif]-->
+			
+			<script src="/research/viva/assets/js/bootstrap.min.js"></script>
+
+			<script>
+			$(function(){
+			  $(".template-header-container").load("/research/viva/header-template.html"); 
+			  $(".template-footer-container").load("/research/viva/footer-template.html"); 
+			});
+
+			function collapsejump(evt)
+			{
+				elem = $("#collapse-trigger");
+				if (elem.attr("aria-expanded") === undefined || elem.attr("aria-expanded") == "false")
+				{
+					targ = $(evt.target.hash)
+					$("#collapse1").on('shown.bs.collapse', function () {
+						targ[0].scrollIntoView();
+					});
+					$("#collapse1").collapse("toggle");
+				}
+			}
+
+			function collapsetrig()
+			{
+				elem = $("#collapse-trigger");
+				if (elem.attr("aria-expanded") === undefined || elem.attr("aria-expanded") == "false")
+				{
+					elem.html('Click here for less');
+				}
+				else
+				{
+					elem.html('Click here for more');
+				}
+			}
+			</script>
+
+		<style type="text/css">
+			.tg  {border-collapse:collapse;border-spacing:0;margin:0px auto;}
+			.tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;}
+			.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;}
+			.tg .tg-s6z2{text-align:center}
+			@media screen and (max-width: 767px) {.tg {width: auto !important;}.tg col {width: auto !important;}.tg-wrap {overflow-x: auto;-webkit-overflow-scrolling: touch;margin: auto 0px;}}
+
+			.hmscreencap { position: relative;border: 1px solid #333;margin: 2%;overflow: hidden;width: 640px; }
+			.hmscreencap img { max-width: 100%; -moz-transition: all 0.5s; -webkit-transition: all 0.5s; transition: all 0.5s; }
+			.hmscreencap:hover img { -moz-transform: scale(2.0); -webkit-transform: scale(2.0); transform: scale(2.0); }
+
+			.hmscreencap_additional { position: relative;border: 1px solid #333;margin: 2%;overflow: hidden;width: 640px; }
+			.hmscreencap_additional img { max-width: 100%; -moz-transition: all 0.5s; -webkit-transition: all 0.5s; transition: all 0.5s; }
+			.hmscreencap_additional:hover img { -moz-transform: scale(1.2); -webkit-transform: scale(1.2); transform: scale(1.2); }
+
+			.center {text-align:left;width:640px;margin:0 auto;}
+			.center ul {font-family:Arial, sans-serif;font-size:14px;list-style-type: disc;}
+		</style>
+	</head>
+	<body >
+			<!-- Header -->
+			<div class="template-header-container"></div>
+
+		<div id="page-wrapper">
+
+			<!-- Content -->
+			<div id="content-wrapper"><div id="content"><div class="container"><div class="row"><div class="9u 12u(mobile)">
+
+			<!-- Main Content -->
+			<section>
+				<header>
+					<h2><center>Additive depth maps, a compact approach for shape completion of single view depth maps</center></h2>
+
+					<div class="tg-wrap">
+						<table class="tg">
+					 		<tr>
+					    		<th class="tg-s6z2"><a href="mailto:plai036@uottawa.ca?Subject=AdditiveDepthMaps">Po Kong Lai</a>,  <a href="mailto:rlian072@uottawa.ca?Subject=AdditiveDepthMaps">Weizhe Liang</a> and <a href="mailto:laganier@eecs.uottawa.ca?Subject=AdditiveDepthMaps">Robert Lagani&egrave;re</a><br>University of Ottawa<br>Ottawa, ON, Canada</th>
+					  		</tr>
+					  		<tr>
+					    		<td class="tg-s6z2" colspan="2">Questions? <a href="mailto:plai036@uottawa.ca?Subject=SingleRGBDVR&cc=laganier@eecs.uottawa.ca;">Drop us a line</a></td>
+					  		</tr>
+						</table>
+					</div>
+				</header>
+				<hr>
+				<center><a id="overview" name="overview"><h4>Overview</h4></a></center>
+				<hr>
+
+The ability to complete and reconstruct the 3D geometry of an object from a single view depth map is particularly useful for VR/AR applications, robotics (ie: grasping objects), obstacle avoidance and content creation. However, reconstructing the 3D shape of objects from a single depth map is very challenging due to the inherent ill-posed nature of the problem - potentially infinite configurations and arrangement of shapes can produce the same depth map. 
+
+In our work, 
+
+Recent state-of-the-art approaches use a 3D skip-connected auto-encoder style network where the input and output is either a voxel occupancy
+grid or a signed distance field (SDF). These 3D networks essentially replace the 2D pixel array with it’s 3D analogue - a dense 3D voxel grid. Thus, computational and memory requirements for these networks scale <i>cubically</i>. As a result, these networks are typically trained with low resolutions (32<sup>3</sup> voxels) often leading to coarse outputs.
+
+In our work, we introduce the concept of an “additive depth map” as a compact representation for 3D shape completion and propose a 2D CNN to predict it. Our contributions are as follows:
+
+<div class="center"><ol>
+<li>The additive depth map as a minimal representation for 3D shape completion from single view depth maps which can preserve thin structures..</li>
+<li>A network which can prediction the additive depth map in real time (~14 fps).</li>
+<li>We show experimentally that the additive depth map can achieve state-of-the-art results for single category 3D shape completion. Additionally, we show that our approach performs well on real world data after being trained purely on synthetic datasets.</li>
+</ol></div>
+
+
+<center><a id="proposed" name="proposed"><h4>Proposed approach</h4></a></center>
+<hr><br>
+<br><br>
+
+<center><a href="images/additive_depth_example.png" target="_blank"><img src="images/additive_depth_example.png" alt="Additive depth map example" style="width:50%;height:50%;"></a></center><br>
+
+
+<hr>
+<center><a id="examples" name="examples"><h4>Example output</h4></a></center>
+<hr><br>
+
+<center><a href="images/additive_depth_clothed_people_results.png" target="_blank"><img src="images/additive_depth_clothed_people_results.png" alt="Additive depth map results on synthetic clothed humans" style="width:50%;height:50%;"></a></center><br>
+
+<center><a href="images/additive_depth_maps_real_data_results.png" target="_blank"><img src="images/additive_depth_maps_real_data_results.png" alt="Additive depth map results on real data of clothed humans" style="width:50%;height:50%;"></a></center><br>
+
+		<div class="3u 12u(mobile)">
+
+			<!-- Sidebar -->
+				<section>
+					<header>
+						<h2>Navigation</h2>
+					</header>
+					<ul class="link-list">
+						<li><a href="#overview">Overview</a></li>
+						<li><a href="#proposed" onclick="collapsejump(event);">Proposed approach</a></li>
+						<li><a href="#examples" onclick="collapsejump(event);">Example output</a></li>
+					</ul>
+				</section>
+		</div>
+		</div></div></div></div>
+
+		</div>
+
+		
+
+			<!-- Footer -->
+			<div class="template-footer-container"></div>
+
+		<!-- Scripts -->
+
+	</body>
+</html>

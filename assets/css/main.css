@@ -1,3 +1,4 @@
+@import url("font-awesome.min.css");
 @import url("https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:400,300,200");
 
 /*
@@ -1176,7 +1177,7 @@
 			display: block;
 			width: 100%;
 		}
-	
+				
 	.bordered-member-image {
 		display: block;
 		background: #fff url("images/bg04.png");
@@ -1190,7 +1191,7 @@
 		.bordered-member-image img {
 			display: block;
 		}
-			
+	
 	.bordered-feature-image {
 		display: block;
 		background: #fff url("images/bg04.png");
@@ -1391,6 +1392,14 @@
 
 				#features a {
 					color: #e0e8eb;
+				}
+
+				.memimage img{
+					width: 160px;
+					height: 160px;
+				}
+				.memimage img:hover{
+					filter: brightness(125%);
 				}
 
 				#features strong {
@@ -1920,3 +1929,25 @@
     display: block;
     background-color: #3B4346;
 }
+
+/* Icons */
+
+.icon {
+	text-decoration: none;
+}
+
+	.icon:before {
+		display: inline-block;
+		font-family: FontAwesome;
+		font-size: 1.1em;
+		text-decoration: none;
+		font-style: normal;
+		font-weight: normal;
+		line-height: 1;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+	}
+
+	.icon > .label {
+		display: none;
+	}

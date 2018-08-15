@@ -1,0 +1,159 @@
+<!DOCTYPE HTML>
+<!--
+	Halcyonic by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Real-time panoramic depth maps</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="/research/viva/assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="/research/viva/assets/css/main.css" />
+		<link rel="stylesheet" href="/research/viva/assets/css/bootstrap.min.css" />
+		<!--[if lte IE 9]><link rel="stylesheet" href="/research/viva/assets/css/ie9.css" /><![endif]-->
+
+			<script src="/research/viva/assets/js/jquery.min.js"/>
+			<script src="/research/viva/assets/js/main.js"></script>
+			<script src="/research/viva/assets/js/skel.min.js"></script>
+			<script src="/research/viva/assets/js/skel-viewport.min.js"></script>
+			
+			<script src="/research/viva/assets/js/util.js"></script>
+			
+			<!--[if lte IE 8]><script src="/research/viva/assets/js/ie/respond.min.js"></script><![endif]-->
+			
+			<script src="/research/viva/assets/js/bootstrap.min.js"></script>
+
+			<script>
+			$(function(){
+			  $(".template-header-container").load("/research/viva/header-template.html"); 
+			  $(".template-footer-container").load("/research/viva/footer-template.html"); 
+			});
+
+			function collapsejump(evt)
+			{
+				elem = $("#collapse-trigger");
+				if (elem.attr("aria-expanded") === undefined || elem.attr("aria-expanded") == "false")
+				{
+					targ = $(evt.target.hash)
+					$("#collapse1").on('shown.bs.collapse', function () {
+						targ[0].scrollIntoView();
+					});
+					$("#collapse1").collapse("toggle");
+				}
+			}
+
+			function collapsetrig()
+			{
+				elem = $("#collapse-trigger");
+				if (elem.attr("aria-expanded") === undefined || elem.attr("aria-expanded") == "false")
+				{
+					elem.html('Click here for less');
+				}
+				else
+				{
+					elem.html('Click here for more');
+				}
+			}
+			</script>
+
+		<style type="text/css">
+			.tg  {border-collapse:collapse;border-spacing:0;margin:0px auto;}
+			.tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;}
+			.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;}
+			.tg .tg-s6z2{text-align:center}
+			@media screen and (max-width: 767px) {.tg {width: auto !important;}.tg col {width: auto !important;}.tg-wrap {overflow-x: auto;-webkit-overflow-scrolling: touch;margin: auto 0px;}}
+
+			.hmscreencap { position: relative;border: 1px solid #333;margin: 2%;overflow: hidden;width: 640px; }
+			.hmscreencap img { max-width: 100%; -moz-transition: all 0.5s; -webkit-transition: all 0.5s; transition: all 0.5s; }
+			.hmscreencap:hover img { -moz-transform: scale(2.0); -webkit-transform: scale(2.0); transform: scale(2.0); }
+
+			.hmscreencap_additional { position: relative;border: 1px solid #333;margin: 2%;overflow: hidden;width: 640px; }
+			.hmscreencap_additional img { max-width: 100%; -moz-transition: all 0.5s; -webkit-transition: all 0.5s; transition: all 0.5s; }
+			.hmscreencap_additional:hover img { -moz-transform: scale(1.2); -webkit-transform: scale(1.2); transform: scale(1.2); }
+
+			.center {text-align:left;width:640px;margin:0 auto;}
+			.center ul {font-family:Arial, sans-serif;font-size:14px;list-style-type: disc;}
+		</style>
+	</head>
+	<body >
+			<!-- Header -->
+			<div class="template-header-container"></div>
+
+		<div id="page-wrapper">
+
+			<!-- Content -->
+			<div id="content-wrapper"><div id="content"><div class="container"><div class="row"><div class="9u 12u(mobile)">
+
+			<!-- Main Content -->
+			<section>
+				<header>
+					<h2><center>Real-time panoramic depth maps using convolutional neural networks</center></h2>
+
+					<div class="tg-wrap">
+						<table class="tg">
+					 		<tr>
+					    		<th class="tg-s6z2"><a href="mailto:plai036@uottawa.ca?Subject=OmnistereoDepthMaps">Po Kong Lai</a>, <a href="mailto:sxie088@uottawa.ca?Subject=OmnistereoDepthMaps">Shuang Xie</a>, <a href="mailto:jlang@uottawa.ca?Subject=OmnistereoDepthMaps">Jochen Lang</a> and <a href="mailto:laganier@uottawa.ca?Subject=OmnistereoDepthMaps">Robert Lagani&egrave;re</a><br>University of Ottawa<br>Ottawa, ON, Canada</th>
+					  		</tr>
+					  		<tr>
+					    		<td class="tg-s6z2" colspan="2">Questions? <a href="mailto:plai036@uottawa.ca?Subject=SingleRGBDVR&cc=sxie088@uottawa.ca;jlang@uottawa.ca;laganier@uottawa.ca;">Drop us a line</a></td>
+					  		</tr>
+						</table>
+					</div>
+				</header>
+				<hr>
+				<center><a id="overview" name="overview"><h4>Overview</h4></a></center>
+				<hr>
+Stereo panoramic images and videos are popular media formats for displaying content captured from visual sensors through virtual reality (VR) headsets. By displaying a different panoramic image for each eye, 3D human vision can be simulated and the viewer is allowed rotational freedom but not positional freedom. In order for positional freedom to be achieved a depth map is required.
+
+In this work we propose an approach which utilizes convolutional neural networks (CNNs) to directly convert a pair of stereo panoramic images into panoramic depth map. This depth map allows for true 3D videos with 6 degrees of freedom (DoF) viewing in a VR headset.
+
+
+<center><a id="examples_data" name="examples_data"><h4>Training data examples</h4></a></center>
+<hr><br>
+<br><br>
+
+<center><a href="images/omnistereo_training_examples.png" target="_blank"><img src="images/omnistereo_training_examples.png" alt="Stereo panoramic depth estimation training data." style="width:50%;height:50%;"></a></center><br>
+
+<hr>
+<center><a id="examples_output" name="examples_output"><h4>Example output</h4></a></center>
+<hr><br>
+<br><br>
+
+<center><a href="images/omnistereo_mesh_comparisons.png" target="_blank"><img src="images/omnistereo_mesh_comparisons.png" alt="Comparisons to the ground truth." style="width:50%;height:50%;"></a><br><i>Meshed visualizations of the ground truth (left), our appproach without stereo panoramic loss (center) and with stereo panoramic loss (right). The top image is one of the stereo paranomic color images used as input.</i><br></center><br>
+
+		<div class="3u 12u(mobile)">
+
+			<!-- Sidebar -->
+				<section>
+					<header>
+						<h2>Navigation</h2>
+					</header>
+					<ul class="link-list">
+						<li><a href="#overview">Overview</a></li>
+						<li><a href="#examples_data" onclick="collapsejump(event);">Training data examples</a></li>
+						<li><a href="#examples_output" onclick="collapsejump(event);">Example output</a></li>
+					</ul>
+				</section>
+				<section>
+					<header>
+						<h2>Industry Partners</h2>
+					</header>
+					<p>Thank you to Suometry for making this work possible!</p>
+					<center><a href="https://www.suometry.com/" target="_blank"><img src="images/suometry_logo.png" alt="Suometry" style="width:100px;height:100px;"></a></center>
+				</section>
+		</div>
+		</div></div></div></div>
+
+		</div>
+
+		
+
+			<!-- Footer -->
+			<div class="template-footer-container"></div>
+
+		<!-- Scripts -->
+
+	</body>
+</html>

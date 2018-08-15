@@ -1,0 +1,174 @@
+<!DOCTYPE HTML>
+<!--
+	Halcyonic by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>A General Framework for Fast 3D Object Detection and Localization Using an Uncalibrated Camera</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<!--[if lte IE 8]><script src="/research/viva/assets/js/ie/html5shiv.js"></script><![endif]-->
+	<link rel="stylesheet" href="/research/viva/assets/css/main.css" />
+	<link rel="stylesheet" href="/research/viva/assets/css/bootstrap.min.css" />
+	<!--[if lte IE 9]><link rel="stylesheet" href="/research/viva/assets/css/ie9.css" /><![endif]-->
+	<script src="/research/viva/assets/js/jquery.min.js" />
+	<script src="/research/viva/assets/js/main.js"></script>
+	<script src="/research/viva/assets/js/skel.min.js"></script>
+	<script src="/research/viva/assets/js/skel-viewport.min.js"></script>
+
+	<script src="/research/viva/assets/js/util.js"></script>
+
+	<!--[if lte IE 8]><script src="/research/viva/assets/js/ie/respond.min.js"></script><![endif]-->
+
+	<script src="/research/viva/assets/js/bootstrap.min.js"></script>
+
+	<script>
+		$(function() {
+			$(".template-header-container").load("/research/viva/header-template.html");
+			$(".template-footer-container").load("/research/viva/footer-template.html");
+		});
+	</script>
+</head>
+
+<body class="subpage">
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<div class="template-header-container"></div>
+
+		<!-- Content -->
+		<div id="content-wrapper">
+			<div id="content">
+				<div class="container">
+					<div class="row">
+						<div class="9u 12u(mobile)">
+
+							<!-- Main Content -->
+							<section>
+								<header>
+									<h2>Fast Target Recognition on Mobile Devices</h2>
+								</header>
+								<p>
+									<h3>Graphical Abstract</h3>
+									<img src="images/graphical.png">
+								</p>
+								<p>
+									<h3>Abstract</h3> We present a real-time approach for 3D object detection using a single, mobile and uncalibrated camera. We develop our algorithm using a feature-based method based on two novel naive Bayes classifiers for viewpoint and feature matching. Our
+									algorithm exploits the specific structure of various binary descriptors in order to boost feature matching by conserving descriptor properties (e.g., rotational and scale invariance, robustness to illumination variations and real-time performance).
+									Unlike state-of-the-art methods, our novel naive classifiers only require a database with a small memory footprint because we store efficiently encoded features. In addition, we also im- prove the indexing scheme to speed up the matching process.
+									Because our database is built from powerful descriptors, only a few images need to be ’learned’ and constructing a database for a new object is highly efficient.
+
+								</p>
+								<p>
+									<iframe width="560" height="315" src="https://www.youtube.com/embed/H2gafCscWHo" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+									<span class="caption">Media 1. Comparison betwen Ferns and our classifier plus more examples. The mousepad (i.e., single view object) needs around 16mb for the Ferns classifier to learn the model. The same example takes less than 80Kb with our classifier. The learning time for this example using the Ferns classifier takes 348s, our algorithm take 24s for this object. The car toy uses 8 views with a model size of less than 450Kb. The coffee cup uses 6 views with a model size of 340Kb. Each view contains ~200 keypoints.</span>
+								</p>
+								<p>
+									<h3>Contributions</h3>
+								</p>
+								<p>
+									<ul>
+										<li> Real-time 3D object detection using a single mobile and uncalibrated camera</li>
+										<li> Combine binary descriptors with Naive Bayes classifiers for feature classification and matching </li>
+										<li> Our classifier exploits the specific structure of binary descriptors to increase feature matching while conserving descriptor properties</li>
+										<li> Small memory footprint due to efficiently encoded features</li>
+										<li> Learning time is reduced because invariant features and descriptors</li>
+										<li> Improved indexing scheme to speed up keypoint matching</li>
+									</ul>
+								</p>
+
+								<p>
+									<h3>Results</h3>
+									We compare our framework against Ferns and Binary Descriptors in terms of performance, memory usage, and running time. Our framework uses the binary descriptors’ implementations of OpenCV (i.e., BRIEF, ORB, BRISK, FREAK) with their default parameter configurations. The Ferns implementation was the authors’ from their web-page. We use it unmodified except for adapting their training intervals to show the impact of training on their solution and ours.
+									<br><br>
+									First, we compare the memory usage between binary descriptors without a training phase for Ferns and our frame- work. It is easy to see that binary descriptors are the most compact with a memory usage of bits × K, where bits is the size in bits of the descriptor and K the amount of the keypoints in the database. On the other hand, the memory footprint of the Ferns database grows exponentially with the Ferns’size S, i.e., 2S × M × byteS × K, where M is the number of Ferns and byteS is the size of bytes used to store the conditional probabilities. The original Fern implementation uses S = 11, M = 30 and byteS = 4 (float). However, the memory needed for our database is 8 × bits × K, i.e., it is O(K) just as the binary descriptors. We use a byte to represent every bit of the descriptor. For example, 1000 keypoints using the BRIEF descriptor will require 31.25Kb for storage, Ferns will require 234Mb, and ours 250Kb. Or put differently, adding an extra keypoint to the Ferns database will require 240Kb, almost as much as another 1000 points in our representation.
+								</p>
+
+								<p>
+									<img src="images/memory.png">
+									<span class="caption">Figure 1. Memory usage for 1000 keypoints. Our solution is independent of the patch/tree/fern sizes.</span>
+								</p>
+
+								<p>
+									Next, we evaluate the performance of each algorithm under different images transformations. We synthetically generate perspective transformations of the planar object at different scales and different positions in the image with changes in contrast and brightness. The background is filled with white noise.
+								</p>
+								<p>
+									<img src="images/rates.png">
+									<span class="caption">Table 1. Comparison of detection rates between matching with only binary descriptors, with Ferns and with our Naive Bayes Classified Descriptors (NBCD) when combined with binary descriptors. The detection rates were tested under random rotation, scale and illumination variations and averaged. The detection rates of Ferns are listed with similar training range to ours and in the line Ferns* with complete training. </span>
+								</p>
+								<p>
+									<img src="images/mousepad1.png">
+									<img src="images/mousepad.png">
+									<span class="caption">Figure 2. Comparison between Ferns and our framework (i.e., NBCD + ORB) for the mousepad example of Ozuysal et al. We compare speed (i.e., frame per seconds), detection rate, memory usage and construction time of the model.</span>
+								</p>
+								<p>
+									<img src="images/speed.png">
+									<span class="caption">Figure 3. Running time of our framework using different binary descriptors. The running time is separated by keypoint detection, descriptor extraction, keypoint matching, view matching and localization of the object. Oour framework is independent of the keypoint extraction and descriptor selection.</span>
+								</p>
+								<p>
+									Our framework detects non-planar 3D objects using the fundamental matrix to capture the geometric constraint between different views of the object. The objects are detected even if they are partially occluded and in different orientations.
+								</p>
+								<p>
+									<img src="images/fundamental.matrix.png">
+									<span class="caption"> Figure 4. The planarity assumption in ferns does not perform well with more complex non planar objects (e.g., top images). The use of the fundamental matrix is stable and can be used with planar and non-planar objects. </span>
+								</p>
+								<p>
+									<img src="images/classifier.hamming.png">
+									<span class="caption">Figure 5. Our classifier is capable of creating a better classification that using the Hamming distance similarity measure. The matches in the top view are using Hamming distance (i.e., 118 matches: 92 inliers and 26 outliers). The bottom shows our classifier results with, i.e., 84 matches: 82 inliers and 2 outliers. All matches in both images have the same Hamming distance. </span>
+								</p>
+								<p>
+									<h3>Source Code</h3>
+									<a href="https://github.com/asolis/detection3D">GitHub Respository</a>
+								</p>
+							</section>
+
+						</div>
+						<div class="3u 12u(mobile)">
+
+							<!-- Sidebar -->
+							<section>
+								<header>
+									<h2>Reference</h2>
+								</header>
+									<a href="http://www.site.uottawa.ca/~laganier/publications/andresWACV2015.pdf">A General Framework for Fast 3D Object Detection and Localization Using an Uncalibrated Camera</a><br/><br/><br/>
+							</section>
+							<section>
+								<header>
+									<h2>Contact</h2>
+								</header>
+								<ul class="link-list">
+									<li><a href="http://www.eecs.uottawa.ca/~laganier">Robert Laganiere</a></li><br/>
+									<li><a href="http://www.site.uottawa.ca/research/viva/"><i><b>
+													<span style="font-size: 16pt; color: #000099">VIV</span>
+													<span style="COLOR:#990000; font-size:16pt">A</span></b></i><span style="font-size: 16pt"><b>
+													<span style="COLOR:#000099">Lab</span></b> </span> </a> </li><br/>
+									<li><a href="http://www.eecs.uottawa.ca">School of Electrical Engineering and Computer Science</a></li>
+								</ul>
+							</section>
+							<section>
+								<header>
+									<h2>Participants</h2>
+								</header>
+								<ul class="link-list">
+									<li><a href="http://www.solism.ca/">Andrés Solís Montero </a><br><span>
+												<a href="http://www.site.uottawa.ca/~jlang/">Jochen Lang</a> <br>
+												<a href="http://www.site.uottawa.ca/~laganier/">Robert Laganière</a>
+											</li>
+											</ul>
+										</section>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			<!-- Footer -->
+			<div class="template-footer-container"></div>
+
+		</div>
+
+	</body>
+</html>
