@@ -1,0 +1,434 @@
+<!DOCTYPE HTML>
+<!--
+	Halcyonic by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+    <title>Video Summarization</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!--[if lte IE 8]><script src="/research/viva/assets/js/ie/html5shiv.js"></script><![endif]-->
+    <link rel="stylesheet" href="/research/viva/assets/css/main.css" />
+    <link rel="stylesheet" href="/research/viva/assets/css/bootstrap.min.css" />
+    <!--[if lte IE 9]><link rel="stylesheet" href="/research/viva/assets/css/ie9.css" /><![endif]-->
+
+    <script src="/research/viva/assets/js/jquery.min.js" />
+    <script src="/research/viva/assets/js/main.js"></script>
+    <script src="/research/viva/assets/js/skel.min.js"></script>
+    <script src="/research/viva/assets/js/skel-viewport.min.js"></script>
+
+    <script src="/research/viva/assets/js/util.js"></script>
+
+    <!--[if lte IE 8]><script src="/research/viva/assets/js/ie/respond.min.js"></script><![endif]-->
+
+    <script src="/research/viva/assets/js/bootstrap.min.js"></script>
+
+    <script>
+        $(function () {
+            $(".template-header-container").load("/research/viva/header-template.html");
+            $(".template-footer-container").load("/research/viva/footer-template.html");
+        });
+
+        function collapsejump(evt) {
+            elem = $("#collapse-trigger");
+            if (elem.attr("aria-expanded") === undefined || elem.attr("aria-expanded") == "false") {
+                targ = $(evt.target.hash)
+                $("#collapse1").on('shown.bs.collapse', function () {
+                    targ[0].scrollIntoView();
+                });
+                $("#collapse1").collapse("toggle");
+            }
+        }
+
+        function collapsetrig() {
+            elem = $("#collapse-trigger");
+            if (elem.attr("aria-expanded") === undefined || elem.attr("aria-expanded") == "false") {
+                elem.html('Click here for less');
+            }
+            else {
+                elem.html('Click here for more');
+            }
+        }
+    </script>
+
+    <style type="text/css">
+        .tg {
+            border-collapse: collapse;
+            border-spacing: 0;
+            margin: 0px auto;
+        }
+
+        .tg td {
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            padding: 10px 5px;
+            border-style: solid;
+            border-width: 0px;
+            overflow: hidden;
+            word-break: normal;
+        }
+
+        .tg th {
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            font-weight: normal;
+            padding: 10px 5px;
+            border-style: solid;
+            border-width: 0px;
+            overflow: hidden;
+            word-break: normal;
+        }
+
+        .tg .tg-s6z2 {
+            text-align: center
+        }
+
+        @media screen and (max-width: 767px) {
+            .tg {
+                width: auto !important;
+            }
+            .tg col {
+                width: auto !important;
+            }
+            .tg-wrap {
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+                margin: auto 0px;
+            }
+        }
+
+        .hmscreencap {
+            position: relative;
+            border: 1px solid #333;
+            margin: 2%;
+            overflow: hidden;
+            width: 640px;
+        }
+
+        .hmscreencap img {
+            max-width: 100%;
+            -moz-transition: all 0.5s;
+            -webkit-transition: all 0.5s;
+            transition: all 0.5s;
+        }
+
+        .hmscreencap:hover img {
+            -moz-transform: scale(2.0);
+            -webkit-transform: scale(2.0);
+            transform: scale(2.0);
+        }
+
+        .hmscreencap_additional {
+            position: relative;
+            border: 1px solid #333;
+            margin: 2%;
+            overflow: hidden;
+            width: 640px;
+        }
+
+        .hmscreencap_additional img {
+            max-width: 100%;
+            -moz-transition: all 0.5s;
+            -webkit-transition: all 0.5s;
+            transition: all 0.5s;
+        }
+
+        .hmscreencap_additional:hover img {
+            -moz-transform: scale(1.2);
+            -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+        }
+
+        .center {
+            text-align: left;
+            width: 640px;
+            margin: 0 auto;
+        }
+
+        .center ul {
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            list-style-type: disc;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <div class="template-header-container"></div>
+
+    <div id="page-wrapper">
+
+        <!-- Content -->
+        <div id="content-wrapper">
+            <div id="content">
+                <div class="container">
+                    <div class="row">
+                        <div class="9u 12u(mobile)">
+
+                            <!-- Main Content -->
+                            <section>
+
+                                <!-- Header -->
+                                <header>
+                                    <h2>
+                                        <center>Video Summarization of Fixed Video Surveillance Cameras</center>
+                                    </h2>
+                                </header>
+
+                                <!-- Overview -->
+                                <hr>
+                                <center>
+                                    <a id="overview" name="overview"><h4>Overview</h4></a>
+                                </center>
+                                <hr>
+                                <p align="justify">
+                                    Video summarization techniques aim to reduce the amount of data available in a video, by condensing temporal information.
+                                    We focus here on 2 different approches:
+                                    <ul>
+                                        <li><b><a href="#synopsis">Video Synopsis</a></b>, where the objective is to merge
+                                            non-intersecting trajectory onto the same frames</li>
+                                        <li><b><a href="#keyframe">Keyframe Selection</a></b>, where the objective is to
+                                            keep the interesting frames of a video</li>
+                                    </ul>
+                                </p>
+
+                                <!-- Synopsis -->
+                                <hr>
+                                <center>
+                                    <a id="synopsis" name="synopsis">
+                                        <h4>Video Synopsis</h4>
+                                    </a>
+                                </center>
+                                <hr>
+
+                                <p align="justify">
+                                    The objective of automatic video summarization is to provide users of video monitoring systems with consise summaries of
+                                    what has been observed by a surveillance camera during a long period of time. In some
+                                    cases, when the scene is usually quiet, simple motion detection would suffice, but in
+                                    most cases such simple approach will still produce a too long summary. In this project,
+                                    we aim at obtaining better summaries by combining the different moving objects and display
+                                    them together, inside the same frames, whenever possible.
+                                </p>
+                                <p>
+                                    The following image represents an overview of the given approach.
+                                    <center>
+                                        <a href="images/PoLai_VideoSummary_AVSS2016.png" target="_blank">
+                                            <img src="images/PoLai_VideoSummary_AVSS2016.png" alt="Model Structure" style="width:407px;height:547px;">
+                                        </a>
+                                    </center>
+                                </p>
+                                <p>
+                                    More details on the model can be found on the paper
+                                    <a href="http://pokonglai.com/docs/PoLai_AVSS2016_VideoSummarization.pdf">here</a>, as
+                                    well as on the associated poster <a href="http://pokonglai.com/docs/PoLai_AVSS2016_Poster.pdf">here</a>.
+                                </p>
+
+                                <p>
+                                    <center>
+                                        <table>
+                                            <caption align="center">Some results</caption>
+                                            <tr>
+                                                <td align="center" style="padding:20px; vertical-align:middle;">
+                                                    <h5>
+                                                        <b>This is the original video</b>
+                                                        <br/>4:00 minutes.
+                                                    </h5>
+                                                </td>
+                                                <td>
+                                                    <center>
+                                                        <iframe src="http://www.youtube.com/embed/md7fULgFVXE" frameborder="0" allowfullscreen></iframe>
+                                                    </center>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td align="center" style="padding:20px; vertical-align:middle;">
+                                                    <h5>
+                                                        <b>Simple solution 1: using motion detection</b>
+                                                        <br/>Frames without motion are removed. 1:03 minutes
+                                                    </h5>
+                                                </td>
+                                                <td>
+                                                    <center>
+                                                        <iframe src="http://www.youtube.com/embed/GcWQBdC4UAA" frameborder="0" allowfullscreen></iframe>
+                                                    </center>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td align="center" style="padding:20px; vertical-align:middle;">
+                                                    <h5>
+                                                        <b>Simple solution 2: fast-forwarding</b>
+                                                        <br/>Only 1 frame every 10 is kept. 0:23 minutes
+                                                    </h5>
+                                                </td>
+                                                <td>
+                                                    <center>
+                                                        <iframe src="http://www.youtube.com/embed/p7oSmUyKlKE" frameborder="0" allowfullscreen></iframe>
+                                                    </center>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td align="center" style="padding:20px; vertical-align:middle;">
+                                                    <h5>
+                                                        <b>Our solution: merging moving objects</b>
+                                                        <br/>The moving objects are combined and displayed simultaneously
+                                                        whenever possible. The original temporal ordering is maintained.
+                                                        0:37 minutes
+                                                    </h5>
+                                                </td>
+                                                <td>
+                                                    <center>
+                                                        <iframe src="http://www.youtube.com/embed/BqPIFoLhWm0" frameborder="0" allowfullscreen></iframe>
+                                                    </center>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td align="center" style="padding:20px; vertical-align:middle;">
+                                                    <h5>
+                                                        <b>Our solution: merging moving objects with collisions</b>
+                                                        <br/>Here some collisions between moving objects are allowed in order
+                                                        to increase the temporal compression. 0:14 minutes
+                                                    </h5>
+                                                </td>
+                                                <td>
+                                                    <center>
+                                                        <iframe src="http://www.youtube.com/embed/BXGO1ypAeeE" frameborder="0" allowfullscreen></iframe>
+                                                    </center>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </center>
+                                </p>
+
+                                <!-- Keyframe -->
+                                <hr>
+                                <center><a id="keyframe" name="keyframe"><h4>Keyframe Selection</h4></a></center>
+                                <hr>
+
+                                <p align="justify">
+                                    Keyframe selection aims at collecting the most interesting/representative frames of a video. As opposed to video synopsis,
+                                    no modification is made on the frames.
+                                </p>
+                                <p align="justify">
+                                    Such method can be divided in 2 parts:
+                                    <ul>
+                                        <li><b>Feature Extraction</b>, which consists avec creating a temporal curve from
+                                            multiple features (such as saliency map, detection map, etc.). This step aims
+                                            to create a 1-dimension curve from the video.</li>
+                                        <li><b>Keyframe selection</b>, which will use the previous 1-dimension curve to find
+                                            which frames can be selected for the final result.</li>
+                                    </ul>
+                                </p>
+
+                                <p>
+                                    <center>
+                                        <table>
+                                            <caption align="center">Some results</caption>
+                                            <tr>
+                                                <td align="center" style="padding:20px; vertical-align:middle;">
+                                                    <h5>
+                                                        <b>This is the original video</b>
+                                                        <br/>4:00 minutes.
+                                                    </h5>
+                                                </td>
+                                                <td>
+                                                    <center>
+                                                        <iframe src="http://www.youtube.com/embed/Q2X6vgzPsuY" frameborder="0" allowfullscreen></iframe>
+                                                    </center>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td align="center" style="padding:20px; vertical-align:middle;">
+                                                    <h5>
+                                                        <b>Solution 1: using only saliency</b>
+                                                        <br/>Saliency is computed on each frame, and used as feature for
+                                                        the keyframe selection
+                                                    </h5>
+                                                </td>
+                                                <td>
+                                                    <center>
+                                                        <iframe src="http://www.youtube.com/embed/wynhp1oBSEQ" frameborder="0" allowfullscreen></iframe>
+                                                    </center>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td align="center" style="padding:20px; vertical-align:middle;">
+                                                    <h5>
+                                                        <b>Solution 2: using only detection label</b>
+                                                        <br/>Object detection is run on each frame, and labels are used as
+                                                        feature for the keyframe selection
+                                                    </h5>
+                                                </td>
+                                                <td>
+                                                    <center>
+                                                        <iframe src="http://www.youtube.com/embed/v0Viga28yEA" frameborder="0" allowfullscreen></iframe>
+                                                    </center>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td align="center" style="padding:20px; vertical-align:middle;">
+                                                    <h5>
+                                                        <b>Solution 3: using only detection position</b>
+                                                        <br/>Object detection is run on each frame, and positions are used
+                                                        as feature for the keyframe selection
+                                                    </h5>
+                                                </td>
+                                                <td>
+                                                    <center>
+                                                        <iframe src="http://www.youtube.com/embed/qXt6UTtmklo" frameborder="0" allowfullscreen></iframe>
+                                                    </center>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td align="center" style="padding:20px; vertical-align:middle;">
+                                                    <h5>
+                                                        <b>Solution 4: using all features</b>
+                                                        <br/>Saliency, detection position and label are used as features
+                                                        for the keyframe selection
+                                                    </h5>
+                                                </td>
+                                                <td>
+                                                    <center>
+                                                        <iframe src="http://www.youtube.com/embed/4bh49ZkV6wo" frameborder="0" allowfullscreen></iframe>
+                                                    </center>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </center>
+                                </p>
+                            </section>
+                        </div>
+                        <div class="3u 12u(mobile)">
+
+                            <!-- Sidebar -->
+                            <section>
+                                <header>
+                                    <h2>Navigation</h2>
+                                </header>
+                                <ul class="link-list">
+                                    <li><a href="#overview">Overview</a></li>
+                                    <li><a href="#synopsis">Video Synopsis</a></li>
+                                    <li><a href="#keyframe">Keyframe Selection</a></li>
+                                </ul>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+
+    <!-- Footer -->
+    <div class="template-footer-container"></div>
+
+    <!-- Scripts -->
+
+</body>
+
+</html>
