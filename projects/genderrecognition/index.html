@@ -1,0 +1,155 @@
+<!DOCTYPE HTML>
+<!--
+	Halcyonic by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>Gender Recognition</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<!--[if lte IE 8]><script src="/research/viva/assets/js/ie/html5shiv.js"></script><![endif]-->
+	<link rel="stylesheet" href="/research/viva/assets/css/main.css" />
+	<link rel="stylesheet" href="/research/viva/assets/css/bootstrap.min.css" />
+	<!--[if lte IE 9]><link rel="stylesheet" href="/research/viva/assets/css/ie9.css" /><![endif]-->
+	<script src="/research/viva/assets/js/jquery.min.js" />
+	<script src="/research/viva/assets/js/main.js"></script>
+	<script src="/research/viva/assets/js/skel.min.js"></script>
+	<script src="/research/viva/assets/js/skel-viewport.min.js"></script>
+
+	<script src="/research/viva/assets/js/util.js"></script>
+
+	<!--[if lte IE 8]><script src="/research/viva/assets/js/ie/respond.min.js"></script><![endif]-->
+
+	<script src="/research/viva/assets/js/bootstrap.min.js"></script>
+
+	<script>
+		$(function() {
+			$(".template-header-container").load("/research/viva/header-template.html");
+			$(".template-footer-container").load("/research/viva/footer-template.html");
+		});
+	</script>
+</head>
+
+<body class="subpage">
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<div class="template-header-container"></div>
+
+		<!-- Content -->
+		<div id="content-wrapper">
+			<div id="content">
+				<div class="container">
+					<div class="row">
+						<div class="9u 12u(mobile)">
+
+							<!-- Main Content -->
+							<section>
+								<header>
+									<h2>Gender Recognition</h2>
+								</header>
+								<p>
+									<img src="images/Averaged.jpg" alt="firefox" class="float-left" width="120" height="100">
+								</p>
+								<p>
+									Being able to detect with a high degree of accuracy the gender of an individual has many applications (particularly in the world of advertising) and developing an effective technique to determine the gender of an individual from a live camera feed is
+									our goal for this project.Once completed, our method would be able to determine the gender of individuals in front of a camera either within crowds or when by themselves. Thus, it would be possible to assess whether there are more women or men
+									present in a given camera viewing range.We are currently comparing various state of the art feature extraction methods that could be both applied and built upon in order to determine the gender of human subjects. The facial feature extraction
+									methods we are currently experimenting with are: Uniform Local Binary Pattern, Local Binary Pattern and Brief. Then, once an accurate feature extraction method is found machine learning will be used: image databases with appropriate ground truth
+									are used to train a system to recognize the ways in which males and females differ.Once a viable method is found, it will be used in conjunction with the face detection API that we had developed in the related Face Recognition project in order
+									to use a camera feed instead of static images. Currently, the focus is on using an individual's facial features to determine their gender, but there is also potential in using other features, such as a person's hair length, as well as how much
+									skin is visible in their upper body and shoulders.In terms of real world applicability of this project, gender detection of people from a live camera feed can be used to display targeted advertisement to individuals viewing a screen. Such tailored
+									advertising would allow an ad to be more effective in reaching the viewers, as well as, allow the content to be made more engaging to those belonging to the detected gender demographic's majority.
+								</p>
+								<p>
+									<h3>Cheekbone Prominence: e-f/g-h ratio</h3>
+								</p>
+								<p>
+									<img src="images/FaceCoordinates.jpg" width="263x" height="266px"> </p>
+								</p>
+								<p>
+									<h3>Table of average gender differences</h3>
+								</p>
+								<p>
+									<img src="images/Gender_Table.JPG" width="450px" height="250px"> </p>
+								</p>
+								<p>
+									<h3>Recognition Results</h3>
+									<p>
+										<object width="420" height="315"><param name="movie" value="http://www.youtube.com/v/f_gVp2mh8DE?version=3&amp;rel=0"><param name="allowFullScreen" value="true"><param name="allowscriptaccess" value="always"><embed src="http://www.youtube.com/v/f_gVp2mh8DE?version=3&amp;rel=0" type="application/x-shockwave-flash" width="280" height="230" allowscriptaccess="always" allowfullscreen="true"></object>
+									</p>
+									<iframe width="560" height="315" src="https://www.youtube.com/embed/A9XaD1caoJs?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+								</p>
+								<p>
+									<h3>Database</h3>
+									<a href="http://chenlab.ece.cornell.edu/people/Andy/ImagesOfGroups.html">Here</a> you can find the database
+								</p>
+
+							</section>
+
+						</div>
+						<div class="3u 12u(mobile)">
+
+							<!-- Sidebar -->
+							<section>
+								<header>
+									<h2>Reference</h2>
+								</header>
+
+Azermher R., Laganière R., Lee W., Xu C., Laroche D.,
+<a href="http://www.cv-foundation.org/openaccess/content_cvpr_workshops_2015/W12/papers/Azarmehr_Real-Time_Embedded_Age_2015_CVPR_paper.pdf">
+Real-time Embedded Age and Gender Classification in Unconstrained Video</a>,
+IEEE Conference on Computer Vision and Pattern Recognition Workshop on Embedded Vision (CVPRW), Boston, MA, June 2015
+								<br><br>
+Fazl-Ersi E., Mousa-Pasandi E., Laganière R.,  Awad M.,
+<a href="./publications/esmaeelICIP2014.pdf">
+Age and gender recognition using informative features of various types</a>,
+IEEE International Conference on Image Processing (ICIP), Paris, France, pp.5891-5895, Oct. 2014
+ <br/>
+							</section>
+							<section>
+								<header>
+									<h2>Contact</h2>
+								</header>
+								<ul class="link-list">
+									<li><a href="http://www.eecs.uottawa.ca/~laganier">Robert Laganiere</a></li><br/>
+									<li><a href="http://www.site.uottawa.ca/research/viva/"><i><b>
+													<span style="font-size: 16pt; color: #000099">VIV</span>
+													<span style="COLOR:#990000; font-size:16pt">A</span></b></i><span style="font-size: 16pt"><b>
+													<span style="COLOR:#000099">Lab</span></b> </span> </a> </li><br/>
+									<li><a href="http://www.eecs.uottawa.ca">School of Electrical Engineering and Computer Science</a></li>
+								</ul>
+							</section>
+							<section>
+								<header>
+									<h2>Paticipants</h2>
+								</header>
+								<ul class="link-list">
+									<li>Fazl-Ersi, Ehsan<br><span>
+												Mousa Pasandi, M. Esmaeel<br><span>
+												Pugin, Emilienne </li>
+											</ul>
+										</section>
+										<section>
+											<header>
+												<h2>Partners</h2>
+											</header>
+											<a href="http://www.aditudemedia.com/">
+ADitude Media inc.</a>
+													</section>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			<!-- Footer -->
+			<div class="template-footer-container"></div>
+
+		</div>
+
+	</body>
+</html>
