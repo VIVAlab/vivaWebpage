@@ -1,0 +1,172 @@
+<!DOCTYPE HTML>
+<!--
+	Halcyonic by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>Scalable Kernel Correlation Filter with Sparse Feature Integration</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<!--[if lte IE 8]><script src="/research/viva/assets/js/ie/html5shiv.js"></script><![endif]-->
+	<link rel="stylesheet" href="/research/viva/assets/css/main.css" />
+	<link rel="stylesheet" href="/research/viva/assets/css/bootstrap.min.css" />
+	<!--[if lte IE 9]><link rel="stylesheet" href="/research/viva/assets/css/ie9.css" /><![endif]-->
+	<script src="/research/viva/assets/js/jquery.min.js" />
+	<script src="/research/viva/assets/js/main.js"></script>
+	<script src="/research/viva/assets/js/skel.min.js"></script>
+	<script src="/research/viva/assets/js/skel-viewport.min.js"></script>
+
+	<script src="/research/viva/assets/js/util.js"></script>
+
+	<!--[if lte IE 8]><script src="/research/viva/assets/js/ie/respond.min.js"></script><![endif]-->
+
+	<script src="/research/viva/assets/js/bootstrap.min.js"></script>
+
+	<script>
+		$(function() {
+			$(".template-header-container").load("/research/viva/header-template.html");
+			$(".template-footer-container").load("/research/viva/footer-template.html");
+		});
+	</script>
+</head>
+
+<body class="subpage">
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<div class="template-header-container"></div>
+
+		<!-- Content -->
+		<div id="content-wrapper">
+			<div id="content">
+				<div class="container">
+					<div class="row">
+						<div class="9u 12u(mobile)">
+
+							<!-- Main Content -->
+							<section>
+								<header>
+									<h2>Scalable Kernel Correlation Filter with Sparse Feature Integration</h2>
+								</header>
+								<p>
+									<h3>Abstract</h3> Correlation filters for long-term visual object tracking have recently seen great interest. Although they present competitive performance results, there is still a need for improving their tracking capabilities. In this paper, we present a fast scalable solution based on the Kernalized Correlation Filter (KCF) framework. We introduce an adjustable Gaussian window function and a keypoint-based model for scale estimation to deal with the fixed size limitation in the Kernelized Correlation Filter. Furthermore, we integrate the fast HoG descriptors and Intel’s Complex Conjugate Symmetric (CCS) packed format to boost the achievable frame rates. We test our solution using the Visual Tracker Benchmark and the VOT Challenge datasets. We evaluate our tracker in terms of precision and success rate, accuracy, robustness and speed. The empirical evaluations demonstrate clear improvements by the proposed tracker over the KCF algorithm while ranking among the top state-of-the- art trackers.
+
+								</p>
+								<p>
+									<iframe width="560" height="315" src="https://www.youtube.com/embed/u6QH2Rbb1hA" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+									<span class="caption"><br>Media 1. Video sequences comparing sKCF (i.e., light blue) and KCF (i.e., yellow). The white bounding box represents the human annotated ground truth of the video sequences. The algorithms outputs have been synchronized in time for displaying purposes. The sKCF implementation showed a speed up of 2.8x compared to KCF.</span>
+								</p>
+								<p>
+									<h3>Contributions</h3>
+								</p>
+								<p>
+									<ul>
+										<li> Extended kernel correlation filter with on-line scale estimation</li>
+										<li> Improved object/background separation with Gaussian windowing </li>
+										<li> Improved real-time frame rates using fast HOG (SSE2), adjustable window filtering, and Intel's CSS format for Fourier spectrums</li>
+										<li> Improved precision, success rate, accuracy and robustness</li>
+										<li> Framework capable of processing high dimensional data with different feature/scale/correlation estimation methods</li>
+									</ul>
+								</p>
+
+								<p>
+									<h3>Results</h3>
+									We developed three C++ implementations to compare against the original KCF algorithm (which is available as a Matlab implementation). First, we implemented the KCF algorithm using Gaussian correlation plus integrating Gaussian windowing and fast HoG descriptors. This implementation uses the full Fourier spectrum for the DFT/IDFT calls (i.e., no CCS). We call it KCFc. Second, we integrated CSS packed format to the previous implementation (i.e., KCFccs). Finally, we integrated scale estimation to the pre- vious variation (i.e., sKCF). All experiments are conducted on an Intel i5 (2415M) at 2.3GHz with 8GB of memory. We compared the three implementations to the original Matlab KCF implementation using HoG descriptors.
+									<br><br>
+									We conducted the evaluation of sKCF in three experiments. First, we compared the speed and accuracy performance using the 50 videos from the Visual Tracker Benchmark as in the KCF paper. Second, we evaluated and ranked our tracker against the top ranked trackers from the VOT Challenge 2014 dataset (i.e., 25 sequences). Finally, we compared our trackers using the VOT and TIR Challenge datasets from 2015 (60 and 20 sequences respectively).
+								</p>
+
+								<p>
+									<img src="images/results1.png">
+									<span class="caption"><br>Figure 1. Precision and success plots for our three implementations (i.e., sKCF, KCFc, KCFccs), KCF, and the top three ranked trackers in the Visual Tracker Benchmark dataset.</span>
+								</p>
+
+								<p>
+									<img src="images/results2.png">
+									<span class="caption"><br>Table 1. Summarizes the top three raned trackers in the VOT 2014 dataset (i.e., 25 sequences). Our algorithm is the fastest of the top trackers with competive high accuracy and low failure rates. We archieved similar results to the two variants of the original KCF that incorporate scale support (i.e., SAMF and KCF*). The last entry in the table shows the KCF Matlab's code results on this 2014 challenge dataset. </span>
+								</p>
+								<p>
+									<img src="images/results3.png">
+									<span class="caption"><br>Table 2. Shows the results obtained from our three trackers implementations, the original KCF Matlab implementation and the required NCC tracker in the VOT and TIR 2015 datasets. The tables display the overall average accuracy and average number of failures in all the sequences, with their accuracy, robustness and overall ranks. The tables also display the average tracker speed given in frames per seconds (i.e., fps).</span>
+								</p>
+								<p>
+									<br>
+									For further comparison and results have a look to the detailed VOT and TIR 2015 Challenge result papers
+								</p>
+
+								
+								<p>
+									<ul>
+										<li> <a href="https://www.cv-foundation.org/openaccess/content_iccv_2015_workshops/w14/html/Kristan_The_Visual_Object_ICCV_2015_paper.html">The Visual Object Tracking VOT2015 Challenge Results</a><br/></li>
+										<li> <a href="https://www.cv-foundation.org/openaccess/content_iccv_2015_workshops/w14/html/Felsberg_The_Thermal_Infrared_ICCV_2015_paper.html">The Thermal Infrared Visual Object Tracking VOT-TIR2015 Challenge Results</a><br/></li>
+										
+									</ul>
+								</p>
+							</section>
+
+						</div>
+						<div class="3u 12u(mobile)">
+
+							<!-- Sidebar -->
+							<section>
+								<header>
+									<h2>Reference</h2>
+								</header><a href="http://openaccess.thecvf.com/content_iccv_2015_workshops/w14/papers/Montero_Scalable_Kernel_Correlation_ICCV_2015_paper.pdf">Solis Montero A., Lang J., Laganiere R., Scalable Kernel Correlation Filter With Sparse Feature Integration, The IEEE International Conference on Computer Vision (ICCV) Workshops, December 2015</a><br/><br/>
+							</section>
+							<section>
+								<header>
+									<h2>Award</h2>
+								</header>
+								<span>&#9733;</span>Best real-time method
+								<a href="http://www.votchallenge.net/vot2015/">VOT Challenge 2015 </a>
+							</section>
+							<section>
+								<header>
+									<h2>Contact</h2>
+								</header>
+								<ul class="link-list">
+									<li><a href="http://www.eecs.uottawa.ca/~laganier">Robert Laganiere</a></li><br/>
+									<li><a href="http://www.site.uottawa.ca/research/viva/"><i><b>
+										<span style="font-size: 16pt; color: #000099">VIV</span>
+										<span style="COLOR:#990000; font-size:16pt">A</span></b></i><span style="font-size: 16pt"><b>
+										<span style="COLOR:#000099">Lab</span></b> </span> </a> </li><br/>
+									<li><a href="http://www.eecs.uottawa.ca">School of Electrical Engineering and Computer Science</a></li>
+								</ul>
+							</section>
+							<section>
+								<header>
+									<h2>Authors</h2>
+								</header>
+								<ul class="link-list">
+									<li><a href="http://www.solism.ca/">Andrés Solís Montero </a><br>
+									<li><a href="http://www.site.uottawa.ca/~jlang/">Jochen Lang</a> <br>
+									<li><a href="http://www.site.uottawa.ca/~laganier/">Robert Laganière</a>
+											</li>
+											</ul>
+							</section>
+							<section>									
+								<header>
+									<h2>Ressources</h2>
+								</header>
+								<ul class="link-list">
+									<li><a href="http://www.site.uottawa.ca/research/viva/backup/projects/project/data/tracker/presentation.pdf">Presentation </a><br>
+									<li><a href="https://github.com/asolis/vivaTracker/wiki">GitHub Respository</a> <br>
+											</li>
+											</ul>		
+							</section>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			<!-- Footer -->
+			<div class="template-footer-container"></div>
+
+		</div>
+
+	</body>
+</html>
