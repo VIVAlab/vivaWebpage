@@ -77,14 +77,15 @@
 			.center ul {font-family:Arial, sans-serif;font-size:14px;list-style-type: disc;}
 		</style>
 	</head>
-	<body >
+	<body class="subpage">
+		<div id="page-wrapper">
 			<!-- Header -->
 			<div class="template-header-container"></div>
 
-		<div id="page-wrapper">
-
 			<!-- Content -->
-			<div id="content-wrapper"><div id="content"><div class="container"><div class="row"><div class="9u 12u(mobile)">
+			<div id="content-wrapper"><div id="content"><div class="container"><div class="row">
+
+			<div class="9u 12u(mobile)">
 
 			<!-- Main Content -->
 			<section>
@@ -106,37 +107,35 @@
 				<center><a id="overview" name="overview"><h4>Overview</h4></a></center>
 				<hr>
 
-The ability to complete and reconstruct the 3D geometry of an object from a single view depth map is particularly useful for VR/AR applications, robotics (ie: grasping objects), obstacle avoidance and content creation. However, reconstructing the 3D shape of objects from a single depth map is very challenging due to the inherent ill-posed nature of the problem - potentially infinite configurations and arrangement of shapes can produce the same depth map. 
+					The ability to complete and reconstruct the 3D geometry of an object from a single view depth map is particularly useful for VR/AR applications, robotics (ie: grasping objects), obstacle avoidance and content creation. However, reconstructing the 3D shape of objects from a single depth map is very challenging due to the inherent ill-posed nature of the problem - potentially infinite configurations and arrangement of shapes can produce the same depth map. 
 
-In our work, 
+					In our work, 
 
-Recent state-of-the-art approaches use a 3D skip-connected auto-encoder style network where the input and output is either a voxel occupancy
-grid or a signed distance field (SDF). These 3D networks essentially replace the 2D pixel array with it’s 3D analogue - a dense 3D voxel grid. Thus, computational and memory requirements for these networks scale <i>cubically</i>. As a result, these networks are typically trained with low resolutions (32<sup>3</sup> voxels) often leading to coarse outputs.
+					Recent state-of-the-art approaches use a 3D skip-connected auto-encoder style network where the input and output is either a voxel occupancy
+					grid or a signed distance field (SDF). These 3D networks essentially replace the 2D pixel array with it’s 3D analogue - a dense 3D voxel grid. Thus, computational and memory requirements for these networks scale <i>cubically</i>. As a result, these networks are typically trained with low resolutions (32<sup>3</sup> voxels) often leading to coarse outputs.
 
-In our work, we introduce the concept of an “additive depth map” as a compact representation for 3D shape completion and propose a 2D CNN to predict it. Our contributions are as follows:
+					In our work, we introduce the concept of an “additive depth map” as a compact representation for 3D shape completion and propose a 2D CNN to predict it. Our contributions are as follows:<br/><br/>
 
-<div class="center"><ol>
-<li>The additive depth map as a minimal representation for 3D shape completion from single view depth maps which can preserve thin structures..</li>
-<li>A network which can prediction the additive depth map in real time (~14 fps).</li>
-<li>We show experimentally that the additive depth map can achieve state-of-the-art results for single category 3D shape completion. Additionally, we show that our approach performs well on real world data after being trained purely on synthetic datasets.</li>
-</ol></div>
-
-
-<center><a id="proposed" name="proposed"><h4>Proposed approach</h4></a></center>
-<hr><br>
-<br><br>
-
-<center><a href="images/additive_depth_example.png" target="_blank"><img src="images/additive_depth_example.png" alt="Additive depth map example" style="width:50%;height:50%;"></a></center><br>
+					<div class="center"><ol>
+					<li>The additive depth map as a minimal representation for 3D shape completion from single view depth maps which can preserve thin structures..</li>
+					<li>A network which can prediction the additive depth map in real time (~14 fps).</li>
+					<li>We show experimentally that the additive depth map can achieve state-of-the-art results for single category 3D shape completion. Additionally, we show that our approach performs well on real world data after being trained purely on synthetic datasets.</li>
+					</ol></div>
 
 
-<hr>
-<center><a id="examples" name="examples"><h4>Example output</h4></a></center>
-<hr><br>
+					<hr><center><a id="proposed" name="proposed"><h4>Proposed approach</h4></a></center><hr><br><br><br>
 
-<center><a href="images/additive_depth_clothed_people_results.png" target="_blank"><img src="images/additive_depth_clothed_people_results.png" alt="Additive depth map results on synthetic clothed humans" style="width:50%;height:50%;"></a></center><br>
+					<center><a href="images/additive_depth_example.png" target="_blank"><img src="images/additive_depth_example.png" alt="Additive depth map example" style="width:50%;height:50%;"></a></center><br>
 
-<center><a href="images/additive_depth_maps_real_data_results.png" target="_blank"><img src="images/additive_depth_maps_real_data_results.png" alt="Additive depth map results on real data of clothed humans" style="width:50%;height:50%;"></a></center><br>
 
+					<hr>
+					<center><a id="examples" name="examples"><h4>Example output</h4></a></center><hr><br>
+
+					<center><a href="images/additive_depth_clothed_people_results.png" target="_blank"><img src="images/additive_depth_clothed_people_results.png" alt="Additive depth map results on synthetic clothed humans" style="width:50%;height:50%;"></a></center><br>
+
+					<center><a href="images/additive_depth_maps_real_data_results.png" target="_blank"><img src="images/additive_depth_maps_real_data_results.png" alt="Additive depth map results on real data of clothed humans" style="width:50%;height:50%;"></a></center><br>
+				</section>
+			</div>
 		<div class="3u 12u(mobile)">
 
 			<!-- Sidebar -->
@@ -152,8 +151,6 @@ In our work, we introduce the concept of an “additive depth map” as a compac
 				</section>
 		</div>
 		</div></div></div></div>
-
-		</div>
 
 		
 

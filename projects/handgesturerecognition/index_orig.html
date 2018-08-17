@@ -6,92 +6,71 @@
 -->
 <html>
 	<head>
-		<title>Long Hands Gesture Recognition: Real-Time Hand Gesture Recognition and Hand Tracking</title>
+		<title>Two Column 1 - Halcyonic by HTML5 UP</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<!--[if lte IE 8]><script src="/research/viva/assets/js/ie/html5shiv.js"></script><![endif]-->
-		<link rel="stylesheet" href="/research/viva/assets/css/main.css" />
-		<link rel="stylesheet" href="/research/viva/assets/css/bootstrap.min.css" />
-		<!--[if lte IE 9]><link rel="stylesheet" href="/research/viva/assets/css/ie9.css" /><![endif]-->
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="/assets/css/main.css" />
+		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
 
-			<script src="/research/viva/assets/js/jquery.min.js"/>
-			<script src="/research/viva/assets/js/main.js"></script>
-			<script src="/research/viva/assets/js/skel.min.js"></script>
-			<script src="/research/viva/assets/js/skel-viewport.min.js"></script>
-			
-			<script src="/research/viva/assets/js/util.js"></script>
-			
-			<!--[if lte IE 8]><script src="/research/viva/assets/js/ie/respond.min.js"></script><![endif]-->
-			
-			<script src="/research/viva/assets/js/bootstrap.min.js"></script>
+	<style type="text/css">
+		.tg  {border-collapse:collapse;border-spacing:0;margin:0px auto;}
+		.tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;}
+		.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;}
+		.tg .tg-s6z2{text-align:center}
+		@media screen and (max-width: 767px) {.tg {width: auto !important;}.tg col {width: auto !important;}.tg-wrap {overflow-x: auto;-webkit-overflow-scrolling: touch;margin: auto 0px;}}
 
-			<script>
-			$(function(){
-			  $(".template-header-container").load("/research/viva/header-template.html"); 
-			  $(".template-footer-container").load("/research/viva/footer-template.html"); 
-			});
+		.hmscreencap { position: relative;border: 1px solid #333;margin: 2%;overflow: hidden;width: 640px; }
+		.hmscreencap img { max-width: 100%; -moz-transition: all 0.5s; -webkit-transition: all 0.5s; transition: all 0.5s; }
+		.hmscreencap:hover img { -moz-transform: scale(2.0); -webkit-transform: scale(2.0); transform: scale(2.0); }
 
-			function collapsejump(evt)
-			{
-				elem = $("#collapse-trigger");
-				if (elem.attr("aria-expanded") === undefined || elem.attr("aria-expanded") == "false")
-				{
-					targ = $(evt.target.hash)
-					$("#collapse1").on('shown.bs.collapse', function () {
-						targ[0].scrollIntoView();
-					});
-					$("#collapse1").collapse("toggle");
-				}
-			}
+		.hmscreencap_additional { position: relative;border: 1px solid #333;margin: 2%;overflow: hidden;width: 640px; }
+		.hmscreencap_additional img { max-width: 100%; -moz-transition: all 0.5s; -webkit-transition: all 0.5s; transition: all 0.5s; }
+		.hmscreencap_additional:hover img { -moz-transform: scale(1.2); -webkit-transform: scale(1.2); transform: scale(1.2); }
 
-			function collapsetrig()
-			{
-				elem = $("#collapse-trigger");
-				if (elem.attr("aria-expanded") === undefined || elem.attr("aria-expanded") == "false")
-				{
-					elem.html('Click here for less');
-				}
-				else
-				{
-					elem.html('Click here for more');
-				}
-			}
-			</script>
-
-		<style type="text/css">
-			.tg  {border-collapse:collapse;border-spacing:0;margin:0px auto;}
-			.tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;}
-			.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;}
-			.tg .tg-s6z2{text-align:center}
-			@media screen and (max-width: 767px) {.tg {width: auto !important;}.tg col {width: auto !important;}.tg-wrap {overflow-x: auto;-webkit-overflow-scrolling: touch;margin: auto 0px;}}
-
-			.hmscreencap { position: relative;border: 1px solid #333;margin: 2%;overflow: hidden;width: 640px; }
-			.hmscreencap img { max-width: 100%; -moz-transition: all 0.5s; -webkit-transition: all 0.5s; transition: all 0.5s; }
-			.hmscreencap:hover img { -moz-transform: scale(2.0); -webkit-transform: scale(2.0); transform: scale(2.0); }
-
-			.hmscreencap_additional { position: relative;border: 1px solid #333;margin: 2%;overflow: hidden;width: 640px; }
-			.hmscreencap_additional img { max-width: 100%; -moz-transition: all 0.5s; -webkit-transition: all 0.5s; transition: all 0.5s; }
-			.hmscreencap_additional:hover img { -moz-transform: scale(1.2); -webkit-transform: scale(1.2); transform: scale(1.2); }
-
-			.center {text-align:left;width:640px;margin:0 auto;}
-			.center ul {font-family:Arial, sans-serif;font-size:14px;list-style-type: disc;}
-		</style>
+		.center {text-align:left;width:640px;margin:0 auto;}
+		.center ul {font-family:Arial, sans-serif;font-size:14px;list-style-type: disc;}
+	</style>
 	</head>
-	<body >
-			<!-- Header -->
-			<div class="template-header-container"></div>
-
+	<section>
+	<body class="subpage">
 		<div id="page-wrapper">
 
+			<!-- Header -->
+				<div id="header-wrapper">
+					<header id="header" class="container">
+						<div class="row">
+							<div class="12u">
+
+								<!-- Logo -->
+									<h1><a href="#" id="logo">Halcyonic</a></h1>
+
+								<!-- Nav -->
+									<nav id="nav">
+										<a href="index.html">Homepage</a>
+										<a href="threecolumn.html">Three Column</a>
+										<a href="twocolumn1.html">Two Column #1</a>
+										<a href="twocolumn2.html">Two Column #2</a>
+										<a href="onecolumn.html">One Column</a>
+									</nav>
+
+							</div>
+						</div>
+					</header>
+				</div>
+
 			<!-- Content -->
-			<div id="content-wrapper"><div id="content"><div class="container"><div class="row"><div class="9u 12u(mobile)">
+				<div id="content-wrapper">
+					<div id="content">
+						<div class="container">
+							<div class="row">
+								<div class="9u 12u(mobile)">
 
-			<!-- Main Content -->
-			<section>
-				<header>
-					<h2><center>Long Hands Gesture Recognition: Real-Time Hand Gesture Recognition and Hand Tracking</center></h2>
-
-					<div class="tg-wrap"><table class="tg">
+									<!-- Main Content -->
+										<section>
+											<header>
+												<h2><center>Long Hands Gesture Recognition: Real-Time Hand Gesture Recognition and Hand Tracking</center></h2>
+<div class="tg-wrap"><table class="tg">
   <tr>
     <th class="tg-s6z2"><a href="mailto:ppopo068@uottawa.ca?Subject=Hand Gesture Recognition">Pavel Popov</a>, <a href="mailto:laganier@eecs.uottawa.ca?Subject=Hand Gesture Recognition">Robert Laganiere</a><br>University of Ottawa<br>Ottawa, ON, Canada</th>
       </tr>
@@ -99,11 +78,43 @@
     <td class="tg-s6z2" colspan="2">Questions? <a href="mailto:rverb054@uottawa.ca?Subject=HandGestureRecognition&cc=laganier@eecs.uottawa.ca;ppopo068@uottawa.ca">Drop us a line</a></td>
   </tr>
 </table></div>
-				</header>
-				<hr>
-				<center><a id="overview" name="overview"><h3>Overview</h3></a></center>
-				<hr>
+											</header>
 
+
+<br>
+<tr>
+    <th class="tg-s6z2"><center>Funded by </center>
+	</th>
+	</tr>
+
+<div class="tg-wrap"><table class="tg">
+
+
+
+
+<tr>
+	<th class="tg-s6z2"><center><a href="https://www.mitacs.ca/en" target="_blank"><div class="net_params"><img src="images/Mitacs_colour.jpg" alt="Net param summary" style="width:130 px;height:48px;"></div></a></center><br><br>
+ 	</th>
+      
+
+
+    
+
+
+
+	<th class="tg-s6z2"><center><a href="http://www.nserc-crsng.gc.ca/index_eng.asp" target="_blank"><div class="net_params"><img src="images/nserc_crsng_high.jpg" alt="Net param summary" style="width:123px;height:55px;"></div></a></center><br><br>
+ 	</th>
+      </tr>
+
+
+  
+</table></div>
+
+
+
+<hr>
+<center><a name="overview"><h1>Overview</h1></a></center>
+<hr>
 Real-time Hand Gesture Recognition is interesting and power way  for users to interface with computers. It is a multi-faceted problem that has many different competing approaches. Our approaches focus on:<br><br>
 
 <div class="center"><ul>
@@ -115,36 +126,18 @@ Real-time Hand Gesture Recognition is interesting and power way  for users to in
 
 This project aims to create powerful hand gesture recognition and hand tracking approaches and to combine them into robust real-time user hand gesture interfaces.
 
-
 <br><br>
 
-		      
-		    <a id="collapse-trigger" data-toggle="collapse" href="#collapse1" onclick="collapsetrig()">Click here for more</a>
-		      
-		    <div id="collapse1" class="panel-collapse collapse">
 <hr>
-<center><a id="examples" name="examples"><h3>Projects that have contributed to this research direction</h3></a></center>
+<center><a name="Projects"><h1>Projects that have contributed to this research direction</h1></a></center>
 <hr><br>
-Several projects have contributed to this research direction.<br>
-<div class="center"><ul>
-<li>Hand Gesture Recognition for car driver interactions: This project achieved position independent hand gesture recognition using machine learning.</li>
-<li>Long Hands Controller for Halo: This controller proved the viability of my gesture recognition system for video game control applications</li>
-<li>Long Hands Gesture Recognition System: This project achieved robust fixed position hand gesture recognition and hand tracking</li>
-<li>Gesture Recognition Paint: This project successfully ported an earlier version of my gesture recognition work on an Android tablet. It allows a user to draw pictures using Gesture Recognition</li>
-</ul></div>
-
-<br>
-
 
 
 <hr>
-<center><a id="examples2" name="examples2"><h3>Hand gesture recognition for car driver interactions.</h3></a></center>
+<center><a name="HGRCarDriver"><h1>Hand gesture recognition for car driver interactions. </h1></a></center>
 
 
-
-
-
-<center><a name="HGRCarDriverSubHeader"><h4>MITACS Accelerate Project 2017</h4></a></center>
+<center><a name="HGRCarDriverSubHeader"><h3>MITACS Accelerate Project 2017</h3></a></center>
 
 <div class="tg-wrap"><table class="tg">
 
@@ -160,6 +153,7 @@ Several projects have contributed to this research direction.<br>
 
 This project was the result of a MITACS Accelerate research internship with a partnering company called Klashwerks. The company wanted to have a gesture recognition interface for their mobile device built for the connect car market. During this internship I improved my existing Hand Tracking algorithm by adding hand pose recognition capabilities using HOG Cascade machine learning. Using what I learned with HOG Cascades I then created a robust real-time Hand Gesture Recognition system using HOG Cascades capable of recognizing specific static hand gestures anywhere in a video frame. The system performed well on PC. The Hand Gesture Recognition system was trained with a small sample dataset. I also added an option to the Hand Gesture Recognition system to use HOG SVMs instead of HOG Cascades in order to make speed and performance comparisons with a competing machine learning method. The Hand Gesture Recognition system was attempted to be ported to Klashwerks's mobile device for the connected car market. However the Hand Gesture Recognition system achieved low performance on the mobile device and was replaced with a simpler proximity sensor. This research internship also produced a very large hand gesture image dataset that will be crucial in future research that I do with machine learning methods for my PhD. MITACS Accelerate is a research funding program run by MITACS.
 <br><br>
+
 <left><a name="Results"><h4>Results</h4></a></left>
 
 
@@ -181,10 +175,22 @@ Static hand pose recognition add-on using HOG Adaboost Cascades for my previous 
 
 
 
-<hr>
-<center><a id="longHandsHalo" name="longHandsHalo"><h3>Long Hands Gesture Recognition controller for Halo</h3></a></center>
 
-<center><a name="HGRCarDriverSubHeader"><h4>Controller for first person video game called Halo. 2015 </h4></a></center>
+
+
+<br>
+
+
+
+
+
+<hr>
+<center><a name="LongHandsHalo"><h1>Long Hands Gesture Recognition controller for Halo</h1></a></center>
+
+
+<center><a name="HGRCarDriverSubHeader"><h3>Controller for first person video game called Halo. 2015
+
+</h3></a></center>
 
 <div class="tg-wrap"><table class="tg">
 
@@ -209,14 +215,29 @@ Long Hands Gesture Recognition controller for Halo video demonstration
 <br><br>
 
 <center><iframe width="640" height="360" src="https://www.youtube.com/embed/NuVAW6wihZ8" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe></center>
-</center><br><br>
+</center><br>
+
+<br>
+<br>
+
+
+
+
+
+<br>
+
+
+
+
+
 
 <hr>
-<center><a id="longHands" name="longHands"><h3>Long Hands Gesture Recognition System</h3></a></center>
+<center><a name="LongHandsHalo"><h1>Long Hands Gesture Recognition System</h1></a></center>
 
-<center><a name="HGRCarDriverSubHeader"><h4>Contour Shape Analysis and Pixel Colour Based Template Matching for Hybrid Real-Time Gesture Recognition and Tracking. 2015
 
-</h4></a></center>
+<center><a name="HGRCarDriverSubHeader"><h3>Contour Shape Analysis and Pixel Colour Based Template Matching for Hybrid Real-Time Gesture Recognition and Tracking. 2015
+
+</h3></a></center>
 
 <div class="tg-wrap"><table class="tg">
 
@@ -244,13 +265,28 @@ Long Hands Gesture Recognition System video demonstration
 <center><iframe width="640" height="360" src="https://www.youtube.com/embed/OcgXYQFNkIU" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe></center>
 </center><br>
 
+<br>
+<br>
+
+
+
+
+
+<br>
+
+
+
+
+
+
 <hr>
-<center><a id="GRPaint" name="GRPaint"><h3>Gesture Recognition Paint</h3></a></center>
-
-<center><a name="HGRCarDriverSubHeader"><h4>Android application allowing a user to draw pictures with hand gestures in front of an Android device camera. 2015
+<center><a name="LongHandsHalo"><h1>Gesture Recognition Paint</h1></a></center>
 
 
-</h4></a></center>
+<center><a name="HGRCarDriverSubHeader"><h3>Android application allowing a user to draw pictures with hand gestures in front of an Android device camera. 2015
+
+
+</h3></a></center>
 
 <div class="tg-wrap"><table class="tg">
 
@@ -277,52 +313,39 @@ Gesture Recognition Paint App created for Android Tablet Devices
 <center><iframe width="640" height="360" src="https://www.youtube.com/embed/8e2xZpFhcIY" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe></center>
 </center><br>
 
+<br>
+<br>
 
 
-<center> </center>
 
-		</div>
+</section>
 
-			</section>
-		</div>
-		<div class="3u 12u(mobile)">
+					
+			
 
-			<!-- Sidebar -->
-				<section>
-					<header>
-						<h2>Navigation</h2>
-					</header>
-					<ul class="link-list">
-						<li><a href="#overview">Overview</a></li>
-						<li><a href="#examples" onclick="collapsejump(event)">Projects</a></li>
-					     <li><a href="#examples2" onclick="collapsejump(event)">Hand Gesture Recognition for Car Driver Interactions</a></li>
-						<li><a href="#longHandsHalo" onclick="collapsejump(event);">Long Hands Halo GR Controller</a></li>
-						<li><a href="#longHands" onclick="collapsejump(event)">Long Hands Gesture Recognition</a></li>
-<li><a href="#GRPaint" onclick="collapsejump(event)">Gesture Recognition Paint</a></li>
+<br>
+<br>
+<br>
+<br>
 
-					</ul>
-				</section>
-				<section>
-					<header>
-						<h2>Funding</h2>
-					</header>
-					<p>Thank you to Mitacs and NSERC for making this work possible!</p>
-					<center><a href="https://www.mitacs.ca/en" target="_blank"><div class="net_params"><img src="images/Mitacs_colour.jpg" alt="Net param summary" style="width:130 px;height:48px;"></div></a></center>
 
-<center><a href="http://www.nserc-crsng.gc.ca/index_eng.asp" target="_blank"><div class="net_params"><img src="images/nserc_crsng_high.jpg" alt="Net param summary" style="width:123px;height:55px;"></div></a></center>
 
-				</section>
-		</div>
-		</div></div></div></div>
+
+
+			<!-- Copyright -->
+				<div id="copyright">
+					&copy; Untitled. All rights reserved. | Design: <a href="http://html5up.net">HTML5 UP</a>
+				</div>
 
 		</div>
-
-		
-
-			<!-- Footer -->
-			<div class="template-footer-container"></div>
 
 		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/skel-viewport.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="assets/js/main.js"></script>
 
 	</body>
 </html>

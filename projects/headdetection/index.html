@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<!--
+	Halcyonic by HTML5 UP	html5up.net | @ajlkn	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)-->
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <title>Deep People Detection: A Comparative Study of SSD and LSTM-decoder</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--[if lte IE 8]><script src="/research/viva/assets/js/ie/html5shiv.js"></script><![endif]-->
+    <link rel="stylesheet" href="/research/viva/assets/css/main.css">
+    <link rel="stylesheet" href="/research/viva/assets/css/bootstrap.min.css">
+    <!--[if lte IE 9]><link rel="stylesheet" href="/research/viva/assets/css/ie9.css" /><![endif]-->
+    <script src="/research/viva/assets/js/jquery.min.js">
+			<script src="/research/viva/assets/js/main.js"></script>
+    <script src="/research/viva/assets/js/skel.min.js"></script>
+    <script src="/research/viva/assets/js/skel-viewport.min.js"></script>
+    <script src="/research/viva/assets/js/util.js"></script>
+    <!--[if lte IE 8]><script src="/research/viva/assets/js/ie/respond.min.js"></script><![endif]-->
+    <script src="/research/viva/assets/js/bootstrap.min.js"></script>
+    <script>
+			$(function(){
+			  $(".template-header-container").load("/research/viva/header-template.html"); 
+			  $(".template-footer-container").load("/research/viva/footer-template.html"); 
+			});
+
+			function collapsejump(evt)
+			{
+				elem = $("#collapse-trigger");
+				if (elem.attr("aria-expanded") === undefined || elem.attr("aria-expanded") == "false")
+				{
+					targ = $(evt.target.hash)
+					$("#collapse1").on('shown.bs.collapse', function () {
+						targ[0].scrollIntoView();
+					});
+					$("#collapse1").collapse("toggle");
+				}
+			}
+
+			function collapsetrig()
+			{
+				elem = $("#collapse-trigger");
+				if (elem.attr("aria-expanded") === undefined || elem.attr("aria-expanded") == "false")
+				{
+					elem.html('Click here for less');
+				}
+				else
+				{
+					elem.html('Click here for more');
+				}
+			}
+			</script>
+    <style type="text/css">
+			.tg  {border-collapse:collapse;border-spacing:0;margin:0px auto;}
+			.tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;}
+			.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;}
+			.tg .tg-s6z2{text-align:center}
+			@media screen and (max-width: 767px) {.tg {width: auto !important;}.tg col {width: auto !important;}.tg-wrap {overflow-x: auto;-webkit-overflow-scrolling: touch;margin: auto 0px;}}
+
+			.hmscreencap { position: relative;border: 1px solid #333;margin: 2%;overflow: hidden;width: 640px; }
+			.hmscreencap img { max-width: 100%; -moz-transition: all 0.5s; -webkit-transition: all 0.5s; transition: all 0.5s; }
+			.hmscreencap:hover img { -moz-transform: scale(2.0); -webkit-transform: scale(2.0); transform: scale(2.0); }
+
+			.hmscreencap_additional { position: relative;border: 1px solid #333;margin: 2%;overflow: hidden;width: 640px; }
+			.hmscreencap_additional img { max-width: 100%; -moz-transition: all 0.5s; -webkit-transition: all 0.5s; transition: all 0.5s; }
+			.hmscreencap_additional:hover img { -moz-transform: scale(1.2); -webkit-transform: scale(1.2); transform: scale(1.2); }
+
+			.center {text-align:left;width:640px;margin:0 auto;}
+			.center ul {font-family:Arial, sans-serif;font-size:14px;list-style-type: disc;}
+		</style>
+  </head>
+  <body> <!-- Header -->
+    <div class="template-header-container"></div>
+    <div id="page-wrapper">
+      <!-- Content -->
+      <div id="content-wrapper">
+        <div id="content">
+          <div class="container">
+            <div class="row">
+              <div class="9u 12u(mobile)">
+                <!-- Main Content -->
+                <section>
+                  <header>
+                    <h2>
+                      <center>Deep People Detection: A Comparative Study of SSD
+                        and LSTM-decoder</center>
+                    </h2>
+                    <div class="tg-wrap">
+                      <table class="tg" style="width: 730px; height: 6px;">
+                        <tbody>
+                          <tr>
+                            <th class="tg-s6z2"><a href="mailto:mrahm021@uottawa.ca?Subject=People%20Detection:%20A%20Comparative%20Study%20of%20SSD%20and%20LSTM-decoder">Md
+                                Atiqur Rahman</a>, <a href="mailto:pkapo104@uottawa.ca?Subject=People%20Detection:%20A%20Comparative%20Study%20of%20SSD%20and%20LSTM-decoder">Prince
+                                Kapoor</a>, <a href="mailto:laganier@eecs.uottawa.ca?Subject=People%20Detection:%20A%20Comparative%20Study%20of%20SSD%20and%20LSTM-decoder">Robert
+                                Laganière</a><br>
+                              University of Ottawa<br>
+                              Ottawa, ON, Canada</th>
+                            <th class="tg-s6z2"><a href="mailto:daniel.laroche@nxp.com?Subject=SqueezeMap">Daniel
+                                Laroche</a>, <a href="mailto:changyun.zhu@nxp.com?Subject=SqueezeMap">Changyun
+                                Zhu</a>, <a href="mailto:christina.xu@nxp.com?Subject:%20People%20Detection:%20A%20Comparative%20Study%20of%20SSD%20and%20LSTM-decoder">Xiaoyin
+                                Xu</a>,<a href="mailto:ali.ors@nxp.com?Subject=SqueezeMap">
+                                Ali Ors</a><br>
+                              NXP Semiconductors<br>
+                              Ottawa, ON, Canada</th>
+                          </tr>
+                          <tr>
+                            <td class="tg-s6z2" colspan="2">Questions? <a href="mailto:mrahm021@uottawa.ca?Subject=People%20Detection:%20A%20Comparative%20Study%20of%20SSD%20and%20LSTM-decoder&amp;cc=laganier@eecs.uottawa.ca;daniel.laroche@nxp.com;changyun.zhu@nxp.com;christina.xu@nxp.com;ali.ors@nxp.com">Drop
+                                us a line</a></td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </header>
+                  <hr>
+                  <center><a id="overview" name="overview">
+                      <h4>Overview</h4>
+                    </a></center>
+                  <hr>
+                  <div style="text-align: justify;"> This study seeks to provide
+                    an extensive comparison between two state-of-the-art deep
+                    object detection frameworks, namely SSD [1] and LSTM-decoder
+                    [2] in the context of people detection. The aim is to
+                    explore the two detection architectures in terms of
+                    accuracy, speed, robustness to occlusion and scale, as well
+                    as generalization ability which are the leading challenges
+                    for people detection. Our experimental results show that
+                    while the LSTM-decoder can be more accurate in realizing
+                    smaller head instances, especially in the presence of
+                    occlusions, the sheer detection speed and superior
+                    generalization ability of SSD makes it an ideal choice for
+                    real-time people detection. <br>
+                    <br>
+                    This work was accepted in the <a href="http://computerrobotvision.pagecloud.com/"
+                      title="CRV 2018 - Home" target="_blank">15th Conference on
+                      Computer and Robot Vision (CRV'18)</a> conference.<br>
+                    <br>
+                    <br>
+                    <a id="collapse-trigger" data-toggle="collapse" href="#collapse1"
+                      onclick="collapsetrig()">Click here for more</a></div>
+                  <br>
+                  &nbsp; <br>
+                  <div id="collapse1" class="panel-collapse collapse">
+                    <hr>
+                    <center><a id="model_architectures" name="model_architectures">
+                        <h4>Model Architectures</h4>
+                      </a></center>
+                    <hr>
+                    <div style="text-align: justify;"> The following gives an
+                      architectural overview of LSTM-decoder and SSD models that
+                      we study in this work. </div>
+                    <br>
+                    <center><a href="images/model_pipeline.png" target="_blank"><img
+                          src="images/model_pipeline.png" alt="Model Pipeline for LSTM-decoder and SSD"
+                          style="width:95%;height:95%;"></a></center>
+                    <br>
+                    <hr>
+                    <center><a id="datasets" name="datasets">
+                        <h4>Datasets</h4>
+                      </a></center>
+                    <hr>
+                    <div style="text-align: justify;"> In addition to using a
+                      benchmark head detection dataset called Brainwash [2], we
+                      also experimented with two new datasets called MrSub and
+                      Clifton which we collected from different restaurants.
+                      These datasets vary widely from each other in terms of
+                      scale and occlusion level as depicted in the below figure,
+                      thereby allowing us to better explore the models'
+                      robustness to variation in scale and occlusion.</div>
+                    <br>
+                    <center><a href="images/datasets.png" target="_blank"><img src="images/datasets.png"
+                          alt="Datasets" style="width:95%;height:95%;"></a></center>
+                    <br>
+                    <hr>
+                    <center><a id="experimental_setup" name="experimental_setup">
+                        <h4>Experimental Setup</h4>
+                      </a></center>
+                    <hr> The models are evaluated and compared based on 4
+                    different experimental settings as below:<br>
+                    <br>
+                    <div class="center">
+                      <ul type="1">
+                        <li><b>Case 1:</b> Models trained and tested on MrSub to
+                          analyze the baseline performance. MrSub, as obvisous
+                          from the above figure, is the easiest among the three
+                          datasests with large scale and very less occlusion.</li>
+                        <br>
+                        <li><b>Case 2:</b> Models trained and tested on
+                          Brainwash to analyze the robustness to occlusion and
+                          tiny-scale. Brainwash is a highly occluded and
+                          tiny-scale dataset.</li>
+                        <br>
+                        <li><b>Case 3:</b> Models trained on Brainwash, tested
+                          on MrSub to analyze the generalization ability over
+                          different scales. Brainwash and MrSub clearly have
+                          different distributions of scales.</li>
+                        <br>
+                        <li><b>Case 4:</b> Models trained on Brainwash+MrSub,
+                          tested on Clifton to analyze the domain adaptation
+                          ability. Clifton has a distribution of scale and
+                          occlusion level which is a mixture of Brainwash and
+                          MrSub. </li>
+                      </ul>
+                    </div>
+                    <hr>
+                    <center><a id="results" name="results">
+                        <h4>Results</h4>
+                      </a></center>
+                    <hr>
+                    <div style="text-align: justify;"> The Recall vs.
+                      (1-Precision) curves corresponding to the 4 different
+                      cases are depicted below. For each model architecture, we
+                      plot 3 different curves corresponding to three different
+                      CNN feature extractors (e.g., Inception-Resnet-V2,
+                      Inception-V2, and Mobilenet)</div>
+                    <br>
+                    <center><a href="images/case12.png" target="_blank"><img src="images/case12.png"
+                          alt="Recall vs. (1-Precision) Curves for Case 1 and Case 2"
+                          style="width:95%;height:95%;"></a></center>
+                    <br>
+                    <center><a href="images/case34.png" target="_blank"><img src="images/case34.png"
+                          alt="Recall vs. (1-Precision) Curves for Case 3 and Case 4"
+                          style="width:95%;height:95%;"></a></center>
+                    <br>
+                    <br>
+                    <div style="text-align: justify;">Some of the sample
+                      detections along with the inference time for the two
+                      models are shown below.</div>
+                    <br>
+                    <center><a href="images/sample_results.png" target="_blank"><img
+                          src="images/sample_results.png" alt="Sample Detections and Inference Time"
+                          style="width:95%;height:95%;"></a></center>
+                    <br>
+                    <hr>
+                    <center><a id="references" name="references">
+                        <h4>References</h4>
+                      </a></center>
+                    <hr>
+                    <div class="center">
+                      <ol type="1">
+                        <li>W. Liu, D. Anguelov, D. Erhan, C. Szegedy, S. E.
+                          Reed, C.-Y. Fu, and A. C. Berg, “Ssd: Single shot
+                          multibox detector,” in <i>ECCV</i>, 2016.</li>
+                        <li>R. Stewart and M. Andriluka, “End-to-end people
+                          detection in crowded scenes,” <i>CoRR</i>, vol.
+                          abs/1506.04878, 2015.</li>
+                      </ol>
+                    </div>
+                    <br>
+                  </div>
+                </section>
+              </div>
+              <div class="3u 12u(mobile)">
+                <section>
+                  <header>
+                    <h2>Navigation</h2>
+                  </header>
+                  <ul class="link-list">
+                    <li><a href="#overview">Overview</a></li>
+                    <li><a href="#model_architectures" onclick="collapsejump(event)">Model
+                        Architectures</a></li>
+                    <li><a href="#datasets" onclick="collapsejump(event);">Datasets</a></li>
+                    <li><a href="#experimental_setup" onclick="collapsejump(event);">Experimental Setup</a></li>                    
+                    <li><a href="#results" onclick="collapsejump(event)">Results</a></li>
+                    <li><a href="#references" onclick="collapsejump(event)">References</a></li>
+                  </ul>
+                </section>
+                <section>
+                  <header>
+                    <h2>Industry Partners</h2>
+                  </header>
+                  <p>Thank you to NXP Semiconductor for making this work
+                    possible!</p>
+                  <center><a href="https://www.nxp.com/" target="_blank"><img src="/research/viva/images/nxp-semiconductors-logo.png"
+                        alt="NXP" style="width:100px;height:100px;"></a></center>
+                </section>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Footer -->
+    <div class="template-footer-container"></div>
+    <!-- Scripts -->
+  </body>
+</html>

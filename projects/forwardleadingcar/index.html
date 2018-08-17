@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title>Real-time panoramic depth maps</title>
+		<title>Forward Leading Car Detection</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<!--[if lte IE 8]><script src="/research/viva/assets/js/ie/html5shiv.js"></script><![endif]-->
@@ -30,32 +30,6 @@
 			  $(".template-header-container").load("/research/viva/header-template.html"); 
 			  $(".template-footer-container").load("/research/viva/footer-template.html"); 
 			});
-
-			function collapsejump(evt)
-			{
-				elem = $("#collapse-trigger");
-				if (elem.attr("aria-expanded") === undefined || elem.attr("aria-expanded") == "false")
-				{
-					targ = $(evt.target.hash)
-					$("#collapse1").on('shown.bs.collapse', function () {
-						targ[0].scrollIntoView();
-					});
-					$("#collapse1").collapse("toggle");
-				}
-			}
-
-			function collapsetrig()
-			{
-				elem = $("#collapse-trigger");
-				if (elem.attr("aria-expanded") === undefined || elem.attr("aria-expanded") == "false")
-				{
-					elem.html('Click here for less');
-				}
-				else
-				{
-					elem.html('Click here for more');
-				}
-			}
 			</script>
 
 		<style type="text/css">
@@ -77,27 +51,28 @@
 			.center ul {font-family:Arial, sans-serif;font-size:14px;list-style-type: disc;}
 		</style>
 	</head>
-	<body >
+	<body class="subpage">
+		<div id="page-wrapper">
 			<!-- Header -->
 			<div class="template-header-container"></div>
 
-		<div id="page-wrapper">
-
 			<!-- Content -->
-			<div id="content-wrapper"><div id="content"><div class="container"><div class="row"><div class="9u 12u(mobile)">
+			<div id="content-wrapper"><div id="content"><div class="container"><div class="row">
+
+			<div class="9u 12u(mobile)">
 
 			<!-- Main Content -->
 			<section>
 				<header>
-					<h2><center>Real-time panoramic depth maps using convolutional neural networks</center></h2>
+					<h2><center>Forward Leading Car Detection</center></h2>
 
 					<div class="tg-wrap">
 						<table class="tg">
 					 		<tr>
-					    		<th class="tg-s6z2"><a href="mailto:plai036@uottawa.ca?Subject=OmnistereoDepthMaps">Po Kong Lai</a>, <a href="mailto:sxie088@uottawa.ca?Subject=OmnistereoDepthMaps">Shuang Xie</a>, <a href="mailto:jlang@uottawa.ca?Subject=OmnistereoDepthMaps">Jochen Lang</a> and <a href="mailto:laganier@uottawa.ca?Subject=OmnistereoDepthMaps">Robert Lagani&egrave;re</a><br>University of Ottawa<br>Ottawa, ON, Canada</th>
+					    		<th class="tg-s6z2"><a href="mailto:wwen053@uottawa.ca?Subject=ForwardLeadingCar">Wen Wen</a> and <a href="mailto:laganier@eecs.uottawa.ca?Subject=ForwardLeadingCar">Robert Lagani&egrave;re</a><br>University of Ottawa<br>Ottawa, ON, Canada</th>
 					  		</tr>
 					  		<tr>
-					    		<td class="tg-s6z2" colspan="2">Questions? <a href="mailto:plai036@uottawa.ca?Subject=SingleRGBDVR&cc=sxie088@uottawa.ca;jlang@uottawa.ca;laganier@uottawa.ca;">Drop us a line</a></td>
+					    		<td class="tg-s6z2" colspan="2">Questions? <a href="mailto:wwen053@uottawa.ca?Subject=ForwardLeadingCar&cc=laganier@eecs.uottawa.ca;">Drop us a line</a></td>
 					  		</tr>
 						</table>
 					</div>
@@ -105,23 +80,24 @@
 				<hr>
 				<center><a id="overview" name="overview"><h4>Overview</h4></a></center>
 				<hr>
-Stereo panoramic images and videos are popular media formats for displaying content captured from visual sensors through virtual reality (VR) headsets. By displaying a different panoramic image for each eye, 3D human vision can be simulated and the viewer is allowed rotational freedom but not positional freedom. In order for positional freedom to be achieved a depth map is required.
 
-In this work we propose an approach which utilizes convolutional neural networks (CNNs) to directly convert a pair of stereo panoramic images into panoramic depth map. This depth map allows for true 3D videos with 6 degrees of freedom (DoF) viewing in a VR headset.
+					The objective of Forward Leading Car Detection is to provide a recording and alarming subsystem for driver assistant system. It is used to detect leading cars that possibly cause a collision soon after, avoiding putting the driver into dangers. The detection system is implenmented via deep learning technique and will be embeded into Android mobile phone eventually. (The project is still in progress.)
 
-<hr>
-<center><a id="examples_data" name="examples_data"><h4>Training data examples</h4></a></center>
-<hr><br>
 
-<center><a href="images/omnistereo_training_examples.png" target="_blank"><img src="images/omnistereo_training_examples.png" alt="Stereo panoramic depth estimation training data." style="width:50%;height:50%;"></a></center><br>
+					<hr><center><a id="difficulties" name="difficulties"><h4>Difficulties</h4></a></center><hr>
 
-<hr>
-<center><a id="examples_output" name="examples_output"><h4>Example output</h4></a></center>
-<hr><br>
+					Real-time detection<br>
+					Light-weighted application implemented for Android devices<br>
 
-<center><a href="images/omnistereo_mesh_comparisons.png" target="_blank"><img src="images/omnistereo_mesh_comparisons.png" alt="Comparisons to the ground truth." style="width:50%;height:50%;"></a><br><i>Meshed visualizations of the ground truth (left), our appproach without stereo panoramic loss (center) and with stereo panoramic loss (right). The top image is one of the stereo paranomic color images used as input.</i><br></center><br>
-</section>
-</div>
+
+					<hr>
+					<center><a id="examples" name="examples"><h4>Demo Video</h4></a></center><hr>
+
+					Forward leading car and sideway car detection on frame images.<br/><br/>
+					<center><iframe width="640" height="360" src="https://www.youtube.com/embed/8CYZ3Zbnwhs" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe></center>
+					
+				</section>
+			</div>
 		<div class="3u 12u(mobile)">
 
 			<!-- Sidebar -->
@@ -131,21 +107,20 @@ In this work we propose an approach which utilizes convolutional neural networks
 					</header>
 					<ul class="link-list">
 						<li><a href="#overview">Overview</a></li>
-						<li><a href="#examples_data" onclick="collapsejump(event);">Training data examples</a></li>
-						<li><a href="#examples_output" onclick="collapsejump(event);">Example output</a></li>
+						<li><a href="#difficulties">Difficulties</a></li>
+						<li><a href="#examples">Demo Video</a></li>
 					</ul>
 				</section>
+
 				<section>
 					<header>
 						<h2>Industry Partners</h2>
 					</header>
-					<p>Thank you to Suometry for making this work possible!</p>
-					<center><a href="https://www.suometry.com/" target="_blank"><img src="images/suometry_logo.png" alt="Suometry" style="width:100px;height:100px;"></a></center>
+					<p>Thank you to Viewnyx for making this work possible!</p>
+					<center><a href="https://www.viewnyx.com/" target="_blank"><img src="images/viewnyx.jpg" alt="NXP" style="width:100px;height:100px;"></a></center>
 				</section>
 		</div>
 		</div></div></div></div>
-
-		</div>
 
 		
 

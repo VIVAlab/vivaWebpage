@@ -1,0 +1,144 @@
+<!DOCTYPE HTML>
+<!--
+	Halcyonic by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Fast human action recognition by Local Part Model.</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="/research/viva/assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="/research/viva/assets/css/main.css" />
+		<link rel="stylesheet" href="/research/viva/assets/css/bootstrap.min.css" />
+		<!--[if lte IE 9]><link rel="stylesheet" href="/research/viva/assets/css/ie9.css" /><![endif]-->
+
+			<script src="/research/viva/assets/js/jquery.min.js"/>
+			<script src="/research/viva/assets/js/main.js"></script>
+			<script src="/research/viva/assets/js/skel.min.js"></script>
+			<script src="/research/viva/assets/js/skel-viewport.min.js"></script>
+
+			<script src="/research/viva/assets/js/util.js"></script>
+
+			<!--[if lte IE 8]><script src="/research/viva/assets/js/ie/respond.min.js"></script><![endif]-->
+
+			<script src="/research/viva/assets/js/bootstrap.min.js"></script>
+
+			<script>
+			$(function(){
+			  $(".template-header-container").load("/research/viva/header-template.html");
+			  $(".template-footer-container").load("/research/viva/footer-template.html");
+			});
+			</script>
+	</head>
+	<body class="subpage">
+		<div id="page-wrapper">
+
+			<!-- Header -->
+			<div class="template-header-container"></div>
+
+			<!-- Content -->
+				<div id="content-wrapper">
+					<div id="content">
+						<div class="container">
+							<div class="row">
+								<div class="9u 12u(mobile)">
+
+									<!-- Main Content -->
+										<section>
+											<header>
+												<h2>Fast human action recognition by Local Part Model.</h2>
+											</header>
+											<span style="text-align: center; font-size: 18pt;">
+<figure>
+<!--<img src="images/model.png"HEIGHT="639" WIDTH="782"> <br>
+<img src="images/model.png" HEIGHT="479" WIDTH="586" alt="Local Part Model"> <br>
+    <figcaption><pre>Local Part Model</pre></figcaption>
+-->
+<p style="float: left; margin-bottom: 5px; margin-right: 3px; width: 782px;"><img src="images/model.png" style="width: 782px; margin-bottom: 5px;"><br>Local Part Model
+</p><p style="clear: both;">
+</p></figure>
+</span>
+											<p>
+                                            <h3>Abstract</h3>
+                                                We proposed a novel Local Part Model (LPM) for fast human action recognition.
+                                                To account for out-of-ordering problem of bag-of-features approach,
+                                                our local part model includes both a coarse root ST patch covering local event-content
+                                                statistics and finer overlapping part ST patches integrating local structure and temporal
+                                                relations. We introduced the idea of using very high sampling density for efficient and accurate
+                                                action recognition by applying random sampling over LPM and through using integral video.
+                                                For more information, check out publications [<a href="http://www.site.uottawa.ca/~laganier/projects/actionLPM/index.html#paper1">1</a>,
+                                                <a href="http://www.site.uottawa.ca/~laganier/projects/actionLPM/index.html#paper3">2</a>,
+                                                <a href="http://www.site.uottawa.ca/~laganier/projects/actionLPM/index.html#paper5">3</a>].
+                                                Our code can be found
+                                                <a href="https://github.com/fshi/actionMBH">[here]</a>.
+                                                If you use our code, please cite our works
+                                                [<a href="http://www.site.uottawa.ca/~laganier/projects/actionLPM/index.html#paper1">1</a>].
+
+                                            <p>We have made a substantial improvement over our CVPR2013[<a href="http://www.site.uottawa.ca/~laganier/projects/actionLPM/index.html#paper1">1</a>] publication. The updated results are shown in the table. In this new improvement, we used separate root and part channels (check [<a href="http://www.site.uottawa.ca/~laganier/projects/actionLPM/index.html#paper3">2</a>]), one-against-all multi-class SVM, a new efficient decriptor and a state-of-the-art optical flow method.
+                                            </p>
+
+                                            <span style="text-align: center; font-size: 14pt;">
+                                            <figure>
+                                            <p style="float: left; margin-bottom: 1px; margin-right: 1px; width: 620px;"><img src="images/results.png" style="width: 601px; margin-bottom: 5px;"><br>Performance</p><p style="float: left; margin-bottom: 1px; margin-right: 1px; width: 461px;"><img src="images/lpmEff.png" style="width: 461px; margin-bottom: 5px;"><br>Effectiveness of LPM
+                                            </p><p style="clear: both;">
+                                            </p></figure>
+                                            </span>
+                                            <p><font color="FF0000">The implementation details and codes for these recent results are from the PhD works to be published soon.</font></p>
+
+                                            <p></p><h3>Publications</h3><p></p>
+
+                                                <ol>
+                                                <li id="paper1">	<b>F. Shi</b>, E. Petriu, and R. Laganiere, “Sampling strategies for real-time action recognition,” <i>in Proc. IEEE Conf. Computer Vision Pattern Recognition (CVPR)</i>, 2013. <a href="http://www.site.uottawa.ca/~laganier/projects/actionLPM/papers/Sampling_Strategies_for_Real-time_Action_Recognition.pdf" target="_blank">[.pdf]</a>
+                                            <a href="https://github.com/fshi/actionMBH">[code]</a></li>
+                                                <li id="paper3">	<b>F. Shi</b>, R. Laganiere, E. Petriu, and H. Zhen, “LPM for fast action recognition with large number of classes,” <i>Notebook paper in THUMOS: ICCV Workshop on Action Recognition with a Large Number of Classes</i>, 2013. <a href="http://www.site.uottawa.ca/~laganier/projects/actionLPM/papers/LPM_for_Fast_Action_Recognition_with_Large_Number_of_Classes.pdf" target="_blank">[.pdf]</a></li>
+                                                <li id="paper2">	<b>F. Shi</b>, E. Petriu, and A. Cordeiro, “Human action recognition from local part model,” <i>in Proc. IEEE Int. Haptic Audio Visual Environments and Games (HAVE) Workshop, 2011, pp. 35–38.</i></li>
+
+                                                </ol>
+										<section>
+											<header>
+												<h2>Contact</h2>
+											</header>
+											<ul class="link-list">
+												<li><a href="http://www.eecs.uottawa.ca/~laganier">Robert Laganiere</a></li><br/>
+												<li><a href="http://www.site.uottawa.ca/research/viva/"><i><b>
+													<span style="font-size: 16pt; color: #000099">VIV</span>
+													<span style="COLOR:#990000; font-size:16pt">A</span></b></i><span style="font-size: 16pt"><b>
+													<span style="COLOR:#000099">Lab</span></b> </span> </a> </li><br/>
+												<li><a href="http://www.eecs.uottawa.ca">School of Electrical Engineering and Computer Science</a></li>
+											</ul>
+										</section>
+										<section>
+											<header>
+												<h2>Paticipants</h2>
+											</header>
+											<ul class="link-list">
+												<li>Jeffrey Ryan Lalonde
+                                                    <br><span>Mehdi Arezoomand</span>
+                                                </li>
+											</ul>
+										</section>
+										<section>
+											<header>
+												<h2>Industry Partners</h2>
+											</header>
+											<ul class="sidemenu">
+                      						 				<a href="http://www.cognivue.com/">
+                       										<img src="/research/viva/images/cognivue.png" width="200" height="75" style="border:none;"></a>
+                       									</ul>
+										</section>
+                                        </section>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			<!-- Footer -->
+			<div class="template-footer-container"></div>
+
+		</div>
+
+	</body>
+</html>
