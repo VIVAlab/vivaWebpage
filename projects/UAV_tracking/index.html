@@ -1,0 +1,176 @@
+
+<!DOCTYPE HTML>
+<!--
+	Halcyonic by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Visual Object Tracking</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="/research/viva/assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="/research/viva/assets/css/main.css" />
+		<link rel="stylesheet" href="/research/viva/assets/css/bootstrap.min.css" />
+		<!--[if lte IE 9]><link rel="stylesheet" href="/research/viva/assets/css/ie9.css" /><![endif]-->
+
+			<script src="/research/viva/assets/js/jquery.min.js"/>
+			<script src="/research/viva/assets/js/main.js"></script>
+			<script src="/research/viva/assets/js/skel.min.js"></script>
+			<script src="/research/viva/assets/js/skel-viewport.min.js"></script>
+			
+			<script src="/research/viva/assets/js/util.js"></script>
+			
+			<!--[if lte IE 8]><script src="/research/viva/assets/js/ie/respond.min.js"></script><![endif]-->
+			
+			<script src="/research/viva/assets/js/bootstrap.min.js"></script>
+
+			<script>
+			$(function(){
+			  $(".template-header-container").load("/research/viva/header-template.html"); 
+			  $(".template-footer-container").load("/research/viva/footer-template.html"); 
+			});
+			function collapsejump(evt)
+			{
+				elem = $("#collapse-trigger");
+				if (elem.attr("aria-expanded") === undefined || elem.attr("aria-expanded") == "false")
+				{
+					targ = $(evt.target.hash)
+					$("#collapse1").on('shown.bs.collapse', function () {
+						targ[0].scrollIntoView();
+					});
+					$("#collapse1").collapse("toggle");
+				}
+			}
+			function collapsetrig()
+			{
+				elem = $("#collapse-trigger");
+				if (elem.attr("aria-expanded") === undefined || elem.attr("aria-expanded") == "false")
+				{
+					elem.html('Click here for less');
+				}
+				else
+				{
+					elem.html('Click here for more');
+				}
+			}
+			</script>
+
+		<style type="text/css">
+			.tg  {border-collapse:collapse;border-spacing:0;margin:0px auto;}
+			.tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;}
+			.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;}
+			.tg .tg-s6z2{text-align:center}
+			@media screen and (max-width: 767px) {.tg {width: auto !important;}.tg col {width: auto !important;}.tg-wrap {overflow-x: auto;-webkit-overflow-scrolling: touch;margin: auto 0px;}}
+			.hmscreencap { position: relative;border: 1px solid #333;margin: 2%;overflow: hidden;width: 640px; }
+			.hmscreencap img { max-width: 100%; -moz-transition: all 0.5s; -webkit-transition: all 0.5s; transition: all 0.5s; }
+			.hmscreencap:hover img { -moz-transform: scale(2.0); -webkit-transform: scale(2.0); transform: scale(2.0); }
+			.hmscreencap_additional { position: relative;border: 1px solid #333;margin: 2%;overflow: hidden;width: 640px; }
+			.hmscreencap_additional img { max-width: 100%; -moz-transition: all 0.5s; -webkit-transition: all 0.5s; transition: all 0.5s; }
+			.hmscreencap_additional:hover img { -moz-transform: scale(1.2); -webkit-transform: scale(1.2); transform: scale(1.2); }
+			.center {text-align:left;width:640px;margin:0 auto;}
+			.center ul {font-family:Arial, sans-serif;font-size:14px;list-style-type: disc;}
+		</style>
+	</head>
+	<body >
+			<!-- Header -->
+			<div class="template-header-container"></div>
+
+		<div id="page-wrapper">
+
+			<!-- Content -->
+			<div id="content-wrapper"><div id="content"><div class="container"><div class="row"><div class="9u 12u(mobile)">
+
+			<!-- Main Content -->
+			<section>
+				<header>
+					<h2><center>Online Model Adaptation for UAV Tracking with Convolutional Neural Network</center></h2>
+
+					<div class="tg-wrap">
+						<table class="tg">
+					 		<tr>
+					    		<th class="tg-s6z2"><a href="mailto:sunzhuojin@msn.com?Subject=UAV Tracking">Zhuojin Sun</a><br>YUNEEC Aviation Technology</a>,<br><a href="mailto:ywang6@uottawa.ca?Subject=UAV Tracking">Yong Wang</a>,<br><a href="mailto:laganier@eecs.uottawa.ca?Subject=UAV Tracking">Robert Laganiere</a><br>University of Ottawa<br>Ottawa, ON, Canada</th>
+					    		
+					  		</tr>
+					  		<tr>
+					    		<td class="tg-s6z2" colspan="2">Questions? <a href="mailto:ywang6@uottawa.ca?Online Model Adaptation for UAV Tracking with Convolutional Neural Network&cc=laganier@eecs.uottawa.ca">Drop us a line</a></td>
+					  		</tr>
+						</table>
+					</div>
+				</header>
+				<hr>
+				<center><a id="overview" name="overview"><h4>Overview</h4></a></center>
+				<hr>
+
+Unmanned aerial vehicle (UAV) tracking is a challenging problem and a core component of UAV applications.
+CNNs have shown impressive performance in computer vision applications, such as object detection, image classification and so on. In this work, a locally connected layer is employed in a CNN architecture to extract robust features. We also utilize focal loss function to focus training on hard examples. Our CNN is first pre-trained offline to learn robust features. The training data is classified according to the texture, color, size of the target and the background information properties. In a subsequent online tracking phase, this CNN is fine-tuned to adapt to the appearance changes of the tracked target. We applied this approach to the problem of UAV tracking and performed extensive experimental results on large scale benchmark datasets. Results obtained show that the proposed method performs favorably against the state-of-the-art trackers in terms of accuracy, robustness and efficiency.
+<br/><br/>
+Our work was accepted to the <a href="http://www.computerrobotvision.org/2018/" target="_blank">15th Conference on Computer and Robot Vision (CRV'18) 
+
+
+<hr>
+<center><a id="Algorithm Overview" name="Algorithm Overview"><h4>Algorithm Overview</h4></a></center>
+<hr>
+In our pre-training stage, a deep network is trained to learn features for separating foreground object from background. Our network has independent branches of class specific layers and shares the common information learned from all training data in the preceding layers. Each class in our network is trained independently and iteratively while the shared layers are updated at each iteration. Class independent information is thus captured and generic object representations are learned for visual tracking.
+<br/><br/>
+Once the pre-training is completed, we fine-tune the new network during an online tracking phase. Figure 1 demonstrates the pipeline of our tracking method. Samples (green rectangles) are gathered around the target position (red rectangle) in the previous frame. Features are extracted through our CNN model and the best candidate is determined as the ones with the maximum positive scores. Next new training examples are extracted around the target location (green rectangles and blue rectangles) and model update is carried out.
+<br/><br/>
+
+<center><a href="images/overview.png" target="_blank"><div class="overview"><img src="images/overview.png" alt="Grid overlay cap" style="width:100%;"></div></a></center><br/><br/>
+
+
+<center><iframe width="560" height="315" src="https://www.youtube.com/embed/ig3R5WLKujg" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></center>
+</center>
+
+<center><iframe width="560" height="315" src="https://www.youtube.com/embed/G4H70sn4kXM" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></center><br><br>
+
+<center><iframe width="560" height="315" src="https://www.youtube.com/embed/rW-T8QjfCNw" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></center>
+</center>
+
+<center><iframe width="560" height="315" src="https://www.youtube.com/embed/Dj3QTeStPi4" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></center><br><br>
+
+<center><iframe width="560" height="315" src="https://www.youtube.com/embed/bUxMTf7QhD8" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></center><br><br>
+
+
+			</section>
+		</div>
+		<div class="3u 12u(mobile)">
+
+			<!-- Sidebar -->
+				<section>
+					<header>
+						<h2>Navigation</h2>
+					</header>
+					<ul class="link-list">
+						<li><a href="#overview">Overview</a></li>
+						<li><a href="#Algorithm Overview">Algorithm Overview</a></li>
+					</ul>
+				</section>
+		</div>
+		</div></div></div></div>
+
+		</div>
+
+		
+
+			<!-- Footer -->
+			<div class="template-footer-container"></div>
+
+		<!-- Scripts -->
+
+	</body>
+</html>
+© 2018 GitHub, Inc.
+Terms
+Privacy
+Security
+Status
+Help
+Contact GitHub
+Pricing
+API
+Training
+Blog
+About
+Press h to open a hovercard with more details.

@@ -1,0 +1,170 @@
+
+<!DOCTYPE HTML>
+<!--
+	Halcyonic by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Visual Object Tracking</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="/research/viva/assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="/research/viva/assets/css/main.css" />
+		<link rel="stylesheet" href="/research/viva/assets/css/bootstrap.min.css" />
+		<!--[if lte IE 9]><link rel="stylesheet" href="/research/viva/assets/css/ie9.css" /><![endif]-->
+
+			<script src="/research/viva/assets/js/jquery.min.js"/>
+			<script src="/research/viva/assets/js/main.js"></script>
+			<script src="/research/viva/assets/js/skel.min.js"></script>
+			<script src="/research/viva/assets/js/skel-viewport.min.js"></script>
+			
+			<script src="/research/viva/assets/js/util.js"></script>
+			
+			<!--[if lte IE 8]><script src="/research/viva/assets/js/ie/respond.min.js"></script><![endif]-->
+			
+			<script src="/research/viva/assets/js/bootstrap.min.js"></script>
+
+			<script>
+			$(function(){
+			  $(".template-header-container").load("/research/viva/header-template.html"); 
+			  $(".template-footer-container").load("/research/viva/footer-template.html"); 
+			});
+			function collapsejump(evt)
+			{
+				elem = $("#collapse-trigger");
+				if (elem.attr("aria-expanded") === undefined || elem.attr("aria-expanded") == "false")
+				{
+					targ = $(evt.target.hash)
+					$("#collapse1").on('shown.bs.collapse', function () {
+						targ[0].scrollIntoView();
+					});
+					$("#collapse1").collapse("toggle");
+				}
+			}
+			function collapsetrig()
+			{
+				elem = $("#collapse-trigger");
+				if (elem.attr("aria-expanded") === undefined || elem.attr("aria-expanded") == "false")
+				{
+					elem.html('Click here for less');
+				}
+				else
+				{
+					elem.html('Click here for more');
+				}
+			}
+			</script>
+
+		<style type="text/css">
+			.tg  {border-collapse:collapse;border-spacing:0;margin:0px auto;}
+			.tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;}
+			.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;}
+			.tg .tg-s6z2{text-align:center}
+			@media screen and (max-width: 767px) {.tg {width: auto !important;}.tg col {width: auto !important;}.tg-wrap {overflow-x: auto;-webkit-overflow-scrolling: touch;margin: auto 0px;}}
+			.hmscreencap { position: relative;border: 1px solid #333;margin: 2%;overflow: hidden;width: 640px; }
+			.hmscreencap img { max-width: 100%; -moz-transition: all 0.5s; -webkit-transition: all 0.5s; transition: all 0.5s; }
+			.hmscreencap:hover img { -moz-transform: scale(2.0); -webkit-transform: scale(2.0); transform: scale(2.0); }
+			.hmscreencap_additional { position: relative;border: 1px solid #333;margin: 2%;overflow: hidden;width: 640px; }
+			.hmscreencap_additional img { max-width: 100%; -moz-transition: all 0.5s; -webkit-transition: all 0.5s; transition: all 0.5s; }
+			.hmscreencap_additional:hover img { -moz-transform: scale(1.2); -webkit-transform: scale(1.2); transform: scale(1.2); }
+			.center {text-align:left;width:640px;margin:0 auto;}
+			.center ul {font-family:Arial, sans-serif;font-size:14px;list-style-type: disc;}
+		</style>
+	</head>
+	<body >
+			<!-- Header -->
+			<div class="template-header-container"></div>
+
+		<div id="page-wrapper">
+
+			<!-- Content -->
+			<div id="content-wrapper"><div id="content"><div class="container"><div class="row"><div class="9u 12u(mobile)">
+
+			<!-- Main Content -->
+			<section>
+				<header>
+					<h2><center>Visual Object Tracking</center></h2>
+
+					<div class="tg-wrap">
+						<table class="tg">
+					 		<tr>
+					    		<th class="tg-s6z2"><a href="mailto:ywang6@uottawa.ca?Subject=Visual Object Tracking">Yong Wang</a>,<br><a href="mailto:laganier@eecs.uottawa.ca?Subject=Visual Object Tracking">Robert Laganiere</a><br>University of Ottawa<br>Ottawa, ON, Canada</th>
+					    		<th class="tg-s6z2"><a href="mailto:daniel.laroche@nxp.com?Subject=Visual Object Tracking">Daniel Laroche</a>, <a href="mailto:changyun.zhu@nxp.com?Subject=SqueezeMap">Changyun Zhu</a>,<br><a href="mailto:christina.xu@nxp.com?Subject=Visual Object Tracking">Xiaoyin Xu</a>,<a href="mailto:ali.ors@nxp.com?Subject=Visual Object Tracking"> Ali Ors</a><br>NXP Semiconductors<br>Ottawa, ON, Canada</th>
+					  		</tr>
+					  		<tr>
+					    		<td class="tg-s6z2" colspan="2">Questions? <a href="mailto:ywang6@uottawa.ca?Visual Object Tracking&cc=laganier@eecs.uottawa.ca;daniel.laroche@nxp.com;changyun.zhu@nxp.com;christina.xu@nxp.com;ali.ors@nxp.com">Drop us a line</a></td>
+					  		</tr>
+						</table>
+					</div>
+				</header>
+				<hr>
+				<center><a id="overview" name="overview"><h4>Overview</h4></a></center>
+				<hr>
+
+In this paper, we exploit convolutional features extracted from multiple layers of a pre-trained deep convolutional neural network. The outputs of the multiple convolutional layers encode both low-level and high-level information of targets. The earlier convolutional layers provide accurate positional information while the late convolutional layers are invariant to appearance changes and provide more semantic information. Specifically, each convolutional layer locates a target through correlation filter-based tracking and then traces the target backward. By analyzing the pair of the forward and backward tracking, we evaluate the robustness of the tracker in each layer. The final position is determined by fusing the location of each layer. A region proposal network (RPN) is employed whenever the backward tracker failure occurs. The new position will be chosen from the proposal candidates generated by the RPN. Extensive experiments have been implemented on several benchmark datasets. Our proposed tracking method achieves favorable results compared to state-of-the-art methods
+<br/><br/>
+Our work was accepted to the <a href="http://www.isvc.net/" target="_blank">13th International Symposium on Visual Computing
+
+<hr>
+<center><a id="Algorithm Overview" name="Algorithm Overview"><h4>Algorithm Overview</h4></a></center>
+<hr><br>
+An overview of our proposed tracking algorithm is given in Fig. 1. It consists of four components. First, deep CNN features are extracted from different layers using the pre-trained VGG19-Net [11]. Then each layer from the CNN predicts the new target position based on correlation filters [5]. Next, backward tracking is employed to compute the overlap score which is used to measure the quality of the tracker. The score is used to fuse the final tracking position from different layers. If the score is higher than a threshold, the final target position is obtained by fusing the tracking positions from the different network layers. Otherwise, the correlation filter is used to locate the final results from candidate proposals which are generate by the RPN. In the following, we give a detailed description of the backward tracking and RPN models.<br><br>
+
+<center><a href="images/overview.png" target="_blank"><div class="overview"><img src="images/general.png" alt="Grid overlay cap" style="width:100%;"></div></a></center><br><br>
+
+<hr>
+<center><a id="performance" name="performance"><h4>Performance</h4></a></center>
+<hr><br>
+
+We evaluate the run-time performance of our final model on a 681x227 input image on 3 different systems:<br><br>
+
+<center><a href="images/performance1.png" target="_blank"><div class="performance1"><img src="images/performance1.png" alt="Grid overlay cap" style="width:100%;"></div></a></center><br><br>
+
+<hr>
+<center><a id="Demo" name="Demo"><h4>Demo</h4></a></center>
+<hr><br>
+
+We evaluate the run-time performance of our final model on a 681x227 input image on 3 different systems:<br><br>
+
+<center><a href="images/results1.png" target="_blank"><div class="results1"><img src="images/results1.png" alt="Grid overlay cap" style="width:100%;"></div></a></center><br><br>
+
+
+			</section>
+		</div>
+		<div class="3u 12u(mobile)">
+
+			<!-- Sidebar -->
+				<section>
+					<header>
+						<h2>Navigation</h2>
+					</header>
+					<ul class="link-list">
+						<li><a href="#overview">Overview</a></li>
+						<li><a href="#Algorithm Overview" onclick="collapsejump(event)">Algorithm Overview</a></li>
+						<li><a href="#performance" onclick="collapsejump(event);">Performance</a></li>
+						<li><a href="#Demo" onclick="collapsejump(event)">Demo</a></li>
+					</ul>
+				</section>
+				<section>
+					<header>
+						<h2>Industry Partners</h2>
+					</header>
+					<p>Thank you to NXP Semiconductor for making this work possible!</p>
+					<center><a href="https://www.nxp.com/" target="_blank"><img src="/research/viva/images/nxp-semiconductors-logo.png" alt="NXP" style="width:100px;height:100px;"></a></center>
+				</section>
+		</div>
+		</div></div></div></div>
+
+		</div>
+
+		
+
+			<!-- Footer -->
+			<div class="template-footer-container"></div>
+
+		<!-- Scripts -->
+
+	</body>
+</html>
