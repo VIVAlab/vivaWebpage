@@ -5,31 +5,34 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
 <html>
-	<head>
+	
+<!-- Mirrored from www.site.uottawa.ca/research/viva/projects/thermal-passenger-detection/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 05 Apr 2019 04:08:05 GMT -->
+<head>
 		<title>Vehicle Occupancy Detection using Thermal Sensors</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<!--[if lte IE 8]><script src="/research/viva/assets/js/ie/html5shiv.js"></script><![endif]-->
-		<link rel="stylesheet" href="/research/viva/assets/css/main.css" />
-		<link rel="stylesheet" href="/research/viva/assets/css/bootstrap.min.css" />
-		<link href="css/all.css" rel="stylesheet">
+		<link rel="stylesheet" href="../../assets/css/main.css" />
+		<link rel="stylesheet" href="../../assets/css/bootstrap.min.css" />
+		<link href="css/all.html" rel="stylesheet">
+		<link rel="stylesheet" href="/css/main.css" />
 		<!--[if lte IE 9]><link rel="stylesheet" href="/research/viva/assets/css/ie9.css" /><![endif]-->
 
-			<script src="/research/viva/assets/js/jquery.min.js"/>
-			<script src="/research/viva/assets/js/main.js"></script>
-			<script src="/research/viva/assets/js/skel.min.js"></script>
-			<script src="/research/viva/assets/js/skel-viewport.min.js"></script>
+			<script src="../../assets/js/jquery.min.js"/>
+			<script src="../../assets/js/main.js"></script>
+			<script src="../../assets/js/skel.min.js"></script>
+			<script src="../../assets/js/skel-viewport.min.js"></script>
 			
-			<script src="/research/viva/assets/js/util.js"></script>
+			<script src="../../assets/js/util.js"></script>
 			
 			<!--[if lte IE 8]><script src="/research/viva/assets/js/ie/respond.min.js"></script><![endif]-->
 			
-			<script src="/research/viva/assets/js/bootstrap.min.js"></script>
+			<script src="../../assets/js/bootstrap.min.js"></script>
 			
 			<script>
 			$(function(){
-			  $(".template-header-container").load("/research/viva/header-template.html"); 
-			  $(".template-footer-container").load("/research/viva/footer-template.html"); 
+			  $(".template-header-container").load("../../header-template.html"); 
+			  $(".template-footer-container").load("../../footer-template.html"); 
 			});
 			</script>
 	</head>
@@ -59,7 +62,7 @@
 												passengers) using a thermal camera. 
 											</p>
 											<p>
-												<h3>Outcome</h3>A complete system capable of high accuracy (90%) vehicle occupancy detection using only thermal images. 
+												<h3>Outcome</h3>A complete system capable of high accuracy vehicle occupancy detection using thermal images. 
 											</p>
 											<p>
 												<h3>Challenges</h3>
@@ -70,11 +73,12 @@
 												</ul>
 											</p>
 											<header>
-												<h3>System Overview</h3>
+												<h3>Core Model Architecture</h3>
 												<br>
 											<header>
 											<p>
 												<img src="images/sys_overview.png" width="800"> 
+												<figcaption>Core model architecture highlighting the feature extraction. The last feature map is processed in two lanes. One for classification, and another performs deconvolution for blob detection.</figcaption>
 											</p>
 											<br><br>
 											<p>
@@ -85,6 +89,7 @@
 												<h3>Applications</h3>
 													<p>
 														<img src="images/hov.jpg" width="400" height="400" class="float-left">
+														<figcaption>HOV Lane. Image credit: Tom Smart, Desert News</figcaption>
 													</p>
 													<p>
 														This technology can be used in monitoring and enforcement of High Occupancy Vehicle (HOV) and High Occupancy Toll (HOT) lanes
@@ -106,11 +111,11 @@
 											</header>
 											<ul class="link-list">
 												<li><a href="http://www.eecs.uottawa.ca/~laganier">Robert Laganiere</a></li><br/>
-												<li><a href="http://www.site.uottawa.ca/research/viva/"><i><b>
+												<li><a href="../../index.html"><i><b>
 													<span style="font-size: 16pt; color: #000099">VIV</span>
 													<span style="COLOR:#990000; font-size:16pt">A</span></b></i><span style="font-size: 16pt"><b>
 													<span style="COLOR:#000099">Lab</span></b> </span> </a> </li><br/>
-												<li><a href="http://www.eecs.uottawa.ca">School of Electrical Engineering and Computer Science</a></li>
+												<li><a href="http://www.eecs.uottawa.ca/">School of Electrical Engineering and Computer Science</a></li>
 											</ul>
 										</section>
 										<section>
@@ -119,16 +124,27 @@
 											</header>
 											<ul class="link-list">
 												<li>Farzan Erlik Nowruzi <a href="mailto:fnowr010@uottawa.ca"><i class="icon fa-envelope" title="email"></i></a><br><span>
-												Wassim El Ahmar <a href="mailto:welah096@uottawa.ca"><i class="icon fa-envelope" title="email"></i></a></li>
+												<li>Wassim El Ahmar <a href="mailto:welah096@uottawa.ca"><i class="icon fa-envelope" title="email"></i></a></li>
 											</ul>
 										</section>
+										
+										<section>
+											<header>
+												<h2>Resources</h2>
+											</header>
+											<ul class="link-list">
+												<li><a href="https://drive.google.com/file/d/1SzY1oYG71CnkIZopPifAMd_pH1pHGXkR/view" target='_blank'>Dataset</a></li>
+												<li><a href="https://github.com/erlikn/sm_ps_ct/" target='_blank'>Code repository</a></li>
+											</ul>
+										</section>
+										
 										<section>
 											<header>
 												<h2>Industry Partners</h2>
 											</header>
 											<ul class="sidemenu">
                       						 				<a href="https://www.smatstraffic.com/">
-                       										<img src="/research/viva/images/smats.png" width="200" height="75" style="border:none;"></a>
+                       										<img src="../../images/smats.png" width="200" height="75" style="border:none;"></a>
                        									</ul>
 										</section>
 
@@ -144,4 +160,6 @@
 		</div>
 
 	</body>
+
+<!-- Mirrored from www.site.uottawa.ca/research/viva/projects/thermal-passenger-detection/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 05 Apr 2019 04:09:33 GMT -->
 </html>
