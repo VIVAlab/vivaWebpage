@@ -1,0 +1,150 @@
+<!DOCTYPE HTML>
+<!--
+	Halcyonic by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	
+<!-- Mirrored from www.site.uottawa.ca/research/viva/projects/thermal-passenger-detection/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 05 Apr 2019 04:08:05 GMT -->
+<head>
+		<title>Head and Shoulder Detection using Convolutional Networks and RGBD data</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="/research/viva/assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="../../assets/css/main.css" />
+		<link rel="stylesheet" href="../../assets/css/bootstrap.min.css" />
+		<link href="css/all.html" rel="stylesheet">
+		<link rel="stylesheet" href="/css/main.css" />
+		<!--[if lte IE 9]><link rel="stylesheet" href="/research/viva/assets/css/ie9.css" /><![endif]-->
+
+			<script src="../../assets/js/jquery.min.js"/>
+			<script src="../../assets/js/main.js"></script>
+			<script src="../../assets/js/skel.min.js"></script>
+			<script src="../../assets/js/skel-viewport.min.js"></script>
+			
+			<script src="../../assets/js/util.js"></script>
+			
+			<!--[if lte IE 8]><script src="/research/viva/assets/js/ie/respond.min.js"></script><![endif]-->
+			
+			<script src="../../assets/js/bootstrap.min.js"></script>
+			
+			<script>
+			$(function(){
+			  $(".template-header-container").load("../../header-template.html"); 
+			  $(".template-footer-container").load("../../footer-template.html"); 
+			});
+			</script>
+	</head>
+	<body class="subpage">
+		<div id="page-wrapper">
+
+			<!-- Header -->
+			<div class="template-header-container"></div>
+
+			<!-- Content -->
+				<div id="content-wrapper">
+					<div id="content">
+						<div class="container">
+							<div class="row">
+								<div class="9u 12u(mobile)">
+
+									<!-- Main Content -->
+										<section>
+											<header>
+												<h2>Head and Shoulder Detection using Convolutional Networks and RGBD data</h2>
+											</header>
+											<p>
+												<h3>Objective</h3>To develop a method for the real time detection of the heads and shoulders of humans in indoor environments using embedded systems. 
+											</p>
+											<p>
+												<h3>Outcome</h3>A complete system capable of high accuracy head and shoulder detection using RGBD data. 
+											</p>
+											<p>
+												<h3>Challenges</h3>
+												<ul>
+													<li>Run in real-time</li>
+													<li>Low space and computation requirements to be able be ported to a dedicated image processing chip</li>
+													<li>Perform reliably to be released as a consumer product</li>
+												</ul>
+											</p>
+											<header>
+												<h3>Core Model Architecture</h3>
+												<br>
+											<header>
+											<p>
+												<img src="images/my_models.png" width="800"> 
+												<figcaption>Core model architecture showing the end to end system.</figcaption>
+											</p>
+											<br><br>
+											<p>
+												A fast image processing algorithm for generating object proposals using the CHL algorithm, and a small convolutional neural network that processes the proposals and classifies them. For proposals predicted as belonging to humans, a head bounding box and shoulder keypoints are output.
+											</p>
+											<header>
+												<h3>Applications</h3>
+													<p>
+														<img src="images/analytics.png" width="400" height="300" class="float-left">
+														<figcaption>Image credit: Sandipan Mukherjee, WPforms</figcaption>
+													</p>
+													<p>
+														This technology can be used in generating business analytics (number of customers, serivce time...), people counting, and congestion analysics.
+													</p>
+											<header>
+												<br>
+													<h3>Sample results</h3>
+												<p>
+														<img src="images/results.png" width="640" height="480" class="float-left">
+												</p>
+										</section>
+								</div>
+								<div class="3u 12u(mobile)">
+
+									<!-- Sidebar -->
+										<section>
+											<header>
+												<h2>Contact</h2>
+											</header>
+											<ul class="link-list">
+												<li><a href="http://www.eecs.uottawa.ca/~laganier">Robert Laganiere</a></li><br/>
+												<li><a href="../../index.html"><i><b>
+													<span style="font-size: 16pt; color: #000099">VIV</span>
+													<span style="COLOR:#990000; font-size:16pt">A</span></b></i><span style="font-size: 16pt"><b>
+													<span style="COLOR:#000099">Lab</span></b> </span> </a> </li><br/>
+												<li><a href="http://www.eecs.uottawa.ca/">School of Electrical Engineering and Computer Science</a></li>
+											</ul>
+										</section>
+										<section>
+											<header>
+												<h2>Paticipants</h2>
+											</header>
+											<ul class="link-list">
+												<li>Wassim El Ahmar <a href="mailto:welah096@uottawa.ca"><i class="icon fa-envelope" title="email"></i></a></li>
+												<li>Farzan Erlik Nowruzi <a href="mailto:fnowr010@uottawa.ca"><i class="icon fa-envelope" title="email"></i></a><br><span>
+											</ul>
+										</section>
+										
+										<section>
+											<header>
+												<h2>Resources</h2>
+											</header>
+											<ul class="link-list">
+												<li><a href="https://drive.google.com/open?id=1fOub9LcNqfDlr-mEcdnenAJWw-rqWGmG" target='_blank'>Dataset</a></li>
+												<li><a href="https://github.com/wassimea/hs_detection_cnn/" target='_blank'>Code repository</a></li>
+											</ul>
+										</section>
+
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			<!-- Footer -->
+			<div class="template-footer-container"></div>
+
+		</div>
+
+	</body>
+
+<!-- Mirrored from www.site.uottawa.ca/research/viva/projects/thermal-passenger-detection/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 05 Apr 2019 04:09:33 GMT -->
+</html>
