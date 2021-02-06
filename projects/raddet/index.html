@@ -1,195 +1,410 @@
 <!DOCTYPE HTML>
+
 <html>
+
 	<head>
+
 		<title>RADDet: Range-Azimuth-Doppler based Radar Object Detection for Dynamic Road Users</title>
+
 		<meta charset="utf-8" />
+
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
+
 		<!--[if lte IE 8]><script src="/research/viva/assets/js/ie/html5shiv.js"></script><![endif]-->
+
 		<link rel="stylesheet" href="/research/viva/assets/css/main.css" />
+
 		<link rel="stylesheet" href="/research/viva/assets/css/bootstrap.min.css" />
+
 		<!--[if lte IE 9]><link rel="stylesheet" href="/research/viva/assets/css/ie9.css" /><![endif]-->
 
+
+
 			<script src="/research/viva/assets/js/jquery.min.js"/>
+
 			<script src="/research/viva/assets/js/main.js"></script>
+
 			<script src="/research/viva/assets/js/skel.min.js"></script>
+
 			<script src="/research/viva/assets/js/skel-viewport.min.js"></script>
+
 			
+
 			<script src="/research/viva/assets/js/util.js"></script>
+
 			
+
 			<!--[if lte IE 8]><script src="/research/viva/assets/js/ie/respond.min.js"></script><![endif]-->
+
 			
+
 			<script src="/research/viva/assets/js/bootstrap.min.js"></script>
 
+
+
 			<script>
+
 			$(function(){
+
 			  $(".template-header-container").load("/research/viva/header-template.html"); 
+
 			  $(".template-footer-container").load("/research/viva/footer-template.html"); 
+
 			});
 
+
+
 			function collapsejump(evt)
+
 			{
+
 				elem = $("#collapse-trigger");
+
 				if (elem.attr("aria-expanded") === undefined || elem.attr("aria-expanded") == "false")
+
 				{
+
 					targ = $(evt.target.hash)
+
 					$("#collapse1").on('shown.bs.collapse', function () {
+
 						targ[0].scrollIntoView();
+
 					});
+
 					$("#collapse1").collapse("toggle");
+
 				}
+
 			}
+
+
 
 			function collapsetrig()
+
 			{
+
 				elem = $("#collapse-trigger");
+
 				if (elem.attr("aria-expanded") === undefined || elem.attr("aria-expanded") == "false")
+
 				{
+
 					elem.html('Click here for less');
+
 				}
+
 				else
+
 				{
+
 					elem.html('Click here for more');
+
 				}
+
 			}
+
 			</script>
 
+
+
 		<style type="text/css">
+
 			.tg  {border-collapse:collapse;border-spacing:0;margin:0px auto;}
+
 			.tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;}
+
 			.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;}
+
 			.tg .tg-s6z2{text-align:center}
+
 			@media screen and (max-width: 767px) {.tg {width: auto !important;}.tg col {width: auto !important;}.tg-wrap {overflow-x: auto;-webkit-overflow-scrolling: touch;margin: auto 0px;}}
 
+
+
 			.hmscreencap { position: relative;border: 1px solid #333;margin: 2%;overflow: hidden;width: 640px; }
+
 			.hmscreencap img { max-width: 100%; -moz-transition: all 0.5s; -webkit-transition: all 0.5s; transition: all 0.5s; }
+
 			.hmscreencap:hover img { -moz-transform: scale(2.0); -webkit-transform: scale(2.0); transform: scale(2.0); }
 
+
+
 			.hmscreencap_additional { position: relative;border: 1px solid #333;margin: 2%;overflow: hidden;width: 640px; }
+
 			.hmscreencap_additional img { max-width: 100%; -moz-transition: all 0.5s; -webkit-transition: all 0.5s; transition: all 0.5s; }
+
 			.hmscreencap_additional:hover img { -moz-transform: scale(1.2); -webkit-transform: scale(1.2); transform: scale(1.2); }
 
+
+
 			.center {text-align:left;width:640px;margin:0 auto;}
+
 			.center ul {font-family:Arial, sans-serif;font-size:14px;list-style-type: disc;}
+
 		</style>
+
 	</head>
+
 	<body >
+
 			<!-- Header -->
+
 			<div class="template-header-container"></div>
+
+
 
 		<div id="page-wrapper">
 
+
+
 			<!-- Content -->
+
 			<div id="content-wrapper"><div id="content"><div class="container"><div class="row"><div class="9u 12u(mobile)">
 
+
+
 			<!-- Main Content -->
+
 			<section>
+
 				<header>
+
 					<h2><center>RADDet: Range-Azimuth-Doppler based Radar Object Detection for Dynamic Road Users</center></h2>
 
+
+
 					<div class="tg-wrap">
+
 						<table class="tg">
+
 					 		<tr>
+
 					    		<th class="tg-s6z2"><a href="mailto:azhan085@uottawa.ca?Subject=RADDet">Ao Zhang</a>, <a href="mailto:fnowr010@uottawa.ca?Subject=RADDet">Farzan Erlik Nowruzi</a>, <a href="mailto:laganier@eecs.uottawa.ca?Subject=RADDet">Robert Laganiere</a><br>School of Electrical Engineering & Computer Science<br/>University of Ottawa<br>Ottawa, Ontario, Canada</th>
+
 					  		</tr>
+
 					  		<tr>
+
 					    		<td class="tg-s6z2" colspan="1">Questions? <a href="mailto:azhan085@uottawa.ca?Subject=RADDet&cc=laganier@eecs.uottawa.ca;fnowr010@uottawa.ca">Drop us a line</a></td>
+
 					  		</tr>
+
 						</table>
+
 					</div>
+
 				</header>
+
 				<center><a href="images/NetworksArchitecture.jpg" target="_blank"><div class="hmscreencap"><img src="images/NetworksArchitecture.jpg" alt="RAD" style="width:100%;"></div></a></center><br>
 
+
+
 				<hr>
+
 				<center><a id="overview" name="overview"><h4>Overview</h4></a></center>
+
 				<hr>
 
-###PUT YOUR OVERVIEW CONTENT HERE###<br><br>
 
 
+In recent years, deep learning based object detection algorithms have been widely explored in the image domain. In the radar domain, although object detection has gained a certain level of popularity, it is hard to find a systematic comparison between different studies. This is due to several reasons. First, various input and output formats have been seen among the related researches, such as <a href="https://arxiv.org/abs/2004.05310">Probabilistic Oriented Object Detection</a></li>, <a href="https://arxiv.org/abs/1906.12187">Deep Radar Detector</a></li> and <a href="https://arxiv.org/abs/2004.12165">CNN based Road User Detection</a></li>. Second, there is no proper public dataset that can serve as benchmarks for the studies in this field. Thus, the researchers chose to build their own dataset. One common thing that can be found in most radar researches is that they only target dynamic objects, since the detections of dynamic objects are richer than static ones.
 
-Our work was accepted to the <a href="###LINK TO CONFERENCE HERE###" target="_blank">###NAME OF CONFERENCE HERE###</a>.<br><br>
+<br/><br/>
 
-		      
+In this paper, we introduce a novel dataset and propose a new object detection model for dynamic road users. Our contributions are as follows:<br/><br/>
+
+<div class="center"><ul>
+<li>A novel dataset that contains radar data in form of RAD representations with corresponding annotations for various object classes is introduced. The dataset is available <a href="https://drive.google.com/drive/folders/1v-AF873jP8p6waChF3pSSqz6HXOOZgkC?usp=sharing">here</a>.</li>
+
+<li>An automatic annotation method that generates ground-truth labels on all dimensions of RAD data and in the Cartesian form is proposed.</li>
+
+<li>A new radar object detection model is proposed. Our model employs a backbone based on <a href="https://arxiv.org/abs/1512.03385">ResNet</a>. The ultimate form of the backbone is achieved after systematic explorations of deep learning models on the radar data.</li>
+
+<li>Inspired by <a href="https://arxiv.org/abs/1612.08242">YOLO Head</a>, we propose a new dual detection head, with a 3D detection head on RAD data and a 2D detection head on the data in Cartesian coordinates</li>
+
+</ul></div>
+
+<!--Our work was accepted to the <a href="###LINK TO CONFERENCE HERE###" target="_blank">###NAME OF CONFERENCE HERE###</a>.<br><br>-->
+
+<br/>
+
 		    <a id="collapse-trigger" data-toggle="collapse" href="#collapse1" onclick="collapsetrig()">Click here for more</a>
+
 		      
+
 		    <div id="collapse1" class="panel-collapse collapse">
+
 <hr>
+
 <center><a id="dataset" name="dataset"><h4>Range-Azimuth-Doppler based Radar Dataset</h4></a></center>
+
 <hr><br>
-###PUT YOUR CONTENT HERE###<br><br>
 
-The dataset is about 350GB and is available for download <a href="https://drive.google.com/drive/folders/1v-AF873jP8p6waChF3pSSqz6HXOOZgkC?usp=sharing">here</a>.
-<br>
+The sensors used in data collection consist of a <a href="https://www.ti.com/tool/AWR1843BOOST">Texas Instruments AWR1843-BOOST</a> radar and a pair of <a href="https://www.theimagingsource.com/products/industrial-cameras/usb-3.0-color/dfk33ux273/">DFK 33UX273</a> stereo cameras from The Imaging Source. Figure below shows our sensors setup. 
 
-<hr>
-<center><a id="background" name="background"><h4>Dataset Background</h4></a></center>
-<hr><br>
-###PUT YOUR CONTENT HERE###<br><br>
-
-<center><div class="sensor_setup"><a href="images/sensor_setup.jpg" target="_blank"><img src="images/sensor_setup.jpg" alt="Sensor Setup" style="float: left; height: 50%; width: 45%; margin-right: 5px;"></a><a href="images/sensor_setup.jpg" target="_blank"><img src="images/calib_target.jpg" alt="Calibration Target" style="width: 45%"></a><p style="clear: both;"/></div></center>
+<!--The dataset is about 350GB and is available for download <a href="https://drive.google.com/drive/folders/1v-AF873jP8p6waChF3pSSqz6HXOOZgkC?usp=sharing">here</a>.-->
 
 <br/><br/><br/>
 
-###PUT YOUR CONTENT HERE###<br><br>
+<!--<hr>-->
 
-<center><a href="images/RAD_annotation_preprocess.jpg" target="_blank"><div class="rad_annot"><img src="images/RAD_annotation_preprocess.jpg" alt="RAD Annotation Process" style="width:100%"></div></a></center><br>
+<!--<center><a id="background" name="background"><h4>Dataset Background</h4></a></center>-->
 
-###PUT YOUR CONTENT HERE###<br><br>
+<!--<hr><br>-->
+
+
+<center><div class="row_source" style="margin-left: auto; margin-right: auto;"><a href="images/sensor_setup.jpg" target="_blank"><img src="images/sensor_setup.jpg" alt="Sensor Setup" style="float: left; width: 25%; margin-left: 15%;"></a><a href="images/sensor_setup.jpg" target="_blank"><img src="images/calib_target.jpg" alt="Calibration Target" style="width: 25%"></a><p style="clear: both;"/></div></center>
+
+
+<br/><br/>
+
+The configurations of both sensors are specified as Table I and Table II. As we can view the number of virtual antennas as a combination of the number of transmitters and receivers, the size of Analog-to-Digital Converter (ADC) data can be computed as (256, 8, 64). Due to the limited resolution of elevation angle of the radar, we opt to only consider the two dimensional birds eye view information from it.
+
+<br/><br/>
+
+<center><a href="images/configurations.png" target="_blank"><div class="config"><img src="images/configurations.png" alt="Configurations" style="width:40%"></div></a></center>
+
+<br/><br/>
+
+For data synchronization, the timestamps are manually added to the radar outputs in order to synchronize with cameras. The implementation is conducted using the Robotics Operating System (ROS). We also re-calibrated the recorded timestamps of both sensors during the data capture.
+
+<br/><br/>
+
+The sensors calibration is implemented with a self-made trihedral corner reflector, shown in the figure above. In order to make the corner reflector easily recognizable for cameras, a coloured triangle shape foam plate is attached to the front of it. The projection matrix from stereo camera's frame to radar's frame is computed based on <a href="https://www.researchgate.net/publication/282846600_Toward_3D_Reconstruction_of_Outdoor_Scenes_Using_an_MMW_Radar_and_a_Monocular_Vision_Sensor">Calibration</a></li>.
+
+<br/><br/>
+
+Traditional Digital Signal Processing (DSP) for Frequency Modulated Continuous Wave (FMCW) radar is divided into two steps. First, Fast Fourier Transform (FFT) is performed on each dimension of received Analog-to-Digital Converter (ADC) signals. The primary output of this step is Range-Azimuth-Doppler (RAD) spectrum. Second, Constant False Alarm Rate (CFAR) is employed for filtering out the noise signals. There are two major CFAR algorithms, namely Cell-Averaging CFAR (CA-CFAR) and Order-Statistic (OS-CFAR). OS-CFAR is normally more preferable for academic usages due to its high-quality outputs, while CA-CFAR is often used in the industry because of the speed. The output of this step is often transformed to Cartesian coordinates and presented as a point-cloud, which is the base of  cluster-based radar data analysis for various applications. In our dataset, the radar data pre-processing employes the 2D OS-CFAR algorithm.
+
+<br/><br/>
+
+On the Range-Doppler (RD) outputs from 2D OS-CFAR, rigid bodies, such as vehicles, can be easily detected due to the speed coherence on the doppler axis. For human beings, <a href="https://arxiv.org/abs/1906.12187">Deep Radar Detector</a></li> shows that different motions of different body parts may result in various output patterns on RD spectrum. However, when the radar's range resolution reaches a certain level, the complexity of human bodies' motion can hardly be observed. Thus, they also can be considered as rigid bodies. An example is shown in figure below. One property of the rigid bodies appearing on the RD spectrum is that they are often presented as linear patterns, despite the angle differences between the objects and the radar. Thus, by connecting the discrete patterns on the RD spectrum, we successfully enrich the detection rate of the traditional 2D OS-CFAR.
+
+<br/><br/>
+
+<center><a href="images/RAD_annotation_preprocess.jpg" target="_blank"><div class="rad_annot"><img src="images/RAD_annotation_preprocess.jpg" alt="RAD Annotation Process" style="width:50%"></div></a></center><br>
+
+<br/><br/>
+
+In this research, we used stereo vison for ground truth labelling. The whole process can be described as follow. First, stereo depth estimation is implemented with OpenCV to generate disparity maps. Then, <a href="https://arxiv.org/abs/1703.06870v1">Mask-RCNN</a> is used on stereo images and the prediction masks are applied to the corresponding disparity maps along with category predictions. Finally, using the triangulation, the instance-wise point cloud outputs with predicted categories are generated.
+
+<br/><br/>
+
+Finally, the dataset can be generated by matching the radar instances and the stereo instances obtained above. Our dataset is available <a href="https://drive.google.com/drive/folders/1v-AF873jP8p6waChF3pSSqz6HXOOZgkC?usp=sharing">here</a></li>.
+
+<br/>
 
 <hr>
+
 <center><a id="raddet" name="raddet"><h4>RADDet</h4></a></center>
+
 <hr><br>
 
-###PUT YOUR CONTENT HERE###<br><br>
 
-<center><a href="images/NetworksArchitecture.jpg" target="_blank"><div class="networksarch"><img src="images/NetworksArchitecture.jpg" alt="Network Architecture" style="width:100%;"></div></a></center><br><br>
+The state of the art image based object detection algorithms consist of 3 parts, a backbone, a neck and a detection head (<a href="https://arxiv.org/abs/2004.10934">YOLOv4</a></li>, <a href="https://arxiv.org/abs/1904.01355">FCOS</a></li>, <a href="https://arxiv.org/abs/1708.02002">Focal Loss</a></li>). Inspired by that we formulate our backbone networks based on widely used <a href="https://arxiv.org/abs/1512.03385">ResNet</a></li>. In the image domain, the neck layers are used to extract ouputs in multiple levels in order to handle the scale variations of the objects. However, unlike images, that the distance changes the size of the objects due to pespective geometry, radars reveal the true scales of the objects. Therefore, multi-resolution neck layers are not considered in our research. Finally, we propose a novel dual detection head based on the well-known anchor-based algorithm <a href="https://arxiv.org/abs/1612.08242">YOLO</a></li>. Figure below shows the data flow of our proposed architecture.
+
+<br/><br/>
+
+<center><a href="images/NetworksArchitecture.jpg" target="_blank"><div class="networksarch"><img src="images/NetworksArchitecture.jpg" alt="Network Architecture" style="width:100%;"></div></a></center>
+
+<br/><br/>
+
+The 3D head processes the feature maps into [16, 16, 4 * num_of_anchors * (7 + num_of_classes)], where 7 stands for the objectness and the 3D box information. The 3D box information consists of the 3D center point [x, y, z], and the size [w, h, d]. The 2D detection head consists of two parts; a coordinate transformation layer that transforms the feature maps from polar representation to the Cartesian form, and a classic <a href="https://arxiv.org/abs/1612.08242">YOLO Head</a>.
 
 <hr>
+
 <center><a id="testing" name="testing"><h4>Testing</h4></a></center>
+
 <hr><br>
 
-###PUT YOUR CONTENT HERE###<br><br>
+
+In order to visually inspect the performance of our model, we ran our model through the test set and compared the prediction boxes with the ground truth boxes. Figure below shows some visualization samples. We sincerely hope that this research and the dataset can bridge the gap between image based object detection with the radar based object detection, and inspire the development of more algorithms on autonomous radars.
+
+<br/><br/>
 
 <center><a href="images/testset_samples.png" target="_blank"><div class="test_set_samples"><img src="images/testset_samples.png" alt="Test Set Samples" style="width:100%"></div></a></center><br><br>
 
 
+
+
+
 		</div>
+
+
 
 			</section>
+
 		</div>
+
 		<div class="3u 12u(mobile)">
 
+
+
 			<!-- Sidebar -->
+
 				<section>
+
 					<header>
+
 						<h2>Navigation</h2>
+
 					</header>
+
 					<ul class="link-list">
+
 						<li><a href="#overview">Overview</a></li>
+
 						<li><a href="#dataset" onclick="collapsejump(event)">Dataset Download</a></li>
+
 						<li><a href="#background" onclick="collapsejump(event);">Dataset Background</a></li>
+
 						<li><a href="#raddet" onclick="collapsejump(event)">RADDet</a></li>
+
 						<li><a href="#testing" onclick="collapsejump(event)">Testing</a></li>
+
 					</ul>
+
 				</section>
+
 				<section>
+
 					<header>
+
 						<h2>Industry Partners</h2>
+
 					</header>
+
 					<p>Thank you to Sensorcortek for making this work possible!</p>
+
 					<center><a href="https://sensorcortek.ai/" target="_blank"><img src="/research/viva/images/sensorcortek.png" alt="SensorCortek" style="width:100px;height:100px;"></a></center>
+
 				</section>
-		</div>
-		</div></div></div></div>
 
 		</div>
+
+		</div></div></div></div>
+
+
+
+		</div>
+
+
 
 		
 
+
+
 			<!-- Footer -->
+
 			<div class="template-footer-container"></div>
+
+
 
 		<!-- Scripts -->
 
+
+
 	</body>
+
 </html>
