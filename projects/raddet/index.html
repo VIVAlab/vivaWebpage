@@ -112,9 +112,9 @@
 
 			.tg  {border-collapse:collapse;border-spacing:0;margin:0px auto;}
 
-			.tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;}
+			.tg td{font-family:Arial, sans-serif;font-size:14px;padding:5px 5px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;}
 
-			.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;}
+			.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:1px 5px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;}
 
 			.tg .tg-s6z2{text-align:center}
 
@@ -173,21 +173,20 @@
 					<h2><center>RADDet: Range-Azimuth-Doppler based Radar Object Detection for Dynamic Road Users</center></h2>
 
 
-
+					<br/>
 					<div class="tg-wrap">
 
 						<table class="tg">
 
 					 		<tr>
-
-					    		<th class="tg-s6z2"><a href="mailto:azhan085@uottawa.ca?Subject=RADDet">Ao Zhang</a>, <a href="mailto:fnowr010@uottawa.ca?Subject=RADDet">Farzan Erlik Nowruzi</a>, <a href="mailto:robert@st.ca?Subject=RADDet">Robert Laganiere</a><br>School of Electrical Engineering & Computer Science<br/>University of Ottawa<br>Ottawa, Ontario, Canada</th>
-
+					    		<th class="tg-s6z2" colspan=2><a href="mailto:azhan085@uottawa.ca?Subject=RADDet">Ao Zhang</a><sup>1</sup>, <a href="mailto:fnowr010@uottawa.ca?Subject=RADDet">Farzan Erlik Nowruzi</a><sup>1,</sup><sup>2</sup>, <a href="mailto:robert@st.ca?Subject=RADDet">Robert Laganiere</a><sup>1,</sup><sup>2</sup></th>
 					  		</tr>
-
 					  		<tr>
-
-					    		<td class="tg-s6z2" colspan="1">Questions? <a href="mailto:azhan085@uottawa.ca?Subject=RADDet&cc=robert@st.ca;fnowr010@uottawa.ca">Drop us a line</a></td>
-
+					  			<th class="tg-s6z2" colspan=1>University of Ottawa<sup>1</sup><br>Ottawa, Ontario, Canada</th>
+					  			<th class="tg-s6z2" colspan=1>Sensorcortek Inc.<sup>2</sup><br/>Ottawa, Ontario, Canada</th>
+					  		</tr>
+					  		<tr>
+					    		<td class="tg-s6z2" colspan="2">Questions? <a href="mailto:azhan085@uottawa.ca?Subject=RADDet&cc=robert@st.ca;fnowr010@uottawa.ca">Drop us a line</a></td>
 					  		</tr>
 
 						</table>
@@ -196,7 +195,7 @@
 
 				</header>
 
-				<center><a href="images/NetworksArchitecture.jpg" target="_blank"><div class="hmscreencap"><img src="images/NetworksArchitecture.jpg" alt="RAD" style="width:100%;"></div></a></center><br>
+				<center><a href="images/NetworksArchitecture.jpg" target="_blank"><img src="images/NetworksArchitecture.jpg" alt="RAD" style="width:100%;"></a></center><br>
 
 
 
@@ -215,13 +214,11 @@ In recent years, deep learning based object detection algorithms have been widel
 In this paper, we introduce a novel dataset and propose a new object detection model for dynamic road users. Our contributions are as follows:<br/><br/>
 
 <div class="center"><ul>
-<li>A novel dataset that contains radar data in form of RAD representations with corresponding annotations for various object classes is introduced. The dataset is available <a href="https://drive.google.com/drive/folders/1v-AF873jP8p6waChF3pSSqz6HXOOZgkC?usp=sharing">here</a>.</li>
+<li>A novel dataset that contains radar data in form of RAD representations with corresponding annotations for various object classes is introduced. The dataset is available on <a href="https://drive.google.com/drive/folders/1v-AF873jP8p6waChF3pSSqz6HXOOZgkC?usp=sharing">Google Drive</a>.</li>
 
 <li>An automatic annotation method that generates ground-truth labels on all dimensions of RAD data and in the Cartesian form is proposed.</li>
 
-<li>A new radar object detection model is proposed. Our model employs a backbone based on <a href="https://arxiv.org/abs/1512.03385">ResNet</a>. The ultimate form of the backbone is achieved after systematic explorations of deep learning models on the radar data.</li>
-
-<li>Inspired by <a href="https://arxiv.org/abs/1612.08242">YOLO Head</a>, we propose a new dual detection head, with a 3D detection head on RAD data and a 2D detection head on the data in Cartesian coordinates</li>
+<li>A new radar object detection model is proposed. Our model employs a backbone based on <a href="https://arxiv.org/abs/1512.03385">ResNet</a>. The ultimate form of the backbone is achieved after systematic explorations of deep learning models on the radar data. Inspired by <a href="https://arxiv.org/abs/1612.08242">YOLO Head</a>, we propose a new dual detection head, with a 3D detection head on RAD data and a 2D detection head on the data in Cartesian coordinates</li>
 
 </ul></div>
 
@@ -254,7 +251,7 @@ The sensors used in data collection consist of a <a href="https://www.ti.com/too
 <!--<hr><br>-->
 
 
-<center><div class="row_source" style="margin-left: auto; margin-right: auto;"><a href="images/sensor_setup.jpg" target="_blank"><img src="images/sensor_setup.jpg" alt="Sensor Setup" style="float: left; width: 25%; margin-left: 15%;"></a><a href="images/sensor_setup.jpg" target="_blank"><img src="images/calib_target.jpg" alt="Calibration Target" style="width: 25%"></a><p style="clear: both;"/></div></center>
+<center><div class="row_source" style="margin-left: auto; margin-right: auto;"><a href="images/sensor_setup.jpg" target="_blank"><img src="images/sensor_setup.jpg" alt="Sensor Setup" style="float: left; width: 35%; margin-left: 10%;"></a><a href="images/sensor_setup.jpg" target="_blank"><img src="images/calib_target.jpg" alt="Calibration Target" style="width: 35%"></a><p style="clear: both;"/></div></center>
 
 
 <br/><br/>
@@ -263,7 +260,7 @@ The configurations of both sensors are specified as Table I and Table II. As we 
 
 <br/><br/>
 
-<center><a href="images/configurations.png" target="_blank"><div class="config"><img src="images/configurations.png" alt="Configurations" style="width:40%"></div></a></center>
+<center><a href="images/configurations.png" target="_blank"><div class="config"><img src="images/configurations.png" alt="Configurations" style="width:50%"></div></a></center>
 
 <br/><br/>
 
@@ -283,7 +280,7 @@ On the Range-Doppler (RD) outputs from 2D OS-CFAR, rigid bodies, such as vehicle
 
 <br/><br/>
 
-<center><a href="images/RAD_annotation_preprocess.jpg" target="_blank"><div class="rad_annot"><img src="images/RAD_annotation_preprocess.jpg" alt="RAD Annotation Process" style="width:50%"></div></a></center><br>
+<center><a href="images/RAD_annotation_preprocess.jpg" target="_blank"><div class="rad_annot"><img src="images/RAD_annotation_preprocess.jpg" alt="RAD Annotation Process" style="width:80%"></div></a></center><br>
 
 <br/><br/>
 
@@ -291,7 +288,7 @@ In this research, we used stereo vison for ground truth labelling. The whole pro
 
 <br/><br/>
 
-Finally, the dataset can be generated by matching the radar instances and the stereo instances obtained above. Our dataset is available <a href="https://drive.google.com/drive/folders/1v-AF873jP8p6waChF3pSSqz6HXOOZgkC?usp=sharing">here</a></li>.
+Finally, the dataset can be generated by matching the radar instances and the stereo instances obtained above. Our dataset is available on <a href="https://drive.google.com/drive/folders/1v-AF873jP8p6waChF3pSSqz6HXOOZgkC?usp=sharing">Google Drive</a></li>.
 
 <br/>
 
